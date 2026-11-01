@@ -1,0 +1,2 @@
+candidate_id,candidate_name,role_title,hr_shortlist_decision,hr_priority_band,hr_marked_skills,hr_red_flags,hr_notes
+101,Sample Candidate,Junior Backend Dev,shortlist,High,"Python, Django, PostgreSQL, Docker",None,Strong GitHub project evidence

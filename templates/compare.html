@@ -1,0 +1,182 @@
+{% extends 'base.html' %}
+{% block title %}Candidate Comparison · {{ drive.title }}{% endblock %}
+{% block content %}
+<a class="back-link" href="{% url 'drive_shortlist' drive.id %}">← Back to shortlist</a>
+
+<div class="page-head">
+  <div>
+    <div class="eyebrow">{{ drive.company.name }} · SIDE-BY-SIDE EVALUATION</div>
+    <h1>Candidate comparison ({{ comparison_cards|length }})</h1>
+    <p>Compare candidates directly across eligibility, demonstrated evidence, skill coverage, and interview readiness.</p>
+  </div>
+  <a class="button secondary" href="{% url 'drive_shortlist' drive.id %}">Shortlist view</a>
+</div>
+
+{% if blind %}
+<div class="notice">
+  <span class="notice-icon">🙈</span>
+  <div><b>Blind review active</b><p>Personal identities and college names are hidden to ensure unbiased evaluation.</p></div>
+</div>
+{% endif %}
+
+<div class="comparison-container">
+  <div class="comparison-grid" style="grid-template-columns: 220px repeat({{ comparison_cards|length }}, 1fr);">
+    <!-- Row: Header / Candidate info -->
+    <div class="comp-label-cell comp-header-cell">Candidate</div>
+    {% for c in comparison_cards %}
+    <div class="comp-col-cell comp-header-cell">
+      <h3>{{ c.display_name }}</h3>
+      <div class="band-pill {{ c.priority_css }}">{{ c.priority_band }} Priority</div>
+      <div class="comp-score"><b>{{ c.score|default:"—" }}</b><span>/100</span></div>
+      <div class="status status-{{ c.status_code }}">{{ c.status_display }}</div>
+    </div>
+    {% endfor %}
+
+    <!-- Row: Eligibility knockout gate -->
+    <div class="comp-label-cell">Eligibility Gate</div>
+    {% for c in comparison_cards %}
+    <div class="comp-col-cell">
+      {% if c.eligibility_passed == True %}
+        <span class="elig-pill elig-pass">✓ Passed All Criteria</span>
+      {% elif c.eligibility_passed == False %}
+        <span class="elig-pill elig-fail">✗ Did Not Meet Criteria</span>
+      {% else %}
+        <span class="muted">Pending</span>
+      {% endif %}
+    </div>
+    {% endfor %}
+
+    <!-- Section: Academic metrics -->
+    <div class="comp-section-row" style="grid-column: 1 / -1;">ACADEMICS & ELIGIBILITY METRICS</div>
+
+    <div class="comp-label-cell">CGPA</div>
+    {% for c in comparison_cards %}
+    <div class="comp-col-cell"><b>{{ c.cgpa|default:"Not on file" }}</b></div>
+    {% endfor %}
+
+    <div class="comp-label-cell">Active Arrears</div>
+    {% for c in comparison_cards %}
+    <div class="comp-col-cell">
+      {% if c.arrears != None %}
+        <b class="{% if c.arrears == 0 %}good{% else %}bad{% endif %}">{{ c.arrears }}</b>
+      {% else %}
+        <span class="muted">Not recorded</span>
+      {% endif %}
+    </div>
+    {% endfor %}
+
+    <div class="comp-label-cell">Highest Education</div>
+    {% for c in comparison_cards %}
+    <div class="comp-col-cell">🎓 {{ c.education_level }}</div>
+    {% endfor %}
+
+    <div class="comp-label-cell">Experience Duration</div>
+    {% for c in comparison_cards %}
+    <div class="comp-col-cell">⏱ {{ c.experience_years }} year(s)</div>
+    {% endfor %}
+
+    <!-- Section: Required skills matrix -->
+    <div class="comp-section-row" style="grid-column: 1 / -1;">REQUIRED SKILLS COVERAGE</div>
+
+    {% for skill in req_skills %}
+    <div class="comp-label-cell">{{ skill }}</div>
+    {% for c in comparison_cards %}
+    <div class="comp-col-cell">
+      {% if skill in c.req_skills_matched %}
+        <span class="good">✓ Matched</span>
+      {% else %}
+        <span class="bad">✗ Missing</span>
+      {% endif %}
+    </div>
+    {% endfor %}
+    {% empty %}
+    <div class="comp-label-cell">Required skills</div>
+    <div class="comp-col-cell" style="grid-column: 2 / -1;"><span class="muted">No specific mandatory skills defined.</span></div>
+    {% endfor %}
+
+    <!-- Section: Evidence depth -->
+    <div class="comp-section-row" style="grid-column: 1 / -1;">SKILL EVIDENCE DEPTH</div>
+
+    <div class="comp-label-cell">Demonstrated Skills<br><small class="muted">Action verbs in projects</small></div>
+    {% for c in comparison_cards %}
+    <div class="comp-col-cell">
+      <b>{{ c.demonstrated_count }} skill(s)</b>
+      <div class="chips" style="margin-top:6px;">
+        {% for s in c.demonstrated_skills %}
+        <span class="chip-good">✓ {{ s }}</span>
+        {% empty %}
+        <span class="muted">None verified in projects</span>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+
+    <div class="comp-label-cell">Listed-Only Skills<br><small class="muted">No project evidence</small></div>
+    {% for c in comparison_cards %}
+    <div class="comp-col-cell">
+      <span>{{ c.listed_count }} skill(s)</span>
+    </div>
+    {% endfor %}
+
+    <!-- Section: Projects & Certifications -->
+    <div class="comp-section-row" style="grid-column: 1 / -1;">PORTFOLIO & CREDENTIALS</div>
+
+    <div class="comp-label-cell">Projects Extracted</div>
+    {% for c in comparison_cards %}
+    <div class="comp-col-cell">📁 <b>{{ c.projects_count }}</b> project(s)</div>
+    {% endfor %}
+
+    <div class="comp-label-cell">Certifications</div>
+    {% for c in comparison_cards %}
+    <div class="comp-col-cell">🏅 <b>{{ c.certifications_count }}</b></div>
+    {% endfor %}
+
+    <!-- Section: Red Flags -->
+    <div class="comp-section-row" style="grid-column: 1 / -1;">RED FLAGS & STRUCTURAL AUDIT</div>
+
+    <div class="comp-label-cell">Red Flags</div>
+    {% for c in comparison_cards %}
+    <div class="comp-col-cell">
+      {% if c.red_flags %}
+        <ul class="flag-list" style="margin:0;">
+          {% for rf in c.red_flags %}
+          <li style="font-size:11px;padding:4px 8px;">⚠ {{ rf }}</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <span class="good">✓ None detected</span>
+      {% endif %}
+    </div>
+    {% endfor %}
+
+    <!-- Section: Interview Rounds -->
+    <div class="comp-section-row" style="grid-column: 1 / -1;">INTERVIEW ROUND SCORES</div>
+
+    <div class="comp-label-cell">Round Scores</div>
+    {% for c in comparison_cards %}
+    <div class="comp-col-cell">
+      {% if c.stage_scores %}
+        {% for ss in c.stage_scores %}
+          <div style="font-size:11px;margin-bottom:4px;">
+            <b>{{ ss.get_stage_display }}:</b> {{ ss.score|default:"—" }}/100
+          </div>
+        {% endfor %}
+      {% else %}
+        <span class="muted">No interview rounds recorded</span>
+      {% endif %}
+    </div>
+    {% endfor %}
+
+    <!-- Row: Actions -->
+    <div class="comp-label-cell comp-footer-cell">Quick Actions</div>
+    {% for c in comparison_cards %}
+    <div class="comp-col-cell comp-footer-cell">
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <a class="button primary compact-btn" href="{% url 'application_detail' c.app.id %}">View Application</a>
+        <a class="button secondary compact-btn" href="{% url 'candidate_report' c.app.id %}">🖨 Print HR Report</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

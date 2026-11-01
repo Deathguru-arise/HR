@@ -17,7 +17,9 @@ urlpatterns = [
     path("drives/new/", views.create_drive, name="create_drive"),
     path("drives/<int:drive_id>/apply/", views.apply, name="apply"),
     path("drives/<int:drive_id>/shortlist/", views.drive_shortlist, name="drive_shortlist"),
+    path("drives/<int:drive_id>/compare/", views.compare_candidates, name="compare_candidates"),
     path("drives/<int:drive_id>/bulk/", views.bulk_action, name="bulk_action"),
+    path("drives/parse-jd/", views.parse_jd_skills, name="parse_jd_skills"),
 
     # Applications
     path("applications/<int:application_id>/", views.application_detail, name="application_detail"),

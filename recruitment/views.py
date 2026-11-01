@@ -14,7 +14,7 @@ from .models import (
 )
 from .services import (
     extract_resume, process_resume, local_model_status,
-    run_eligibility_gate, compute_priority_band,
+    run_eligibility_gate, compute_priority_band, extract_skills_from_jd,
 )
 
 
@@ -230,6 +230,9 @@ def apply(request, drive_id):
     if not resume:
         messages.error(request, "Choose a resume to apply.")
         return redirect("drive_detail", drive_id=drive.pk)
+    if not request.POST.get("dpdp_consent"):
+        messages.error(request, "You must provide consent for data processing under DPDP Act 2023 to apply.")
+        return redirect("drive_detail", drive_id=drive.pk)
     try:
         text, pages = extract_resume(resume, resume.name)
         with transaction.atomic():
@@ -434,7 +437,10 @@ def drive_shortlist(request, drive_id):
 
     # Funnel counts for this drive
     all_apps = Application.objects.filter(drive=drive)
-    funnel = {s: all_apps.filter(status=s).count() for s, _ in Application.STATUS}
+    funnel_data = [
+        {"code": s_code, "label": s_label, "count": all_apps.filter(status=s_code).count()}
+        for s_code, s_label in Application.STATUS
+    ]
 
     return render(request, "shortlist.html", {
         "drive": drive,
@@ -442,23 +448,34 @@ def drive_shortlist(request, drive_id):
         "status_choices": Application.STATUS,
         "status_filter": status_filter,
         "band_filter": band_filter,
-        "funnel": funnel,
+        "funnel_data": funnel_data,
         "blind": drive.blind_review,
     })
 
 
 @login_required
 def bulk_action(request, drive_id):
-    """Bulk shortlist or reject selected applications."""
+    """Bulk shortlist, reject, or compare selected applications."""
     drive = get_object_or_404(Drive, pk=drive_id)
     _require_hr(request.user)
     if request.method != "POST":
         raise Http404
     action = request.POST.get("action")
     ids = request.POST.getlist("selected")
-    if not ids or action not in ("shortlisted", "not_selected"):
-        messages.error(request, "Select at least one application and a valid action.")
+    if not ids:
+        messages.error(request, "Select at least one application.")
         return redirect("drive_shortlist", drive_id=drive.pk)
+
+    if action == "compare":
+        if len(ids) < 2 or len(ids) > 4:
+            messages.error(request, "Select between 2 and 4 candidates to compare side by side.")
+            return redirect("drive_shortlist", drive_id=drive.pk)
+        return redirect(f"/drives/{drive.id}/compare/?ids={','.join(ids)}")
+
+    if action not in ("shortlisted", "not_selected"):
+        messages.error(request, "Invalid bulk action.")
+        return redirect("drive_shortlist", drive_id=drive.pk)
+
     apps = Application.objects.filter(pk__in=ids, drive=drive)
     updated = apps.update(status=action)
     for app in apps:
@@ -468,6 +485,103 @@ def bulk_action(request, drive_id):
         )
     messages.success(request, f"{updated} application(s) updated to '{dict(Application.STATUS)[action]}'.")
     return redirect("drive_shortlist", drive_id=drive.pk)
+
+
+# ---------------------------------------------------------------------------
+# Candidate side-by-side comparison (2-4 candidates)
+# ---------------------------------------------------------------------------
+
+@login_required
+def compare_candidates(request, drive_id):
+    drive = get_object_or_404(Drive.objects.select_related("company"), pk=drive_id)
+    _require_hr(request.user)
+    if role(request.user) == "hr" and drive.created_by_id != request.user.id:
+        raise PermissionDenied
+
+    raw_ids = request.GET.get("ids", "").strip()
+    id_list = [int(i.strip()) for i in raw_ids.split(",") if i.strip().isdigit()]
+    if len(id_list) < 2 or len(id_list) > 4:
+        messages.error(request, "Please select 2 to 4 candidates to compare.")
+        return redirect("drive_shortlist", drive_id=drive.pk)
+
+    apps = list(Application.objects.filter(pk__in=id_list, drive=drive).select_related(
+        "candidate", "candidate__placement_profile"
+    ).prefetch_related("analysis", "eligibility", "stage_scores"))
+
+    if len(apps) < 2:
+        messages.error(request, "Could not find enough matching applications for comparison.")
+        return redirect("drive_shortlist", drive_id=drive.pk)
+
+    # Required skills to compare across candidates
+    req_skills = [s.strip() for s in drive.required_skills.split(",") if s.strip()]
+
+    # Build per-candidate comparison data
+    comparison_cards = []
+    for app in apps:
+        analysis = getattr(app, "analysis", None)
+        facts = analysis.facts if analysis else {}
+        matched_req = set(facts.get("required_skill_evidence", []))
+        skill_ctx = facts.get("skill_context", {})
+        demonstrated = [s for s, c in skill_ctx.items() if c == "demonstrated"]
+        listed = [s for s, c in skill_ctx.items() if c == "listed_only"]
+
+        card = {
+            "app": app,
+            "display_name": f"Candidate #{app.id}" if drive.blind_review else (app.candidate.get_full_name() or app.candidate.username),
+            "score": analysis.score if analysis else None,
+            "priority_band": app.priority_band_display,
+            "priority_css": app.priority_band_css,
+            "eligibility_passed": app.eligibility.passed if hasattr(app, "eligibility") else None,
+            "req_skills_matched": [s for s in req_skills if s in matched_req],
+            "req_skills_missing": [s for s in req_skills if s not in matched_req],
+            "demonstrated_count": len(demonstrated),
+            "demonstrated_skills": demonstrated[:8],
+            "listed_count": len(listed),
+            "experience_years": analysis.experience_years if analysis else 0,
+            "education_level": analysis.education_level if analysis else "—",
+            "cgpa": (getattr(getattr(app.candidate, "placement_profile", None), "cgpa", None)
+                     or (analysis.cgpa_extracted if analysis else None)),
+            "arrears": getattr(getattr(app.candidate, "placement_profile", None), "arrears", None),
+            "projects_count": len(analysis.projects) if analysis and analysis.projects else 0,
+            "certifications_count": len(analysis.certifications) if analysis and analysis.certifications else 0,
+            "red_flags": analysis.red_flags if analysis else [],
+            "status_display": app.get_status_display(),
+            "status_code": app.status,
+            "stage_scores": list(app.stage_scores.all()),
+        }
+        comparison_cards.append(card)
+
+    return render(request, "compare.html", {
+        "drive": drive,
+        "comparison_cards": comparison_cards,
+        "req_skills": req_skills,
+        "blind": drive.blind_review,
+    })
+
+
+# ---------------------------------------------------------------------------
+# Job Description Skill Extraction API
+# ---------------------------------------------------------------------------
+
+@login_required
+def parse_jd_skills(request):
+    _require_hr(request.user)
+    if request.method != "POST":
+        return JsonResponse({"error": "POST required"}, status=405)
+    import json
+    try:
+        body = json.loads(request.body.decode("utf-8")) if request.body else {}
+        text = body.get("text", "")
+    except Exception:
+        text = request.POST.get("text", "")
+
+    result = extract_skills_from_jd(text)
+    return JsonResponse({
+        "status": "ok",
+        "required_skills": ", ".join(result["required_skills"]),
+        "preferred_skills": ", ".join(result["preferred_skills"]),
+        "all_skills": result["all_skills"],
+    })
 
 
 # ---------------------------------------------------------------------------

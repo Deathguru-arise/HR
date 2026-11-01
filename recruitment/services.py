@@ -240,13 +240,21 @@ CERT_KEYWORDS = [
 # ===========================================================================
 
 def extract_resume(file_obj, filename):
-    """Parse a resume file and return (full_text, pages_list)."""
+    """Parse a resume file and return (full_text, pages_list) with content-sniffing verification."""
     ext = Path(filename).suffix.lower()
     if ext not in ALLOWED_EXTENSIONS:
         raise ValueError("Upload a PDF, DOCX, or TXT resume.")
     if file_obj.size > MAX_RESUME_BYTES:
         raise ValueError("Resume must be 8 MB or smaller.")
     file_obj.seek(0)
+
+    # Content header sniffing to prevent forged file extensions
+    header = file_obj.read(16)
+    file_obj.seek(0)
+    if ext == ".pdf" and not header.startswith(b"%PDF-"):
+        raise ValueError("Invalid PDF file: corrupted header or incorrect file signature.")
+    if ext == ".docx" and not header.startswith(b"PK\x03\x04"):
+        raise ValueError("Invalid DOCX file: not a valid Microsoft Word document package.")
 
     if ext == ".txt":
         text = file_obj.read().decode("utf-8", errors="replace")
@@ -807,6 +815,58 @@ def extract_achievements(text, sections):
                 results.append(line[:150])
 
     return results[:6]
+
+
+def extract_skills_from_jd(text: str) -> dict:
+    """
+    Extract skills from a job description text and classify into suggested
+    required and preferred skills.
+    """
+    if not text or not text.strip():
+        return {"all_skills": [], "required_skills": [], "preferred_skills": []}
+
+    lower = text.lower()
+    detected = _detect_skills(text, lower)
+    resolved = _resolve_aliases(lower, detected)
+    all_found = list({s for s in detected + resolved})
+
+    req_sec_pattern = re.compile(
+        r"(?:requirements?|required|qualifications?|must\s+have|prerequisites?|minimum\s+qualifications?)([\s\S]*?)(?=(?:preferred|nice\s+to\s+have|bonus|plus|responsibilities|benefits|\Z))",
+        re.IGNORECASE,
+    )
+    pref_sec_pattern = re.compile(
+        r"(?:preferred|nice\s+to\s+have|desirable|bonus|plus|good\s+to\s+have)([\s\S]*?)(?=(?:requirements?|qualifications?|responsibilities|benefits|\Z))",
+        re.IGNORECASE,
+    )
+
+    req_match = req_sec_pattern.search(text)
+    pref_match = pref_sec_pattern.search(text)
+
+    req_skills = []
+    pref_skills = []
+
+    if req_match or pref_match:
+        req_text = (req_match.group(1) if req_match else "").lower()
+        pref_text = (pref_match.group(1) if pref_match else "").lower()
+
+        for skill in all_found:
+            sk_pat = r"(?<!\w)" + re.escape(skill.lower()) + r"(?!\w)"
+            in_req = bool(re.search(sk_pat, req_text))
+            in_pref = bool(re.search(sk_pat, pref_text))
+            if in_pref and not in_req:
+                pref_skills.append(skill)
+            else:
+                req_skills.append(skill)
+    else:
+        req_count = max(1, int(len(all_found) * 0.7))
+        req_skills = all_found[:req_count]
+        pref_skills = all_found[req_count:]
+
+    return {
+        "all_skills": all_found,
+        "required_skills": req_skills,
+        "preferred_skills": pref_skills,
+    }
 
 
 def local_model_status():

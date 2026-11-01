@@ -23,6 +23,37 @@ Use Django admin at `/admin/` to create recruiter accounts: add a user, then add
 - Accounts created through public registration are candidates only. Recruiter/admin privileges must be granted by a trusted administrator.
 - For local demo use, do not expose the development server to the public internet. Set a strong secret key and `DJANGO_DEBUG=0` for any controlled deployment.
 
+## Features in v3
+
+- **Knockout Eligibility Gate:** Separates hard eligibility (CGPA cutoff, max active arrears, graduation year, eligible branches) from fit scoring. Disqualifying reasons are clearly logged before rubric scoring.
+- **Section-Aware Resume Parsing:** Parses resumes into Education, Experience, Projects, Technical Skills, Certifications, and Achievements.
+- **Skill Context Weighting:** Distinguishes between *Demonstrated* skills (action verbs in projects/experience) and *Listed-only* skills (skills section only).
+- **Candidate Comparison View:** Compare 2 to 4 candidates side by side across eligibility, skills, projects, depth, red flags, and interview round scores (`/drives/<id>/compare/?ids=...`).
+- **Job Description Skill Parser:** Auto-extracts required and preferred skills directly from pasted job descriptions using taxonomy and contextual boundaries (`POST /drives/parse-jd/`).
+- **Printable HR One-Page Report:** Executive screening summary with evidence excerpts, priority triage bands (High / Medium / Low), and candidate gaps (`/applications/<id>/report/`).
+- **Interview Question Generator:** Generates role-specific questions targeted at candidate gaps and claims requiring depth verification.
+- **Multi-Round Stage Pipeline:** Tracks candidate progression (`Applied → Eligible → Shortlisted → Aptitude → Technical → HR → Offer / Rejected`) with recorded round scorecards.
+- **Fairness & Privacy:** Blind-review toggle to mask names/colleges, file signature content-sniffing validation, and DPDP Act 2023 consent capture.
+- **HR Agreement Benchmark Tooling:** Automated evaluation suite (`evaluate_agreement`) calculating Precision/Recall, Top-K overlap, Spearman's rank correlation ($\rho$), and Cohen's Kappa ($\kappa$) against HR ground truth labels.
+
+## Automated test suite
+
+Run the complete 24-test suite:
+```powershell
+python manage.py test recruitment
+```
+
+## HR agreement evaluation & benchmarking
+
+1. Generate the HR labeling CSV template:
+```powershell
+python manage.py evaluate_agreement --generate-template hr_labeling_template.csv
+```
+2. Run benchmark evaluation against HR labeled data:
+```powershell
+python manage.py evaluate_agreement --labels hr_labeling_template.csv
+```
+
 ## Privacy and decision process
 
 Resume files are served through an authenticated view with per-application role checks. The application records key workflow events. Candidates cannot see other candidates' files, scores, or private notes. HR users see only applications for drives they created; placement admins can review all records. Final application status is a human decision.

@@ -12,9 +12,18 @@
     <div class="form-grid">
       <label>Company name<input name="company" required placeholder="e.g. Northstar Technologies"></label>
       <label>Role title<input name="title" required placeholder="e.g. Junior Backend Developer"></label>
-      <label class="full-span">Role description<textarea name="description" rows="4" required></textarea></label>
-      <label class="full-span">Required skills <small>Comma-separated</small><input name="required_skills" required placeholder="Python, SQL, Django"></label>
-      <label class="full-span">Preferred skills <small>Comma-separated, optional</small><input name="preferred_skills" placeholder="Docker, AWS"></label>
+      <label class="full-span">
+        Role description
+        <textarea id="jd-description" name="description" rows="5" required placeholder="Paste the job description or role requirements here..."></textarea>
+      </label>
+      <div class="full-span" style="margin: -6px 0 10px;">
+        <button type="button" id="btn-parse-jd" class="button secondary" style="font-size:12px;padding:6px 14px;">
+          ✨ Auto-detect skills from description
+        </button>
+        <span id="jd-parse-status" style="font-size:11px;color:var(--green);margin-left:10px;"></span>
+      </div>
+      <label class="full-span">Required skills <small>Comma-separated</small><input id="jd-required-skills" name="required_skills" required placeholder="Python, SQL, Django"></label>
+      <label class="full-span">Preferred skills <small>Comma-separated, optional</small><input id="jd-preferred-skills" name="preferred_skills" placeholder="Docker, AWS"></label>
     </div>
 
     <h2>Eligibility criteria (knockout gate)</h2>
@@ -52,4 +61,43 @@
     <button class="button primary">Publish drive <span>→</span></button>
   </form>
 </div>
+
+<script>
+document.getElementById('btn-parse-jd').addEventListener('click', async function() {
+  const desc = document.getElementById('jd-description').value.trim();
+  const statusEl = document.getElementById('jd-parse-status');
+  if (!desc) {
+    statusEl.style.color = '#9a4f32';
+    statusEl.textContent = 'Please enter a description first.';
+    return;
+  }
+  statusEl.style.color = 'var(--muted)';
+  statusEl.textContent = 'Analyzing job description...';
+
+  try {
+    const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+    const res = await fetch("{% url 'parse_jd_skills' %}", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-CSRFToken": csrfToken,
+      },
+      body: JSON.stringify({ text: desc })
+    });
+    const data = await res.json();
+    if (data.status === 'ok') {
+      if (data.required_skills) document.getElementById('jd-required-skills').value = data.required_skills;
+      if (data.preferred_skills) document.getElementById('jd-preferred-skills').value = data.preferred_skills;
+      statusEl.style.color = 'var(--green)';
+      statusEl.textContent = `✓ Extracted ${data.all_skills.length} skills from description!`;
+    } else {
+      statusEl.style.color = '#9a4f32';
+      statusEl.textContent = 'Could not extract skills.';
+    }
+  } catch (err) {
+    statusEl.style.color = '#9a4f32';
+    statusEl.textContent = 'Error calling skill extractor.';
+  }
+});
+</script>
 {% endblock %}
