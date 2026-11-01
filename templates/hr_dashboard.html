@@ -1,5 +1,100 @@
-{% extends 'base.html' %}{% block title %}Recruiter dashboard{% endblock %}{% block content %}<div class="page-head"><div><div class="eyebrow">{{ role|upper }} PORTAL</div><h1>Recruitment overview</h1><p>Review applicant evidence and manage your placement drives.</p></div><a class="button primary" href="{% url 'create_drive' %}">＋ Create a drive</a></div>
-<div class="stats"><div><small>YOUR DRIVES</small><b>{{ drives|length }}</b></div><div><small>APPLICATIONS</small><b>{{ applications|length }}</b></div><div><small>AI MODE</small><b class="stat-label">Local rules</b></div></div>
-{% if model_status %}<div class="notice"><span class="notice-icon">i</span><div><b>Local-only analysis</b><p>{{ model_status.message }}</p></div></div>{% endif %}
-<section class="section-heading compact"><div><h2>Applicant review</h2><p class="muted">Candidates are ordered by most recent application. Role-fit scores are evidence coverage, not hiring probabilities.</p></div></section><div class="table-card"><div class="table-head applicant-head"><span>CANDIDATE</span><span>ROLE</span><span>ROLE FIT</span><span>STATUS</span></div>{% for app in applications %}<a class="table-row applicant-row" href="{% url 'application_detail' app.id %}"><b>{{ app.candidate.get_full_name|default:app.candidate.username }}</b><span>{{ app.drive.title }}</span><span>{% if app.analysis.score != None %}<strong class="score-small">{{ app.analysis.score }}</strong> / 100{% else %}Pending{% endif %}</span><span class="status status-{{ app.status }}">{{ app.get_status_display }}</span></a>{% empty %}<div class="empty"><div class="empty-icon">⌕</div><h3>No applicants to review</h3><p>Applications to your drives will appear here.</p></div>{% endfor %}</div>
-<section class="section-heading compact"><div><h2>Your drives</h2><p class="muted">Manage deadlines and applicant limits.</p></div></section><div class="drive-grid">{% for drive in drives %}<a class="drive-card" href="{% url 'drive_detail' drive.id %}"><div class="company-icon">{{ drive.company.name|first|upper }}</div><span class="pill {% if drive.status == 'open' %}green{% endif %}">{{ drive.get_status_display|upper }}</span><h3>{{ drive.title }}</h3><p>{{ drive.company.name }} · {{ drive.applications.count }} applicants</p><div class="drive-meta">Closes {{ drive.closes_at|date:'M j, Y · g:i A' }} <span>→</span></div></a>{% empty %}<div class="empty wide"><h3>No drives created yet</h3><p>Publish your first drive to start receiving applications.</p></div>{% endfor %}</div>{% endblock %}
+{% extends 'base.html' %}{% block title %}Recruiter dashboard{% endblock %}{% block content %}
+<div class="page-head">
+  <div>
+    <div class="eyebrow">{{ role|upper }} PORTAL</div>
+    <h1>Recruitment overview</h1>
+    <p>Review applicant evidence and manage your placement drives.</p>
+  </div>
+  <a class="button primary" href="{% url 'create_drive' %}">＋ Create a drive</a>
+</div>
+
+<!-- Funnel stats -->
+<div class="stats">
+  <div><small>YOUR DRIVES</small><b>{{ drives|length }}</b></div>
+  <div><small>TOTAL APPLICATIONS</small><b>{{ funnel.total }}</b></div>
+  <div><small>ELIGIBLE</small><b>{{ funnel.eligible }}</b></div>
+  <div><small>SHORTLISTED</small><b>{{ funnel.shortlisted }}</b></div>
+  <div><small>OFFERS</small><b>{{ funnel.offer }}</b></div>
+</div>
+
+{% if model_status %}
+<div class="notice">
+  <span class="notice-icon">i</span>
+  <div><b>Local-only analysis</b><p>{{ model_status.message }}</p></div>
+</div>
+{% endif %}
+
+<!-- Applicant table -->
+<section class="section-heading compact">
+  <div>
+    <h2>Applicant review</h2>
+    <p class="muted">Ordered by most recent application. Role-fit scores are evidence coverage, not hiring probabilities.</p>
+  </div>
+</section>
+<div class="table-card">
+  <div class="table-head hr-head">
+    <span>CANDIDATE</span>
+    <span>ROLE</span>
+    <span>ELIGIBILITY</span>
+    <span>SCORE</span>
+    <span>BAND</span>
+    <span>STATUS</span>
+  </div>
+  {% for app in applications %}
+  <a class="table-row hr-row" href="{% url 'application_detail' app.id %}">
+    <b>{{ app.candidate.get_full_name|default:app.candidate.username }}</b>
+    <span>{{ app.drive.title }}</span>
+    <span>
+      {% if app.eligibility %}
+        <span class="elig-pill {% if app.eligibility.passed %}elig-pass{% else %}elig-fail{% endif %}">
+          {% if app.eligibility.passed %}✓ Pass{% else %}✗ Fail{% endif %}
+        </span>
+      {% else %}—{% endif %}
+    </span>
+    <span>
+      {% if app.analysis.score != None %}
+        <strong class="score-small">{{ app.analysis.score }}</strong> / 100
+      {% else %}Pending{% endif %}
+    </span>
+    <span>
+      <span class="band-pill {{ app.priority_band_css }}">{{ app.priority_band_display }}</span>
+    </span>
+    <span class="status status-{{ app.status }}">{{ app.get_status_display }}</span>
+  </a>
+  {% empty %}
+  <div class="empty">
+    <div class="empty-icon">⌕</div>
+    <h3>No applicants to review</h3>
+    <p>Applications to your drives will appear here.</p>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- Drives grid -->
+<section class="section-heading compact">
+  <div>
+    <h2>Your drives</h2>
+    <p class="muted">Manage deadlines, shortlists, and applicant limits.</p>
+  </div>
+</section>
+<div class="drive-grid">
+  {% for drive in drives %}
+  <div class="drive-card-wrap">
+    <a class="drive-card" href="{% url 'drive_detail' drive.id %}">
+      <div class="company-icon">{{ drive.company.name|first|upper }}</div>
+      <span class="pill {% if drive.status == 'open' %}green{% endif %}">{{ drive.get_status_display|upper }}</span>
+      {% if drive.blind_review %}<span class="blind-badge-sm">🙈 Blind</span>{% endif %}
+      <h3>{{ drive.title }}</h3>
+      <p>{{ drive.company.name }} · {{ drive.applications.count }} applicants</p>
+      <div class="drive-meta">Closes {{ drive.closes_at|date:'M j, Y · g:i A' }} <span>→</span></div>
+    </a>
+    <a class="shortlist-link button secondary" href="{% url 'drive_shortlist' drive.id %}">View shortlist →</a>
+  </div>
+  {% empty %}
+  <div class="empty wide">
+    <h3>No drives created yet</h3>
+    <p>Publish your first drive to start receiving applications.</p>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

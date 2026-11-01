@@ -1,1 +1,14 @@
-{% extends 'base.html' %}{% block title %}System health{% endblock %}{% block content %}<div class="page-head"><div><div class="eyebrow">PRIVACY & OPERATIONS</div><h1>System health</h1><p>Current resume processing configuration.</p></div><span class="pill green">SERVER LOCAL</span></div><div class="health-card"><div class="health-row"><span>Resume AI cloud fallback</span><b class="good">Disabled</b></div><div class="health-row"><span>Resume file storage</span><b>Local server storage</b></div><div class="health-row"><span>Analysis method</span><b>Evidence-checked local rules</b></div><div class="health-row"><span>Optional local model</span><b>{% if status.enabled %}Configured · {{ status.model }}{% else %}Not configured{% endif %}</b></div><p class="muted">{{ status.message }}</p><div class="notice"><span class="notice-icon">i</span><div><b>Offline readiness</b><p>This build does not send resumes to hosted AI services. To enable local model inference in a future integration, install Ollama and configure it on this machine. Validate operation with the network disconnected before institutional use.</p></div></div></div>{% endblock %}
+{% extends 'base.html' %}
+{% block title %}System health{% endblock %}
+{% block content %}
+<div class="page-head"><div><div class="eyebrow">PRIVACY &amp; OPERATIONS</div><h1>System health</h1><p>Current resume processing configuration.</p></div><span class="pill green">SERVER LOCAL</span></div>
+<div class="health-card">
+  <div class="health-row"><span>Resume AI cloud fallback</span><b class="good">Disabled</b></div>
+  <div class="health-row"><span>Resume file storage</span><b>Local server storage</b></div>
+  <div class="health-row"><span>Scoring method</span><b>Evidence-checked local rubric</b></div>
+  <div class="health-row"><span>Skill suggestion model</span><b>{% if status.enabled %}Trained · {{ status.model }}{% else %}Not trained{% endif %}</b></div>
+  {% if status.enabled %}<div class="health-row"><span>Training profiles</span><b>{{ status.training_documents }}</b></div><div class="health-row"><span>Trained at</span><b>{{ status.trained_at }}</b></div>{% endif %}
+  <p class="muted">{{ status.message }}</p>
+  <div class="notice"><span class="notice-icon">i</span><div><b>How model suggestions work</b><p>The offline TF-IDF model finds related terms from the built-in skill taxonomy. Suggestions are unverified, do not affect rubric scores, and never make hiring decisions. Resume text is not sent to hosted AI services.</p></div></div>
+</div>
+{% endblock %}

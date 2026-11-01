@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% block title %}Shortlist · {{ drive.title }}{% endblock %}
+{% block content %}
+<a class="back-link" href="{% url 'dashboard' %}">← Dashboard</a>
+<div class="page-head">
+  <div>
+    <div class="eyebrow">{{ drive.company.name }} · SHORTLIST</div>
+    <h1>{{ drive.title }}</h1>
+    <p>Candidates ranked by evidence score. Apply filters to narrow down.</p>
+  </div>
+  <a class="button secondary" href="{% url 'drive_detail' drive.id %}">Drive details</a>
+</div>
+
+<!-- Funnel strip -->
+<div class="funnel-strip">
+  {% for status, label in status_choices %}
+  {% with count=funnel|default_if_none:0 %}
+  <div class="funnel-cell">
+    <b>{{ funnel|dictsort:"key" }}</b>
+    <small>{{ label }}</small>
+  </div>
+  {% endwith %}
+  {% endfor %}
+</div>
+
+<!-- Filters -->
+<form class="filter-bar" method="get">
+  <label>Status
+    <select name="status" onchange="this.form.submit()">
+      <option value="">All</option>
+      {% for val, lbl in status_choices %}
+      <option value="{{ val }}" {% if status_filter == val %}selected{% endif %}>{{ lbl }}</option>
+      {% endfor %}
+    </select>
+  </label>
+  <label>Priority band
+    <select name="band" onchange="this.form.submit()">
+      <option value="">All</option>
+      <option value="High" {% if band_filter == "High" %}selected{% endif %}>High</option>
+      <option value="Medium" {% if band_filter == "Medium" %}selected{% endif %}>Medium</option>
+      <option value="Low" {% if band_filter == "Low" %}selected{% endif %}>Low</option>
+    </select>
+  </label>
+</form>
+
+<!-- Bulk action form -->
+<form method="post" action="{% url 'bulk_action' drive.id %}">
+  {% csrf_token %}
+  <div class="table-card">
+    <div class="table-head shortlist-head">
+      <span><input type="checkbox" id="select-all" title="Select all"></span>
+      {% if not blind %}<span>CANDIDATE</span>{% else %}<span>ID</span>{% endif %}
+      <span>ELIGIBILITY</span>
+      <span>SCORE</span>
+      <span>BAND</span>
+      <span>PROJECTS</span>
+      <span>SKILLS DEPTH</span>
+      <span>STATUS</span>
+      <span>ACTION</span>
+    </div>
+    {% for app in applications %}
+    <div class="table-row shortlist-row">
+      <span><input type="checkbox" name="selected" value="{{ app.id }}" class="row-check"></span>
+      <span>
+        {% if not blind %}
+          <a href="{% url 'application_detail' app.id %}" class="text-link">
+            {{ app.candidate.get_full_name|default:app.candidate.username }}
+          </a>
+        {% else %}
+          <a href="{% url 'application_detail' app.id %}" class="text-link">#{{ app.id }}</a>
+        {% endif %}
+      </span>
+      <span>
+        {% if app.eligibility %}
+          <span class="elig-pill {% if app.eligibility.passed %}elig-pass{% else %}elig-fail{% endif %}">
+            {% if app.eligibility.passed %}✓{% else %}✗{% endif %}
+          </span>
+        {% else %}—{% endif %}
+      </span>
+      <span>
+        {% if app.analysis.score != None %}
+          <strong class="score-small">{{ app.analysis.score }}</strong>
+        {% else %}—{% endif %}
+      </span>
+      <span><span class="band-pill {{ app.priority_band_css }}">{{ app.priority_band_display }}</span></span>
+      <span>{{ app.analysis.projects|length|default:"0" }}</span>
+      <span>
+        {% if app.analysis.facts.skill_context %}
+          {% with demonstrated=app.analysis.facts.skill_context %}
+            <span class="ctx-dot ctx-demonstrated"></span>{{ demonstrated|length }}
+          {% endwith %}
+        {% else %}—{% endif %}
+      </span>
+      <span class="status status-{{ app.status }}">{{ app.get_status_display }}</span>
+      <span><a class="button secondary compact-btn" href="{% url 'candidate_report' app.id %}">Report</a></span>
+    </div>
+    {% empty %}
+    <div class="empty">
+      <div class="empty-icon">⌕</div>
+      <h3>No candidates match the current filters.</h3>
+    </div>
+    {% endfor %}
+  </div>
+
+  {% if applications %}
+  <div class="bulk-actions">
+    <button class="button primary" name="action" value="shortlisted">✓ Shortlist selected</button>
+    <button class="button secondary" name="action" value="not_selected">✗ Reject selected</button>
+  </div>
+  {% endif %}
+</form>
+
+<script>
+document.getElementById('select-all').addEventListener('change', function() {
+  document.querySelectorAll('.row-check').forEach(cb => cb.checked = this.checked);
+});
+</script>
+{% endblock %}

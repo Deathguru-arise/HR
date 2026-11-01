@@ -15,9 +15,9 @@ Use Django admin at `/admin/` to create recruiter accounts: add a user, then add
 
 ## Current scope and limitations
 
-- This first release uses deterministic local text and skill matching; it does not call a language model, embedding service, or external AI API. No cloud fallback is present. `OLLAMA_*` settings are reserved for a later local-model integration.
+- Resume scoring uses deterministic local text and skill matching. An offline TF-IDF skill retriever suggests related taxonomy terms for human verification; suggestions do not affect scores. No hosted AI API is called.
 - PDF and DOCX text extraction are supported. Scanned PDF OCR is not included; such files are flagged with a readable-text error and need an OCR integration.
-- Skill matching uses a small editable vocabulary in `recruitment/services.py`. It does not infer proficiency or experience duration. The score is an evidence-coverage aid, never a shortlist probability.
+- Skill matching uses an editable vocabulary in `recruitment/services.py`. The TF-IDF suggestion index is trained from this app's skill names and aliases, not labeled candidate outcomes. It does not infer proficiency, hiring suitability, or experience duration. The score is an evidence-coverage aid, never a shortlist probability.
 - Rubric weights are saved with each drive; the initial scorer uses an 80/20 required/preferred split. The drive creation form lets HR set these weights.
 - Development uses SQLite and local media storage. SQLite locking is suitable for a local prototype, not a high-concurrency deployment. Use PostgreSQL and review upload/storage security, backups, retention, deployment settings, and institutional privacy requirements before real use.
 - Accounts created through public registration are candidates only. Recruiter/admin privileges must be granted by a trusted administrator.
@@ -27,4 +27,4 @@ Use Django admin at `/admin/` to create recruiter accounts: add a user, then add
 
 Resume files are served through an authenticated view with per-application role checks. The application records key workflow events. Candidates cannot see other candidates' files, scores, or private notes. HR users see only applications for drives they created; placement admins can review all records. Final application status is a human decision.
 
-The project brief recommends benchmarking local models, OCR, embeddings, and accuracy before any deployment. Those evaluation and governance steps remain necessary; this prototype does not claim hiring accuracy.
+The project database currently contains no labeled application outcomes, so a hiring predictor cannot be responsibly trained from it. To (re)build the local taxonomy index, run `py manage.py train_skill_model`; the generated artifact is saved in `recruitment/data/skill_model.json`. Benchmarking, OCR, representative labeled data, and governance review remain necessary before deployment; this prototype does not claim hiring accuracy.

@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+{% block title %}HR Report · {{ app.drive.title }}{% endblock %}
+{% block content %}
+<div class="report-page">
+  <div class="report-header">
+    <div>
+      <div class="eyebrow">PLACEMENT INTELLIGENCE · CANDIDATE SCREENING REPORT</div>
+      <h1>{% if blind %}Candidate #{{ app.id }}{% else %}{{ app.candidate.get_full_name|default:app.candidate.username }}{% endif %}</h1>
+      <p>{{ app.drive.company.name }} · {{ app.drive.title }} · Applied {{ app.created_at|date:'M j, Y' }}</p>
+    </div>
+    <div class="report-meta">
+      {% if analysis %}
+      <div class="report-score">{{ analysis.score }}<span>/100</span></div>
+      <div class="band-pill {{ app.priority_band_css }}">{{ priority_band }} priority</div>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Eligibility gate -->
+  {% if app.eligibility %}
+  <div class="report-section">
+    <div class="section-label">ELIGIBILITY</div>
+    <div class="elig-result {% if app.eligibility.passed %}elig-pass{% else %}elig-fail{% endif %}">
+      {% if app.eligibility.passed %}✓ Passed all eligibility criteria{% else %}✗ Did not meet eligibility criteria{% endif %}
+    </div>
+    <table class="crit-table">
+      <tr><th>Criterion</th><th>Required</th><th>Actual</th><th>Result</th></tr>
+      {% for c in app.eligibility.criteria %}
+      <tr>
+        <td>{{ c.criterion }}</td>
+        <td>{{ c.required }}</td>
+        <td>{{ c.actual }}</td>
+        <td class="{% if c.passed %}good{% else %}bad{% endif %}">{% if c.passed %}Pass{% else %}Fail{% endif %}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+  {% endif %}
+
+  {% if analysis %}
+  <!-- Must-have skills -->
+  <div class="report-section">
+    <div class="section-label">REQUIRED SKILLS</div>
+    <table class="skills-table">
+      <tr><th>Skill</th><th>Status</th><th>Evidence (source excerpt)</th></tr>
+      {% for skill in analysis.facts.required_skill_evidence %}
+      <tr>
+        <td><b>{{ skill }}</b></td>
+        <td class="good">Matched</td>
+        <td>
+          {% if analysis.facts.evidence|dictsort:skill %}
+            {% with ev=analysis.facts.evidence|dictsortreversed:skill %}{% endwith %}
+          {% endif %}
+          {% for sk, ev in analysis.facts.evidence.items %}{% if sk == skill %}<em>…{{ ev.quote|truncatechars:120 }}…</em> (p.{{ ev.page }}){% endif %}{% endfor %}
+        </td>
+      </tr>
+      {% endfor %}
+      {% for skill in analysis.facts.missing_required_skills %}
+      <tr>
+        <td><b>{{ skill }}</b></td>
+        <td class="bad">Missing</td>
+        <td class="muted">No evidence found in resume</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+
+  <!-- Nice-to-have skills -->
+  {% if analysis.facts.preferred_skill_evidence %}
+  <div class="report-section">
+    <div class="section-label">PREFERRED SKILLS MATCHED</div>
+    <div class="chips">
+      {% for skill in analysis.facts.preferred_skill_evidence %}
+      <span class="chip-pref">{{ skill }}</span>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Structured facts -->
+  <div class="report-section report-grid-2">
+    <div>
+      <div class="section-label">EDUCATION & EXPERIENCE</div>
+      <p>🎓 <b>Education:</b> {{ analysis.education_level|default:"Not detected" }}</p>
+      <p>⏱ <b>Experience:</b> {{ analysis.experience_years|default:"0" }} year(s)</p>
+      {% if analysis.cgpa_extracted %}<p>📊 <b>CGPA (extracted):</b> {{ analysis.cgpa_extracted }}</p>{% endif %}
+      {% if analysis.graduation_year_extracted %}<p>📅 <b>Grad year (extracted):</b> {{ analysis.graduation_year_extracted }}</p>{% endif %}
+    </div>
+    <div>
+      <div class="section-label">PROJECTS & CERTIFICATIONS</div>
+      <p>📁 <b>Projects found:</b> {{ analysis.projects|length }}</p>
+      {% for p in analysis.projects|slice:":3" %}<p class="muted">· {{ p.title|truncatechars:60 }}</p>{% endfor %}
+      <p>🏅 <b>Certifications:</b> {{ analysis.certifications|length }}</p>
+    </div>
+  </div>
+
+  <!-- Red flags -->
+  {% if analysis.red_flags %}
+  <div class="report-section">
+    <div class="section-label">RED FLAGS (structural observations — not disqualifiers)</div>
+    <ul class="flag-list">
+      {% for flag in analysis.red_flags %}<li>⚠ {{ flag }}</li>{% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  <!-- Suggested questions -->
+  {% if is_hr and analysis.interview_questions %}
+  <div class="report-section">
+    <div class="section-label">SUGGESTED INTERVIEW QUESTIONS</div>
+    <ol class="question-list">
+      {% for q in analysis.interview_questions %}
+      <li>
+        <span class="q-type q-type-{{ q.type }}">{{ q.type|cut:"_" }}</span>
+        <p>{{ q.question }}</p>
+        <small class="muted">{{ q.reason }}</small>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+  {% endif %}
+
+  <!-- Stage scores -->
+  {% if app.stage_scores.all %}
+  <div class="report-section">
+    <div class="section-label">INTERVIEW ROUND SCORES</div>
+    <table class="crit-table">
+      <tr><th>Round</th><th>Score</th><th>Notes</th><th>Date</th></tr>
+      {% for ss in app.stage_scores.all %}
+      <tr>
+        <td>{{ ss.get_stage_display }}</td>
+        <td>{{ ss.score|default:"—" }}/100</td>
+        <td>{{ ss.notes|truncatechars:80 }}</td>
+        <td>{{ ss.created_at|date:'M j, Y' }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+  {% endif %}
+
+  <!-- HR note -->
+  {% if is_hr and app.hr_note %}
+  <div class="report-section">
+    <div class="section-label">HR NOTE (private)</div>
+    <p>{{ app.hr_note }}</p>
+  </div>
+  {% endif %}
+
+  {% endif %}
+
+  <div class="report-footer">
+    <p>Generated by Placement Intelligence · Local-first, transparent screening · {{ app.created_at|date:'M j, Y' }}</p>
+    <p class="muted">This report is an evidence-coverage aid. All hiring decisions rest with the HR team.</p>
+  </div>
+</div>
+<div class="print-actions no-print">
+  <button class="button primary" onclick="window.print()">🖨 Print / Save PDF</button>
+  <a class="button secondary" href="{% url 'application_detail' app.id %}">← Back to review</a>
+</div>
+{% endblock %}

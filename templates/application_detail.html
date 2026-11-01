@@ -1,3 +1,279 @@
-{% extends 'base.html' %}{% block title %}Application review{% endblock %}{% block content %}<a class="back-link" href="{% url 'dashboard' %}">← Dashboard</a><div class="page-head"><div><div class="eyebrow">{{ app.drive.company.name }} · {{ app.drive.title }}</div><h1>Application review</h1><p>{{ app.candidate.get_full_name|default:app.candidate.username }} · Applied {{ app.created_at|date:'M j, Y · g:i A' }}</p></div><a class="button secondary" href="{% url 'resume_file' app.id %}">↧ Open original resume</a></div>
-{% if app.analysis %}<div class="review-grid"><section class="review-card"><div class="eyebrow">EVIDENCE COVERAGE</div><div class="big-score">{{ app.analysis.score }}<span>/100</span></div><p>This is a deterministic measure of skill evidence against the role rubric, not a probability or hiring decision.</p><div class="meter"><i style="width:{{ app.analysis.score }}%"></i></div><h3>Criterion breakdown</h3>{% for name, result in app.analysis.criterion_scores.items %}<div class="criterion"><b>{{ name|title }}</b><span>{{ result.score }}% · weight {{ result.weight }}%</span></div>{% endfor %}</section><section class="review-card"><div class="eyebrow">SUMMARY</div><p class="summary-text">{{ app.analysis.summary }}</p><h3>Skills recognized</h3><div class="chips">{% for skill in app.analysis.facts.skills %}<span>{{ skill }}</span>{% empty %}<span>No recognized skills</span>{% endfor %}</div><h3>Required skill evidence</h3><div class="chips">{% for skill in app.analysis.facts.required_skill_evidence %}<span class="chip-good">{{ skill }}</span>{% empty %}<span>No required skills matched</span>{% endfor %}</div><h3>Source excerpts</h3>{% for skill, evidence in app.analysis.facts.evidence.items %}<details class="evidence"><summary>{{ skill }} · page {{ evidence.page }}</summary><blockquote>{{ evidence.quote }}</blockquote></details>{% empty %}<p class="muted">No source excerpt was identified for the configured skills.</p>{% endfor %}</section></div>{% if app.analysis.flags %}<div class="notice warning"><span class="notice-icon">!</span><div><b>Review flags</b><ul>{% for flag in app.analysis.flags %}<li>{{ flag }}</li>{% endfor %}</ul></div></div>{% endif %}{% else %}<div class="notice">No analysis is available for this application.</div>{% endif %}
-{% if is_hr %}<form class="form-card decision-form" method="post" action="{% url 'update_decision' app.id %}">{% csrf_token %}<h2>Human review decision</h2><p class="muted">Record the outcome and reason. This does not change the evidence score.</p><div class="form-grid"><label>Application status<select name="status">{% for value, label in app.STATUS %}<option value="{{ value }}" {% if app.status == value %}selected{% endif %}>{{ label }}</option>{% endfor %}</select></label><label>Decision reason<textarea name="decision_reason" rows="3">{{ app.decision_reason }}</textarea></label><label class="full-span">Private HR note<textarea name="hr_note" rows="3">{{ app.hr_note }}</textarea></label></div><button class="button primary">Save review</button></form>{% elif app.status == 'shortlisted' %}<div class="notice"><span class="notice-icon">✓</span><div><b>Shortlisted</b><p>{{ app.decision_reason|default:'Your application has been shortlisted.' }}</p></div></div>{% elif app.status == 'not_selected' %}<div class="notice"><div><b>Application update</b><p>{{ app.decision_reason|default:'Your application was not selected for this drive.' }}</p></div></div>{% endif %}{% endblock %}
+{% extends 'base.html' %}
+{% block title %}Application review · {{ app.drive.title }}{% endblock %}
+{% block content %}
+<a class="back-link" href="{% url 'dashboard' %}">← Dashboard</a>
+
+<div class="page-head">
+  <div>
+    <div class="eyebrow">{{ app.drive.company.name }} · {{ app.drive.title }}</div>
+    <h1>Application review</h1>
+    <p>
+      {% if blind %}
+        <span class="blind-badge">🙈 Blind review — identity hidden</span>
+      {% else %}
+        {{ app.candidate.get_full_name|default:app.candidate.username }}
+      {% endif %}
+      · Applied {{ app.created_at|date:'M j, Y · g:i A' }}
+    </p>
+  </div>
+  <div class="head-actions">
+    <a class="button secondary" href="{% url 'resume_file' app.id %}">↧ Open resume</a>
+    <a class="button secondary" href="{% url 'candidate_report' app.id %}">🖨 HR report</a>
+  </div>
+</div>
+
+<!-- Eligibility gate -->
+{% if app.eligibility %}
+<div class="notice {% if app.eligibility.passed %}notice-pass{% else %}notice-fail{% endif %}">
+  <span class="notice-icon">{% if app.eligibility.passed %}✓{% else %}✗{% endif %}</span>
+  <div>
+    <b>Eligibility: {% if app.eligibility.passed %}PASSED{% else %}FAILED{% endif %}</b>
+    <div class="criteria-grid">
+      {% for c in app.eligibility.criteria %}
+      <div class="criterion-row">
+        <span class="crit-icon {% if c.passed %}good{% else %}bad{% endif %}">{% if c.passed %}✓{% else %}✗{% endif %}</span>
+        <span><b>{{ c.criterion }}</b> — required {{ c.required }}, found {{ c.actual }}{% if not c.passed %} · {{ c.reason }}{% endif %}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% if app.analysis %}
+<!-- Priority band -->
+<div class="band-row">
+  <span class="band-label">Review priority</span>
+  <span class="band-pill {{ app.priority_band_css }}">{{ app.priority_band_display }}</span>
+  <span class="band-note">Based on evidence score + red-flag adjustment. Triage aid only — HR decides.</span>
+</div>
+
+<div class="review-grid">
+  <!-- Left: Score + criteria -->
+  <section class="review-card">
+    <div class="eyebrow">EVIDENCE COVERAGE</div>
+    <div class="big-score">{{ app.analysis.score }}<span>/100</span></div>
+    <p>Deterministic measure of skill evidence against the role rubric. Not a hiring probability.</p>
+    <div class="meter"><i style="width:{{ app.analysis.score }}%"></i></div>
+    <h3>Criterion breakdown</h3>
+    {% for name, result in app.analysis.criterion_scores.items %}
+    <div class="criterion">
+      <b>{{ name|title|cut:"_" }}</b>
+      <span>{{ result.score }}% · weight {{ result.weight }}%</span>
+    </div>
+    {% endfor %}
+
+    {% if app.analysis.facts.skill_context %}
+    <h3>Skill depth</h3>
+    <div class="skill-context-grid">
+      {% for skill, ctx in app.analysis.facts.skill_context.items %}
+      <div class="skill-ctx-row ctx-{{ ctx }}">
+        <span class="ctx-dot"></span>
+        <span>{{ skill }}</span>
+        <span class="ctx-label">{{ ctx|cut:"_" }}</span>
+      </div>
+      {% endfor %}
+    </div>
+    <p class="legend-note"><span class="ctx-dot ctx-demonstrated"></span>Demonstrated in project/experience &nbsp; <span class="ctx-dot ctx-listed_only"></span>Listed only</p>
+    {% endif %}
+  </section>
+
+  <!-- Right: Summary + evidence -->
+  <section class="review-card">
+    <div class="eyebrow">SUMMARY</div>
+    <p class="summary-text">{{ app.analysis.summary }}</p>
+
+    <h3>Required skills</h3>
+    <div class="chips">
+      {% for skill in app.analysis.facts.required_skill_evidence %}
+        <span class="chip-good">✓ {{ skill }}</span>
+      {% empty %}
+        <span class="chip-missing">No required skills matched</span>
+      {% endfor %}
+      {% for skill in app.analysis.facts.missing_required_skills %}
+        <span class="chip-missing">✗ {{ skill }}</span>
+      {% endfor %}
+    </div>
+
+    <h3>Preferred skills matched</h3>
+    <div class="chips">
+      {% for skill in app.analysis.facts.preferred_skill_evidence %}
+        <span class="chip-pref">{{ skill }}</span>
+      {% empty %}
+        <span>None</span>
+      {% endfor %}
+    </div>
+
+    <h3>Education · Experience</h3>
+    <p class="meta-row">
+      🎓 {{ app.analysis.education_level|default:"Not detected" }} &nbsp;·&nbsp;
+      ⏱ {{ app.analysis.experience_years|default:"0" }} yr(s) experience &nbsp;·&nbsp;
+      {% if app.analysis.cgpa_extracted %}📊 CGPA {{ app.analysis.cgpa_extracted }}{% endif %}
+    </p>
+
+    {% if app.analysis.projects %}
+    <h3>Projects ({{ app.analysis.projects|length }})</h3>
+    {% for proj in app.analysis.projects %}
+    <details class="evidence">
+      <summary>{{ proj.title }}</summary>
+      {% if proj.description %}<p>{{ proj.description|truncatechars:300 }}</p>{% endif %}
+      {% if proj.skills %}<div class="chips">{% for s in proj.skills %}<span>{{ s }}</span>{% endfor %}</div>{% endif %}
+    </details>
+    {% endfor %}
+    {% endif %}
+
+    {% if app.analysis.certifications %}
+    <h3>Certifications</h3>
+    <ul class="cert-list">
+      {% for c in app.analysis.certifications %}<li>{{ c }}</li>{% endfor %}
+    </ul>
+    {% endif %}
+
+    <h3>Source excerpts</h3>
+    {% for skill, ev in app.analysis.facts.evidence.items %}
+    <details class="evidence">
+      <summary>{{ skill }} · page {{ ev.page }}</summary>
+      <blockquote>{{ ev.quote }}</blockquote>
+    </details>
+    {% empty %}
+    <p class="muted">No source excerpt identified for the configured skills.</p>
+    {% endfor %}
+
+    {% if app.analysis.facts.model_skill_suggestions %}
+    <h3>Related skills to verify</h3>
+    <p class="muted">Local model suggestions only — unverified, do not affect the score.</p>
+    <div class="chips">
+      {% for item in app.analysis.facts.model_skill_suggestions %}
+        <span>{{ item.skill }} · {{ item.similarity|floatformat:2 }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </section>
+</div>
+
+<!-- Red flags -->
+{% if app.analysis.red_flags %}
+<div class="notice warning">
+  <span class="notice-icon">!</span>
+  <div>
+    <b>Red flags (structural observations — not disqualifiers)</b>
+    <ul>{% for flag in app.analysis.red_flags %}<li>{{ flag }}</li>{% endfor %}</ul>
+  </div>
+</div>
+{% endif %}
+
+<!-- Review flags -->
+{% if app.analysis.flags %}
+<div class="notice warning">
+  <span class="notice-icon">!</span>
+  <div>
+    <b>Analysis flags</b>
+    <ul>{% for flag in app.analysis.flags %}<li>{{ flag }}</li>{% endfor %}</ul>
+  </div>
+</div>
+{% endif %}
+
+<!-- Interview questions -->
+{% if is_hr and app.analysis.interview_questions %}
+<div class="card-section">
+  <div class="eyebrow">SUGGESTED INTERVIEW QUESTIONS</div>
+  <p class="muted">Generated from resume gaps and claimed skills. Adapt to your interview style.</p>
+  <ol class="question-list">
+    {% for q in app.analysis.interview_questions %}
+    <li>
+      <span class="q-type q-type-{{ q.type }}">{{ q.type|cut:"_" }}</span>
+      <p>{{ q.question }}</p>
+      <small class="muted">{{ q.reason }}</small>
+    </li>
+    {% endfor %}
+  </ol>
+</div>
+{% endif %}
+
+{% else %}
+<div class="notice">No analysis is available for this application.</div>
+{% endif %}
+
+<!-- Stage pipeline (HR only) -->
+{% if is_hr %}
+<div class="card-section">
+  <div class="eyebrow">INTERVIEW PIPELINE</div>
+  <div class="pipeline-row">
+    {% for value, label in app.STATUS %}
+      <div class="pipeline-stage {% if app.status == value %}active{% endif %}">{{ label }}</div>
+    {% endfor %}
+  </div>
+
+  {% if stage_scores %}
+  <h3>Recorded round scores</h3>
+  <div class="stage-scores-table">
+    {% for ss in stage_scores %}
+    <div class="ss-row">
+      <b>{{ ss.get_stage_display }}</b>
+      <span>{{ ss.score|default:"—" }}/100</span>
+      <span class="muted">{{ ss.notes|truncatechars:120 }}</span>
+      <span class="muted">{{ ss.created_at|date:'M j, Y' }}</span>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <form class="form-card stage-score-form" method="post" action="{% url 'add_stage_score' app.id %}">
+    {% csrf_token %}
+    <h3>Add round score</h3>
+    <div class="form-grid">
+      <label>Stage
+        <select name="stage">
+          {% for value, label in stage_choices %}<option value="{{ value }}">{{ label }}</option>{% endfor %}
+        </select>
+      </label>
+      <label>Score (out of 100)
+        <input type="number" name="score" min="0" max="100" placeholder="e.g. 78">
+      </label>
+      <label class="full-span">Notes
+        <textarea name="notes" rows="2" placeholder="Key observations from this round…"></textarea>
+      </label>
+    </div>
+    <button class="button primary">Save round score</button>
+  </form>
+</div>
+
+<!-- HR decision form -->
+<form class="form-card decision-form" method="post" action="{% url 'update_decision' app.id %}">
+  {% csrf_token %}
+  <h2>Human review decision</h2>
+  <p class="muted">Record the outcome and reason. This does not change the evidence score.</p>
+  <div class="form-grid">
+    <label>Application status
+      <select name="status">
+        {% for value, label in app.STATUS %}
+        <option value="{{ value }}" {% if app.status == value %}selected{% endif %}>{{ label }}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <label>Decision reason
+      <textarea name="decision_reason" rows="3">{{ app.decision_reason }}</textarea>
+    </label>
+    <label class="full-span">Private HR note
+      <textarea name="hr_note" rows="3">{{ app.hr_note }}</textarea>
+    </label>
+  </div>
+  <button class="button primary">Save review</button>
+</form>
+
+{% elif app.status == 'shortlisted' %}
+<div class="notice">
+  <span class="notice-icon">✓</span>
+  <div><b>Shortlisted</b><p>{{ app.decision_reason|default:'Your application has been shortlisted.' }}</p></div>
+</div>
+{% elif app.status == 'offer' %}
+<div class="notice notice-pass">
+  <span class="notice-icon">🎉</span>
+  <div><b>Offer extended</b><p>{{ app.decision_reason|default:'Congratulations! An offer has been extended to you.' }}</p></div>
+</div>
+{% elif app.status == 'not_selected' %}
+<div class="notice">
+  <div><b>Application update</b><p>{{ app.decision_reason|default:'Your application was not selected for this drive.' }}</p></div>
+</div>
+{% endif %}
+{% endblock %}

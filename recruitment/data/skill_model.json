@@ -1,0 +1,1499 @@
+{
+  "format": 1,
+  "model": "placement-skill-tfidf-v1",
+  "trained_at": "2026-11-01T09:07:21.435566+00:00",
+  "training_documents": 195,
+  "training_source": "built-in skill taxonomy and alias vocabulary",
+  "idf": {
+    "python": 5.58496748,
+    "py": 5.58496748,
+    "java": 5.58496748,
+    "javascript": 5.58496748,
+    "js": 5.58496748,
+    "typescript": 5.58496748,
+    "ts": 5.58496748,
+    "c": 4.66867675,
+    "go": 5.58496748,
+    "rust": 5.58496748,
+    "kotlin": 5.58496748,
+    "swift": 5.58496748,
+    "scala": 5.58496748,
+    "ruby": 5.17950237,
+    "php": 5.58496748,
+    "dart": 5.58496748,
+    "r": 5.58496748,
+    "matlab": 5.58496748,
+    "perl": 5.58496748,
+    "shell": 5.58496748,
+    "bash": 5.58496748,
+    "powershell": 5.58496748,
+    "groovy": 5.58496748,
+    "lua": 5.58496748,
+    "haskell": 5.58496748,
+    "elixir": 5.58496748,
+    "clojure": 5.58496748,
+    "julia": 5.58496748,
+    "html": 5.58496748,
+    "css": 5.17950237,
+    "scss": 5.58496748,
+    "sass": 5.17950237,
+    "react": 5.17950237,
+    "reactjs": 5.58496748,
+    "react.js": 5.58496748,
+    "next.js": 5.58496748,
+    "nextjs": 5.58496748,
+    "vue.js": 5.58496748,
+    "vuejs": 5.58496748,
+    "vue": 5.58496748,
+    "angular": 5.58496748,
+    "svelte": 5.58496748,
+    "redux": 5.58496748,
+    "tailwind": 5.58496748,
+    "bootstrap": 5.58496748,
+    "jquery": 5.58496748,
+    "graphql": 5.58496748,
+    "rest": 5.58496748,
+    "websocket": 5.58496748,
+    "vite": 5.58496748,
+    "webpack": 5.58496748,
+    "django": 5.58496748,
+    "flask": 5.58496748,
+    "fastapi": 5.58496748,
+    "spring": 5.17950237,
+    "boot": 5.58496748,
+    "springboot": 5.58496748,
+    "mvc": 5.58496748,
+    "node.js": 5.58496748,
+    "node": 5.58496748,
+    "nodejs": 5.58496748,
+    "express.js": 5.58496748,
+    "express": 5.58496748,
+    "nestjs": 5.58496748,
+    "laravel": 5.58496748,
+    "rails": 5.58496748,
+    "asp.net": 5.58496748,
+    "core": 5.17950237,
+    "net": 5.58496748,
+    "dotnet": 5.58496748,
+    "hibernate": 5.58496748,
+    "grpc": 5.58496748,
+    "sql": 5.58496748,
+    "postgresql": 5.58496748,
+    "postgres": 5.58496748,
+    "psql": 5.58496748,
+    "mysql": 5.58496748,
+    "sqlite": 5.58496748,
+    "mongodb": 5.58496748,
+    "mongo": 5.58496748,
+    "redis": 5.58496748,
+    "cassandra": 5.58496748,
+    "dynamodb": 5.58496748,
+    "elasticsearch": 5.58496748,
+    "neo4j": 5.58496748,
+    "oracle": 5.58496748,
+    "mariadb": 5.58496748,
+    "couchdb": 5.58496748,
+    "influxdb": 5.58496748,
+    "supabase": 5.58496748,
+    "firebase": 5.58496748,
+    "aws": 5.17950237,
+    "gcp": 5.58496748,
+    "google": 5.58496748,
+    "cloud": 5.58496748,
+    "azure": 5.58496748,
+    "microsoft": 5.58496748,
+    "docker": 5.58496748,
+    "kubernetes": 5.58496748,
+    "k8s": 5.58496748,
+    "terraform": 5.58496748,
+    "iac": 5.58496748,
+    "ansible": 5.58496748,
+    "jenkins": 5.58496748,
+    "github": 5.17950237,
+    "actions": 5.58496748,
+    "gha": 5.58496748,
+    "gitlab": 5.17950237,
+    "ci": 5.17950237,
+    "circleci": 5.58496748,
+    "helm": 5.58496748,
+    "prometheus": 5.58496748,
+    "grafana": 5.58496748,
+    "linux": 5.58496748,
+    "nginx": 5.58496748,
+    "apache": 5.58496748,
+    "serverless": 5.58496748,
+    "lambda": 5.58496748,
+    "ec2": 5.58496748,
+    "s3": 5.58496748,
+    "cloudformation": 5.58496748,
+    "pandas": 5.58496748,
+    "numpy": 5.58496748,
+    "scipy": 5.58496748,
+    "matplotlib": 5.58496748,
+    "seaborn": 5.58496748,
+    "plotly": 5.58496748,
+    "power": 5.58496748,
+    "bi": 5.58496748,
+    "tableau": 5.58496748,
+    "excel": 5.58496748,
+    "looker": 5.58496748,
+    "spark": 5.58496748,
+    "hadoop": 5.58496748,
+    "kafka": 5.58496748,
+    "airflow": 5.58496748,
+    "dbt": 5.58496748,
+    "snowflake": 5.58496748,
+    "bigquery": 5.58496748,
+    "databricks": 5.58496748,
+    "etl": 5.58496748,
+    "machine": 5.58496748,
+    "learning": 4.66867675,
+    "ml": 5.58496748,
+    "ai": 5.17950237,
+    "deep": 5.58496748,
+    "dl": 5.58496748,
+    "neural": 5.58496748,
+    "networks": 5.58496748,
+    "natural": 5.58496748,
+    "language": 5.58496748,
+    "processing": 5.58496748,
+    "nlp": 5.58496748,
+    "computer": 5.58496748,
+    "vision": 5.58496748,
+    "cv": 5.58496748,
+    "reinforcement": 5.58496748,
+    "transfer": 5.58496748,
+    "pytorch": 5.58496748,
+    "tensorflow": 5.58496748,
+    "tf": 5.58496748,
+    "keras": 5.58496748,
+    "scikit": 5.58496748,
+    "learn": 5.58496748,
+    "sklearn": 5.58496748,
+    "xgboost": 5.58496748,
+    "lightgbm": 5.58496748,
+    "hugging": 5.58496748,
+    "face": 5.58496748,
+    "hf": 5.58496748,
+    "opencv": 5.58496748,
+    "nltk": 5.58496748,
+    "spacy": 5.58496748,
+    "bert": 5.58496748,
+    "llm": 5.58496748,
+    "llms": 5.58496748,
+    "gpt": 5.58496748,
+    "chatgpt": 5.58496748,
+    "generative": 5.58496748,
+    "genai": 5.58496748,
+    "stable": 5.58496748,
+    "diffusion": 5.58496748,
+    "langchain": 5.58496748,
+    "rag": 5.58496748,
+    "mlflow": 5.58496748,
+    "git": 5.17950237,
+    "hub": 5.58496748,
+    "bitbucket": 5.58496748,
+    "jira": 5.58496748,
+    "confluence": 5.58496748,
+    "slack": 5.58496748,
+    "notion": 5.58496748,
+    "trello": 5.58496748,
+    "figma": 5.58496748,
+    "postman": 5.58496748,
+    "cybersecurity": 5.58496748,
+    "penetration": 5.58496748,
+    "testing": 5.58496748,
+    "oauth": 5.58496748,
+    "jwt": 5.58496748,
+    "owasp": 5.58496748,
+    "ssl": 5.58496748,
+    "tls": 5.58496748,
+    "cryptography": 5.58496748,
+    "firewalls": 5.58496748,
+    "android": 5.58496748,
+    "ios": 5.58496748,
+    "native": 5.58496748,
+    "flutter": 5.58496748,
+    "expo": 5.58496748,
+    "jetpack": 5.58496748,
+    "compose": 5.58496748,
+    "swiftui": 5.58496748,
+    "objective": 5.58496748,
+    "xamarin": 5.58496748,
+    "agile": 5.58496748,
+    "scrum": 5.58496748,
+    "kanban": 5.58496748,
+    "devops": 5.58496748,
+    "cd": 5.58496748,
+    "cicd": 5.58496748,
+    "test": 5.58496748,
+    "driven": 5.58496748,
+    "development": 5.58496748,
+    "tdd": 5.17950237,
+    "microservices": 5.58496748,
+    "soa": 5.58496748,
+    "autocad": 5.58496748,
+    "solidworks": 5.58496748,
+    "ros": 5.58496748,
+    "embedded": 5.58496748,
+    "systems": 5.58496748,
+    "fpga": 5.58496748,
+    "verilog": 5.58496748,
+    "vhdl": 5.58496748,
+    "plc": 5.58496748,
+    "iot": 5.58496748,
+    "salesforce": 5.58496748,
+    "sap": 5.58496748,
+    "erp": 5.58496748,
+    "data": 5.58496748,
+    "science": 5.58496748,
+    "statistics": 5.58496748,
+    "probability": 5.58496748,
+    "linear": 5.58496748,
+    "algebra": 5.58496748,
+    "calculus": 5.58496748
+  },
+  "skills": [
+    {
+      "skill": "Python",
+      "terms": {
+        "python": 3,
+        "py": 1
+      }
+    },
+    {
+      "skill": "Java",
+      "terms": {
+        "java": 3
+      }
+    },
+    {
+      "skill": "JavaScript",
+      "terms": {
+        "javascript": 3,
+        "js": 1
+      }
+    },
+    {
+      "skill": "TypeScript",
+      "terms": {
+        "typescript": 3,
+        "ts": 1
+      }
+    },
+    {
+      "skill": "C",
+      "terms": {
+        "c": 3
+      }
+    },
+    {
+      "skill": "C++",
+      "terms": {
+        "c": 3
+      }
+    },
+    {
+      "skill": "C#",
+      "terms": {
+        "c": 3
+      }
+    },
+    {
+      "skill": "Go",
+      "terms": {
+        "go": 3
+      }
+    },
+    {
+      "skill": "Rust",
+      "terms": {
+        "rust": 3
+      }
+    },
+    {
+      "skill": "Kotlin",
+      "terms": {
+        "kotlin": 3
+      }
+    },
+    {
+      "skill": "Swift",
+      "terms": {
+        "swift": 3
+      }
+    },
+    {
+      "skill": "Scala",
+      "terms": {
+        "scala": 3
+      }
+    },
+    {
+      "skill": "Ruby",
+      "terms": {
+        "ruby": 3
+      }
+    },
+    {
+      "skill": "PHP",
+      "terms": {
+        "php": 3
+      }
+    },
+    {
+      "skill": "Dart",
+      "terms": {
+        "dart": 3
+      }
+    },
+    {
+      "skill": "R",
+      "terms": {
+        "r": 3
+      }
+    },
+    {
+      "skill": "MATLAB",
+      "terms": {
+        "matlab": 3
+      }
+    },
+    {
+      "skill": "Perl",
+      "terms": {
+        "perl": 3
+      }
+    },
+    {
+      "skill": "Shell",
+      "terms": {
+        "shell": 3
+      }
+    },
+    {
+      "skill": "Bash",
+      "terms": {
+        "bash": 3
+      }
+    },
+    {
+      "skill": "PowerShell",
+      "terms": {
+        "powershell": 3
+      }
+    },
+    {
+      "skill": "Groovy",
+      "terms": {
+        "groovy": 3
+      }
+    },
+    {
+      "skill": "Lua",
+      "terms": {
+        "lua": 3
+      }
+    },
+    {
+      "skill": "Haskell",
+      "terms": {
+        "haskell": 3
+      }
+    },
+    {
+      "skill": "Elixir",
+      "terms": {
+        "elixir": 3
+      }
+    },
+    {
+      "skill": "Clojure",
+      "terms": {
+        "clojure": 3
+      }
+    },
+    {
+      "skill": "Julia",
+      "terms": {
+        "julia": 3
+      }
+    },
+    {
+      "skill": "HTML",
+      "terms": {
+        "html": 3
+      }
+    },
+    {
+      "skill": "CSS",
+      "terms": {
+        "css": 3
+      }
+    },
+    {
+      "skill": "SCSS",
+      "terms": {
+        "scss": 3,
+        "sass": 1
+      }
+    },
+    {
+      "skill": "SASS",
+      "terms": {
+        "sass": 3
+      }
+    },
+    {
+      "skill": "React",
+      "terms": {
+        "react": 3,
+        "reactjs": 1,
+        "react.js": 1
+      }
+    },
+    {
+      "skill": "Next.js",
+      "terms": {
+        "next.js": 3,
+        "nextjs": 1
+      }
+    },
+    {
+      "skill": "Vue.js",
+      "terms": {
+        "vue.js": 3,
+        "vuejs": 1,
+        "vue": 1
+      }
+    },
+    {
+      "skill": "Angular",
+      "terms": {
+        "angular": 3
+      }
+    },
+    {
+      "skill": "Svelte",
+      "terms": {
+        "svelte": 3
+      }
+    },
+    {
+      "skill": "Redux",
+      "terms": {
+        "redux": 3
+      }
+    },
+    {
+      "skill": "Tailwind CSS",
+      "terms": {
+        "tailwind": 3,
+        "css": 3
+      }
+    },
+    {
+      "skill": "Bootstrap",
+      "terms": {
+        "bootstrap": 3
+      }
+    },
+    {
+      "skill": "jQuery",
+      "terms": {
+        "jquery": 3
+      }
+    },
+    {
+      "skill": "GraphQL",
+      "terms": {
+        "graphql": 3
+      }
+    },
+    {
+      "skill": "REST",
+      "terms": {
+        "rest": 3
+      }
+    },
+    {
+      "skill": "WebSocket",
+      "terms": {
+        "websocket": 3
+      }
+    },
+    {
+      "skill": "Vite",
+      "terms": {
+        "vite": 3
+      }
+    },
+    {
+      "skill": "Webpack",
+      "terms": {
+        "webpack": 3
+      }
+    },
+    {
+      "skill": "Django",
+      "terms": {
+        "django": 3
+      }
+    },
+    {
+      "skill": "Flask",
+      "terms": {
+        "flask": 3
+      }
+    },
+    {
+      "skill": "FastAPI",
+      "terms": {
+        "fastapi": 3
+      }
+    },
+    {
+      "skill": "Spring Boot",
+      "terms": {
+        "spring": 3,
+        "boot": 3,
+        "springboot": 1
+      }
+    },
+    {
+      "skill": "Spring",
+      "terms": {
+        "spring": 4,
+        "mvc": 1
+      }
+    },
+    {
+      "skill": "Node.js",
+      "terms": {
+        "node.js": 3,
+        "node": 1,
+        "nodejs": 1
+      }
+    },
+    {
+      "skill": "Express.js",
+      "terms": {
+        "express.js": 3,
+        "express": 1
+      }
+    },
+    {
+      "skill": "NestJS",
+      "terms": {
+        "nestjs": 3
+      }
+    },
+    {
+      "skill": "Laravel",
+      "terms": {
+        "laravel": 3
+      }
+    },
+    {
+      "skill": "Rails",
+      "terms": {
+        "rails": 4,
+        "ruby": 1
+      }
+    },
+    {
+      "skill": "ASP.NET",
+      "terms": {
+        "asp.net": 4,
+        "core": 1
+      }
+    },
+    {
+      "skill": ".NET",
+      "terms": {
+        "net": 4,
+        "dotnet": 1,
+        "core": 1
+      }
+    },
+    {
+      "skill": "Hibernate",
+      "terms": {
+        "hibernate": 3
+      }
+    },
+    {
+      "skill": "gRPC",
+      "terms": {
+        "grpc": 3
+      }
+    },
+    {
+      "skill": "SQL",
+      "terms": {
+        "sql": 3
+      }
+    },
+    {
+      "skill": "PostgreSQL",
+      "terms": {
+        "postgresql": 3,
+        "postgres": 1,
+        "psql": 1
+      }
+    },
+    {
+      "skill": "MySQL",
+      "terms": {
+        "mysql": 3
+      }
+    },
+    {
+      "skill": "SQLite",
+      "terms": {
+        "sqlite": 3
+      }
+    },
+    {
+      "skill": "MongoDB",
+      "terms": {
+        "mongodb": 3,
+        "mongo": 1
+      }
+    },
+    {
+      "skill": "Redis",
+      "terms": {
+        "redis": 3
+      }
+    },
+    {
+      "skill": "Cassandra",
+      "terms": {
+        "cassandra": 3
+      }
+    },
+    {
+      "skill": "DynamoDB",
+      "terms": {
+        "dynamodb": 3
+      }
+    },
+    {
+      "skill": "Elasticsearch",
+      "terms": {
+        "elasticsearch": 3
+      }
+    },
+    {
+      "skill": "Neo4j",
+      "terms": {
+        "neo4j": 3
+      }
+    },
+    {
+      "skill": "Oracle",
+      "terms": {
+        "oracle": 3
+      }
+    },
+    {
+      "skill": "MariaDB",
+      "terms": {
+        "mariadb": 3
+      }
+    },
+    {
+      "skill": "CouchDB",
+      "terms": {
+        "couchdb": 3
+      }
+    },
+    {
+      "skill": "InfluxDB",
+      "terms": {
+        "influxdb": 3
+      }
+    },
+    {
+      "skill": "Supabase",
+      "terms": {
+        "supabase": 3
+      }
+    },
+    {
+      "skill": "Firebase",
+      "terms": {
+        "firebase": 3
+      }
+    },
+    {
+      "skill": "AWS",
+      "terms": {
+        "aws": 3
+      }
+    },
+    {
+      "skill": "GCP",
+      "terms": {
+        "gcp": 3,
+        "google": 1,
+        "cloud": 1
+      }
+    },
+    {
+      "skill": "Azure",
+      "terms": {
+        "azure": 4,
+        "microsoft": 1
+      }
+    },
+    {
+      "skill": "Docker",
+      "terms": {
+        "docker": 3
+      }
+    },
+    {
+      "skill": "Kubernetes",
+      "terms": {
+        "kubernetes": 3,
+        "k8s": 1
+      }
+    },
+    {
+      "skill": "Terraform",
+      "terms": {
+        "terraform": 3,
+        "iac": 1
+      }
+    },
+    {
+      "skill": "Ansible",
+      "terms": {
+        "ansible": 3
+      }
+    },
+    {
+      "skill": "Jenkins",
+      "terms": {
+        "jenkins": 3
+      }
+    },
+    {
+      "skill": "GitHub Actions",
+      "terms": {
+        "github": 3,
+        "actions": 3,
+        "gha": 1
+      }
+    },
+    {
+      "skill": "GitLab CI",
+      "terms": {
+        "gitlab": 3,
+        "ci": 3
+      }
+    },
+    {
+      "skill": "CircleCI",
+      "terms": {
+        "circleci": 3
+      }
+    },
+    {
+      "skill": "Helm",
+      "terms": {
+        "helm": 3
+      }
+    },
+    {
+      "skill": "Prometheus",
+      "terms": {
+        "prometheus": 3
+      }
+    },
+    {
+      "skill": "Grafana",
+      "terms": {
+        "grafana": 3
+      }
+    },
+    {
+      "skill": "Linux",
+      "terms": {
+        "linux": 3
+      }
+    },
+    {
+      "skill": "Nginx",
+      "terms": {
+        "nginx": 3
+      }
+    },
+    {
+      "skill": "Apache",
+      "terms": {
+        "apache": 3
+      }
+    },
+    {
+      "skill": "Serverless",
+      "terms": {
+        "serverless": 3
+      }
+    },
+    {
+      "skill": "Lambda",
+      "terms": {
+        "lambda": 4,
+        "aws": 1
+      }
+    },
+    {
+      "skill": "EC2",
+      "terms": {
+        "ec2": 3
+      }
+    },
+    {
+      "skill": "S3",
+      "terms": {
+        "s3": 3
+      }
+    },
+    {
+      "skill": "CloudFormation",
+      "terms": {
+        "cloudformation": 3
+      }
+    },
+    {
+      "skill": "Pandas",
+      "terms": {
+        "pandas": 3
+      }
+    },
+    {
+      "skill": "NumPy",
+      "terms": {
+        "numpy": 3
+      }
+    },
+    {
+      "skill": "SciPy",
+      "terms": {
+        "scipy": 3
+      }
+    },
+    {
+      "skill": "Matplotlib",
+      "terms": {
+        "matplotlib": 3
+      }
+    },
+    {
+      "skill": "Seaborn",
+      "terms": {
+        "seaborn": 3
+      }
+    },
+    {
+      "skill": "Plotly",
+      "terms": {
+        "plotly": 3
+      }
+    },
+    {
+      "skill": "Power BI",
+      "terms": {
+        "power": 4,
+        "bi": 4
+      }
+    },
+    {
+      "skill": "Tableau",
+      "terms": {
+        "tableau": 4
+      }
+    },
+    {
+      "skill": "Excel",
+      "terms": {
+        "excel": 3
+      }
+    },
+    {
+      "skill": "Looker",
+      "terms": {
+        "looker": 3
+      }
+    },
+    {
+      "skill": "Spark",
+      "terms": {
+        "spark": 3
+      }
+    },
+    {
+      "skill": "Hadoop",
+      "terms": {
+        "hadoop": 3
+      }
+    },
+    {
+      "skill": "Kafka",
+      "terms": {
+        "kafka": 3
+      }
+    },
+    {
+      "skill": "Airflow",
+      "terms": {
+        "airflow": 3
+      }
+    },
+    {
+      "skill": "dbt",
+      "terms": {
+        "dbt": 3
+      }
+    },
+    {
+      "skill": "Snowflake",
+      "terms": {
+        "snowflake": 3
+      }
+    },
+    {
+      "skill": "BigQuery",
+      "terms": {
+        "bigquery": 3
+      }
+    },
+    {
+      "skill": "Databricks",
+      "terms": {
+        "databricks": 3
+      }
+    },
+    {
+      "skill": "ETL",
+      "terms": {
+        "etl": 3
+      }
+    },
+    {
+      "skill": "Machine Learning",
+      "terms": {
+        "machine": 3,
+        "learning": 3,
+        "ml": 1,
+        "ai": 1
+      }
+    },
+    {
+      "skill": "Deep Learning",
+      "terms": {
+        "deep": 3,
+        "learning": 3,
+        "dl": 1
+      }
+    },
+    {
+      "skill": "Neural Networks",
+      "terms": {
+        "neural": 3,
+        "networks": 3
+      }
+    },
+    {
+      "skill": "Natural Language Processing",
+      "terms": {
+        "natural": 3,
+        "language": 3,
+        "processing": 3,
+        "nlp": 1
+      }
+    },
+    {
+      "skill": "Computer Vision",
+      "terms": {
+        "computer": 3,
+        "vision": 3,
+        "cv": 1
+      }
+    },
+    {
+      "skill": "Reinforcement Learning",
+      "terms": {
+        "reinforcement": 3,
+        "learning": 3
+      }
+    },
+    {
+      "skill": "Transfer Learning",
+      "terms": {
+        "transfer": 3,
+        "learning": 3
+      }
+    },
+    {
+      "skill": "PyTorch",
+      "terms": {
+        "pytorch": 4
+      }
+    },
+    {
+      "skill": "TensorFlow",
+      "terms": {
+        "tensorflow": 3,
+        "tf": 1
+      }
+    },
+    {
+      "skill": "Keras",
+      "terms": {
+        "keras": 3
+      }
+    },
+    {
+      "skill": "Scikit-learn",
+      "terms": {
+        "scikit": 4,
+        "learn": 4,
+        "sklearn": 1
+      }
+    },
+    {
+      "skill": "XGBoost",
+      "terms": {
+        "xgboost": 3
+      }
+    },
+    {
+      "skill": "LightGBM",
+      "terms": {
+        "lightgbm": 3
+      }
+    },
+    {
+      "skill": "Hugging Face",
+      "terms": {
+        "hugging": 3,
+        "face": 3,
+        "hf": 1
+      }
+    },
+    {
+      "skill": "OpenCV",
+      "terms": {
+        "opencv": 3
+      }
+    },
+    {
+      "skill": "NLTK",
+      "terms": {
+        "nltk": 3
+      }
+    },
+    {
+      "skill": "spaCy",
+      "terms": {
+        "spacy": 3
+      }
+    },
+    {
+      "skill": "BERT",
+      "terms": {
+        "bert": 3
+      }
+    },
+    {
+      "skill": "LLM",
+      "terms": {
+        "llm": 3,
+        "llms": 1,
+        "gpt": 1,
+        "chatgpt": 1
+      }
+    },
+    {
+      "skill": "Generative AI",
+      "terms": {
+        "generative": 3,
+        "ai": 3,
+        "genai": 1
+      }
+    },
+    {
+      "skill": "Stable Diffusion",
+      "terms": {
+        "stable": 3,
+        "diffusion": 3
+      }
+    },
+    {
+      "skill": "LangChain",
+      "terms": {
+        "langchain": 3
+      }
+    },
+    {
+      "skill": "RAG",
+      "terms": {
+        "rag": 3
+      }
+    },
+    {
+      "skill": "MLflow",
+      "terms": {
+        "mlflow": 3
+      }
+    },
+    {
+      "skill": "Git",
+      "terms": {
+        "git": 3
+      }
+    },
+    {
+      "skill": "GitHub",
+      "terms": {
+        "github": 3,
+        "git": 1,
+        "hub": 1
+      }
+    },
+    {
+      "skill": "GitLab",
+      "terms": {
+        "gitlab": 3
+      }
+    },
+    {
+      "skill": "Bitbucket",
+      "terms": {
+        "bitbucket": 3
+      }
+    },
+    {
+      "skill": "Jira",
+      "terms": {
+        "jira": 3
+      }
+    },
+    {
+      "skill": "Confluence",
+      "terms": {
+        "confluence": 3
+      }
+    },
+    {
+      "skill": "Slack",
+      "terms": {
+        "slack": 3
+      }
+    },
+    {
+      "skill": "Notion",
+      "terms": {
+        "notion": 3
+      }
+    },
+    {
+      "skill": "Trello",
+      "terms": {
+        "trello": 3
+      }
+    },
+    {
+      "skill": "Figma",
+      "terms": {
+        "figma": 3
+      }
+    },
+    {
+      "skill": "Postman",
+      "terms": {
+        "postman": 3
+      }
+    },
+    {
+      "skill": "Cybersecurity",
+      "terms": {
+        "cybersecurity": 3
+      }
+    },
+    {
+      "skill": "Penetration Testing",
+      "terms": {
+        "penetration": 3,
+        "testing": 3
+      }
+    },
+    {
+      "skill": "OAuth",
+      "terms": {
+        "oauth": 3
+      }
+    },
+    {
+      "skill": "JWT",
+      "terms": {
+        "jwt": 3
+      }
+    },
+    {
+      "skill": "OWASP",
+      "terms": {
+        "owasp": 3
+      }
+    },
+    {
+      "skill": "SSL",
+      "terms": {
+        "ssl": 3
+      }
+    },
+    {
+      "skill": "TLS",
+      "terms": {
+        "tls": 3
+      }
+    },
+    {
+      "skill": "Cryptography",
+      "terms": {
+        "cryptography": 3
+      }
+    },
+    {
+      "skill": "Firewalls",
+      "terms": {
+        "firewalls": 3
+      }
+    },
+    {
+      "skill": "Android",
+      "terms": {
+        "android": 3
+      }
+    },
+    {
+      "skill": "iOS",
+      "terms": {
+        "ios": 3
+      }
+    },
+    {
+      "skill": "React Native",
+      "terms": {
+        "react": 3,
+        "native": 3
+      }
+    },
+    {
+      "skill": "Flutter",
+      "terms": {
+        "flutter": 3
+      }
+    },
+    {
+      "skill": "Expo",
+      "terms": {
+        "expo": 3
+      }
+    },
+    {
+      "skill": "Jetpack Compose",
+      "terms": {
+        "jetpack": 3,
+        "compose": 3
+      }
+    },
+    {
+      "skill": "SwiftUI",
+      "terms": {
+        "swiftui": 3
+      }
+    },
+    {
+      "skill": "Objective-C",
+      "terms": {
+        "objective": 3,
+        "c": 3
+      }
+    },
+    {
+      "skill": "Xamarin",
+      "terms": {
+        "xamarin": 3
+      }
+    },
+    {
+      "skill": "Agile",
+      "terms": {
+        "agile": 3
+      }
+    },
+    {
+      "skill": "Scrum",
+      "terms": {
+        "scrum": 3
+      }
+    },
+    {
+      "skill": "Kanban",
+      "terms": {
+        "kanban": 3
+      }
+    },
+    {
+      "skill": "DevOps",
+      "terms": {
+        "devops": 3
+      }
+    },
+    {
+      "skill": "CI/CD",
+      "terms": {
+        "ci": 4,
+        "cd": 4,
+        "cicd": 1
+      }
+    },
+    {
+      "skill": "Test-Driven Development",
+      "terms": {
+        "test": 3,
+        "driven": 3,
+        "development": 3,
+        "tdd": 1
+      }
+    },
+    {
+      "skill": "TDD",
+      "terms": {
+        "tdd": 3
+      }
+    },
+    {
+      "skill": "Microservices",
+      "terms": {
+        "microservices": 3
+      }
+    },
+    {
+      "skill": "SOA",
+      "terms": {
+        "soa": 3
+      }
+    },
+    {
+      "skill": "AutoCAD",
+      "terms": {
+        "autocad": 3
+      }
+    },
+    {
+      "skill": "SolidWorks",
+      "terms": {
+        "solidworks": 3
+      }
+    },
+    {
+      "skill": "ROS",
+      "terms": {
+        "ros": 3
+      }
+    },
+    {
+      "skill": "Embedded Systems",
+      "terms": {
+        "embedded": 3,
+        "systems": 3
+      }
+    },
+    {
+      "skill": "FPGA",
+      "terms": {
+        "fpga": 3
+      }
+    },
+    {
+      "skill": "Verilog",
+      "terms": {
+        "verilog": 3
+      }
+    },
+    {
+      "skill": "VHDL",
+      "terms": {
+        "vhdl": 3
+      }
+    },
+    {
+      "skill": "PLC",
+      "terms": {
+        "plc": 3
+      }
+    },
+    {
+      "skill": "IoT",
+      "terms": {
+        "iot": 3
+      }
+    },
+    {
+      "skill": "Salesforce",
+      "terms": {
+        "salesforce": 3
+      }
+    },
+    {
+      "skill": "SAP",
+      "terms": {
+        "sap": 3
+      }
+    },
+    {
+      "skill": "ERP",
+      "terms": {
+        "erp": 3
+      }
+    },
+    {
+      "skill": "Data Science",
+      "terms": {
+        "data": 3,
+        "science": 3
+      }
+    },
+    {
+      "skill": "Statistics",
+      "terms": {
+        "statistics": 3
+      }
+    },
+    {
+      "skill": "Probability",
+      "terms": {
+        "probability": 3
+      }
+    },
+    {
+      "skill": "Linear Algebra",
+      "terms": {
+        "linear": 3,
+        "algebra": 3
+      }
+    },
+    {
+      "skill": "Calculus",
+      "terms": {
+        "calculus": 3
+      }
+    }
+  ]
+}

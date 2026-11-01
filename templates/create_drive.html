@@ -1,1 +1,55 @@
-{% extends 'base.html' %}{% block title %}Create drive{% endblock %}{% block content %}<a class="back-link" href="{% url 'dashboard' %}">← Dashboard</a><div class="form-page"><div class="eyebrow">NEW OPPORTUNITY</div><h1>Create a recruitment drive</h1><p class="lead">Set the role requirements and review rubric. Scores are evidence coverage for HR review.</p><form method="post" class="form-card wide-form">{% csrf_token %}<h2>Drive details</h2><div class="form-grid"><label>Company name<input name="company" required placeholder="e.g. Northstar Technologies"></label><label>Role title<input name="title" required placeholder="e.g. Junior Backend Developer"></label><label class="full-span">Role description<textarea name="description" rows="4" required></textarea></label><label class="full-span">Required skills <small>Comma-separated</small><input name="required_skills" required placeholder="Python, SQL, Django"></label><label class="full-span">Preferred skills <small>Comma-separated</small><input name="preferred_skills" placeholder="Docker, AWS"></label><label>Minimum CGPA <small>Optional</small><input name="minimum_cgpa" type="number" step="0.01" min="0" max="10"></label><label>Graduation year <small>Optional</small><input name="graduation_year" type="number" min="2000" max="2100"></label><label>Application deadline<input name="closes_at" type="datetime-local" required></label><label>Applicant limit <small>Optional</small><input name="applicant_limit" type="number" min="1"></label></div><div class="rubric-box"><b>Role-fit rubric</b><p>Scores show resume evidence coverage. The weights below must total 100.</p><div class="form-grid"><label>Required skills weight<input name="required_weight" type="number" min="0" max="100" value="80" required></label><label>Preferred skills weight<input name="preferred_weight" type="number" min="0" max="100" value="20" required></label></div></div><button class="button primary">Publish drive <span>→</span></button></form></div>{% endblock %}
+{% extends 'base.html' %}
+{% block title %}Create drive{% endblock %}
+{% block content %}
+<a class="back-link" href="{% url 'dashboard' %}">← Dashboard</a>
+<div class="form-page">
+  <div class="eyebrow">NEW OPPORTUNITY</div>
+  <h1>Create a recruitment drive</h1>
+  <p class="lead">Set the role requirements and eligibility criteria. Scores are evidence coverage for HR review.</p>
+  <form method="post" class="form-card wide-form">
+    {% csrf_token %}
+    <h2>Drive details</h2>
+    <div class="form-grid">
+      <label>Company name<input name="company" required placeholder="e.g. Northstar Technologies"></label>
+      <label>Role title<input name="title" required placeholder="e.g. Junior Backend Developer"></label>
+      <label class="full-span">Role description<textarea name="description" rows="4" required></textarea></label>
+      <label class="full-span">Required skills <small>Comma-separated</small><input name="required_skills" required placeholder="Python, SQL, Django"></label>
+      <label class="full-span">Preferred skills <small>Comma-separated, optional</small><input name="preferred_skills" placeholder="Docker, AWS"></label>
+    </div>
+
+    <h2>Eligibility criteria (knockout gate)</h2>
+    <div class="notice"><span class="notice-icon">i</span><div><b>Hard cutoffs</b><p>These are pass/fail checks run before scoring. Candidates who fail any criterion are flagged immediately.</p></div></div>
+    <div class="form-grid">
+      <label>Minimum CGPA <small>Optional · out of 10</small><input name="minimum_cgpa" type="number" step="0.01" min="0" max="10" placeholder="e.g. 6.5"></label>
+      <label>Maximum active arrears <small>0 = no arrears allowed</small><input name="max_arrears" type="number" min="0" placeholder="e.g. 0"></label>
+      <label>Graduation year <small>Optional</small><input name="graduation_year" type="number" min="2000" max="2100" placeholder="e.g. 2025"></label>
+      <label>Allowed branches <small>Comma-separated, blank = all</small><input name="allowed_branches" placeholder="CSE, ECE, IT"></label>
+    </div>
+
+    <h2>Drive settings</h2>
+    <div class="form-grid">
+      <label>Application deadline<input name="closes_at" type="datetime-local" required></label>
+      <label>Applicant limit <small>Optional</small><input name="applicant_limit" type="number" min="1"></label>
+      <label class="full-span">
+        <span style="display:flex;align-items:center;gap:10px">
+          <input type="checkbox" name="blind_review" style="width:auto;margin:0"> Enable blind review
+        </span>
+        <small>Hides candidate name and college from HR during the review phase.</small>
+      </label>
+    </div>
+
+    <div class="rubric-box">
+      <b>Role-fit rubric</b>
+      <p>Weights must total 100. Scores show resume evidence coverage — not hiring probabilities.</p>
+      <div class="form-grid">
+        <label>Required skills weight<input name="required_weight" type="number" min="0" max="100" value="70" required></label>
+        <label>Preferred skills weight<input name="preferred_weight" type="number" min="0" max="100" value="20" required></label>
+        <label>Experience weight<input name="experience_weight" type="number" min="0" max="100" value="5" required></label>
+        <label>Education weight<input name="education_weight" type="number" min="0" max="100" value="5" required></label>
+      </div>
+    </div>
+
+    <button class="button primary">Publish drive <span>→</span></button>
+  </form>
+</div>
+{% endblock %}

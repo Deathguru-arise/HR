@@ -1,1 +1,23 @@
-{% extends 'base.html' %}{% block title %}Placement profile{% endblock %}{% block content %}<a class="back-link" href="{% url 'dashboard' %}">← Dashboard</a><div class="form-page"><div class="eyebrow">CANDIDATE PROFILE</div><h1>Your placement details</h1><p class="lead">These details help placement staff verify explicit drive requirements. Missing information is flagged for review.</p><form method="post" class="form-card wide-form">{% csrf_token %}<div class="form-grid"><label>Student ID<input name="student_id" value="{{ profile.student_id }}"></label><label>Department<input name="department" value="{{ profile.department }}"></label><label>Graduation year<input name="graduation_year" type="number" min="2000" max="2100" value="{{ profile.graduation_year|default:'' }}"></label><label>CGPA<input name="cgpa" type="number" step="0.01" min="0" max="10" value="{{ profile.cgpa|default:'' }}"></label></div><button class="button primary">Save profile</button></form></div>{% endblock %}
+{% extends 'base.html' %}
+{% block title %}Placement profile{% endblock %}
+{% block content %}
+<a class="back-link" href="{% url 'dashboard' %}">← Dashboard</a>
+<div class="form-page">
+  <div class="eyebrow">CANDIDATE PROFILE</div>
+  <h1>Your placement details</h1>
+  <p class="lead">These details help the placement team verify eligibility against drive requirements. Missing information is flagged for manual review.</p>
+  <div class="notice"><span class="notice-icon">i</span><div><b>Keep this up to date</b><p>CGPA, arrears, and graduation year are used in the knockout eligibility gate before your resume is scored.</p></div></div>
+  <form method="post" class="form-card wide-form">
+    {% csrf_token %}
+    <div class="form-grid">
+      <label>Student ID<input name="student_id" value="{{ profile.student_id }}"></label>
+      <label>Department / Branch<input name="department" value="{{ profile.department }}" placeholder="e.g. Computer Science Engineering"></label>
+      <label>Phone <small>Optional</small><input name="phone" type="tel" value="{{ profile.phone }}" placeholder="+91 98765 43210"></label>
+      <label>Graduation year<input name="graduation_year" type="number" min="2000" max="2100" value="{{ profile.graduation_year|default:'' }}" placeholder="e.g. 2025"></label>
+      <label>CGPA <small>Out of 10</small><input name="cgpa" type="number" step="0.01" min="0" max="10" value="{{ profile.cgpa|default:'' }}" placeholder="e.g. 8.2"></label>
+      <label>Active arrears / backlogs <small>Enter 0 if none</small><input name="arrears" type="number" min="0" value="{{ profile.arrears|default:'' }}" placeholder="e.g. 0"></label>
+    </div>
+    <button class="button primary">Save profile</button>
+  </form>
+</div>
+{% endblock %}
