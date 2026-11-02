@@ -6,6 +6,8 @@ urlpatterns = [
     path("", views.home, name="home"),
     path("register/", views.register, name="register"),
     path("accounts/login/", views.login_view, name="login"),
+    path("accounts/login/candidate/", views.login_view, {"portal": "candidate"}, name="candidate_login"),
+    path("accounts/login/hr/", views.login_view, {"portal": "hr"}, name="hr_login"),
     path("accounts/logout/", views.logout_view, name="logout"),
 
     # Candidate
@@ -23,6 +25,7 @@ urlpatterns = [
 
     # Applications
     path("applications/<int:application_id>/", views.application_detail, name="application_detail"),
+    path("applications/<int:application_id>/correct-field/", views.correct_resume_field, name="correct_resume_field"),
     path("applications/<int:application_id>/resume/", views.resume_file, name="resume_file"),
     path("applications/<int:application_id>/decision/", views.update_decision, name="update_decision"),
     path("applications/<int:application_id>/stage/", views.add_stage_score, name="add_stage_score"),

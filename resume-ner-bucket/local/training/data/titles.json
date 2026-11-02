@@ -1,0 +1,110 @@
+{
+  "tech": [
+    "Software Engineer", "Senior Software Engineer", "Staff Software Engineer",
+    "Principal Software Engineer", "Software Developer", "Full Stack Developer",
+    "Frontend Developer", "Backend Developer", "DevOps Engineer", "SRE",
+    "Site Reliability Engineer", "Data Scientist", "Senior Data Scientist",
+    "Lead Data Scientist", "Data Engineer", "Machine Learning Engineer",
+    "AI Engineer", "Cloud Engineer", "Cloud Architect", "Solutions Architect",
+    "Systems Engineer", "Systems Administrator", "Network Engineer",
+    "Network Administrator", "Database Administrator", "DBA",
+    "Security Engineer", "Cybersecurity Analyst", "QA Engineer",
+    "Test Engineer", "Mobile Developer", "iOS Developer", "Android Developer",
+    "Product Manager", "Senior Product Manager", "Technical Program Manager",
+    "Engineering Manager", "Director of Engineering", "VP of Engineering", "CTO",
+    "Software Engineering Intern", "Data Science Intern"
+  ],
+  "healthcare": [
+    "Registered Nurse", "Staff Nurse", "Charge Nurse", "Nurse Practitioner",
+    "Family Nurse Practitioner", "Nurse Manager", "Clinical Nurse Specialist",
+    "Emergency Room Nurse", "ICU Nurse", "Pediatric Nurse",
+    "Physician Assistant", "Medical Assistant", "Pharmacist",
+    "Physical Therapist", "Occupational Therapist", "Speech Therapist",
+    "Dentist", "Dental Hygienist", "Radiologist", "Surgeon",
+    "Anesthesiologist", "Cardiologist", "Dermatologist",
+    "Lab Technician", "Medical Technologist", "Phlebotomist",
+    "Health Information Manager", "Clinical Research Coordinator",
+    "Care Coordinator", "Case Manager"
+  ],
+  "education": [
+    "Teacher", "English Teacher", "Math Teacher", "Science Teacher",
+    "History Teacher", "AP Literature Teacher", "Special Education Teacher",
+    "Elementary School Teacher", "High School Teacher", "Middle School Teacher",
+    "Professor", "Assistant Professor", "Associate Professor",
+    "Adjunct Professor", "Lecturer", "Teaching Assistant",
+    "School Principal", "Vice Principal", "Academic Dean",
+    "Guidance Counselor", "School Counselor", "Curriculum Coordinator",
+    "Instructional Designer", "Education Coordinator", "Tutor"
+  ],
+  "finance_accounting": [
+    "Accountant", "Senior Accountant", "Staff Accountant",
+    "Financial Analyst", "Senior Financial Analyst", "Investment Analyst",
+    "Portfolio Manager", "Investment Banker", "Equity Research Analyst",
+    "Tax Specialist", "Tax Manager", "Auditor", "Internal Auditor",
+    "External Auditor", "Controller", "CFO", "Chief Financial Officer",
+    "Bookkeeper", "Accounts Payable Specialist", "Accounts Receivable Specialist",
+    "Payroll Specialist", "Budget Analyst", "Credit Analyst",
+    "Compliance Officer", "Risk Analyst", "Actuary",
+    "Financial Advisor", "Wealth Manager", "Insurance Underwriter"
+  ],
+  "legal": [
+    "Attorney", "Lawyer", "Associate", "Senior Associate",
+    "Partner", "Managing Partner", "Counsel", "General Counsel",
+    "Legal Analyst", "Paralegal", "Legal Secretary", "Law Clerk",
+    "Corporate Attorney", "Litigation Attorney", "Patent Attorney",
+    "Immigration Attorney", "Tax Attorney", "Real Estate Attorney",
+    "Public Defender", "Prosecutor", "Judge", "Mediator"
+  ],
+  "sales_marketing": [
+    "Sales Representative", "Account Executive", "Senior Account Executive",
+    "Sales Manager", "Regional Sales Manager", "VP of Sales",
+    "Business Development Representative", "Business Development Manager",
+    "Account Manager", "Key Account Manager", "Customer Success Manager",
+    "Marketing Manager", "Senior Marketing Manager", "Marketing Director",
+    "CMO", "Chief Marketing Officer", "Brand Manager",
+    "Digital Marketing Manager", "SEO Specialist", "Content Marketing Manager",
+    "Social Media Manager", "Growth Manager", "Demand Generation Manager",
+    "Product Marketing Manager", "Marketing Coordinator",
+    "Public Relations Manager", "Communications Director",
+    "Copywriter", "Content Writer", "Technical Writer"
+  ],
+  "operations_management": [
+    "Operations Manager", "Senior Operations Manager",
+    "Director of Operations", "COO", "Chief Operating Officer",
+    "Supply Chain Manager", "Logistics Manager", "Procurement Manager",
+    "Warehouse Manager", "Inventory Manager", "Facilities Manager",
+    "Project Manager", "Senior Project Manager", "Program Manager",
+    "Business Analyst", "Management Consultant", "Strategy Consultant",
+    "Executive Assistant", "Office Manager", "Administrative Assistant",
+    "HR Manager", "HR Director", "Recruiter", "Talent Acquisition Specialist",
+    "Training Manager", "Learning and Development Manager"
+  ],
+  "creative_design": [
+    "Graphic Designer", "Senior Graphic Designer", "Art Director",
+    "Creative Director", "UX Designer", "UI Designer", "UX/UI Designer",
+    "Product Designer", "Visual Designer", "Interaction Designer",
+    "Motion Designer", "Animator", "Illustrator",
+    "Photographer", "Videographer", "Video Editor",
+    "Interior Designer", "Fashion Designer", "Industrial Designer",
+    "Web Designer", "Brand Designer"
+  ],
+  "hospitality_food": [
+    "Executive Chef", "Sous Chef", "Head Chef", "Pastry Chef",
+    "Line Cook", "Prep Cook", "Kitchen Manager",
+    "Restaurant Manager", "General Manager", "Hotel Manager",
+    "Front Desk Manager", "Concierge", "Event Planner",
+    "Event Coordinator", "Catering Manager", "Bartender",
+    "Server", "Host", "Food and Beverage Manager",
+    "Sommelier", "Barista"
+  ],
+  "trades_engineering": [
+    "Mechanical Engineer", "Civil Engineer", "Electrical Engineer",
+    "Chemical Engineer", "Structural Engineer", "Environmental Engineer",
+    "Industrial Engineer", "Manufacturing Engineer", "Quality Engineer",
+    "Process Engineer", "Project Engineer", "Field Engineer",
+    "Architect", "Urban Planner", "Surveyor",
+    "Electrician", "Plumber", "HVAC Technician",
+    "Welder", "Machinist", "Construction Manager",
+    "Site Supervisor", "Safety Manager", "Maintenance Technician"
+  ]
+}

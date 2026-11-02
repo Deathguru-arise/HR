@@ -1,0 +1,47 @@
+{
+  "builder": "manual-current-dataset-snapshot",
+  "sources": {
+    "note": "Current checked-in dataset predates cleanup refactor. Regenerate for full provenance metadata."
+  },
+  "train": {
+    "examples": 3647,
+    "avg_tokens": 107.51,
+    "max_tokens": 512,
+    "truncated_512": 132,
+    "label_counts": {
+      "NAME": 7474,
+      "EMAIL": 3685,
+      "PHONE": 8389,
+      "LOCATION": 10809,
+      "TITLE": 13709,
+      "SKILL": 29262,
+      "COMPANY": 13997,
+      "DATE": 15012,
+      "DEGREE": 4875,
+      "FIELD": 6791,
+      "INSTITUTION": 12937,
+      "CERT": 1644
+    }
+  },
+  "val": {
+    "examples": 652,
+    "avg_tokens": 102.32,
+    "max_tokens": 512,
+    "truncated_512": 18,
+    "label_counts": {
+      "NAME": 1326,
+      "EMAIL": 653,
+      "PHONE": 1529,
+      "LOCATION": 1904,
+      "SKILL": 5032,
+      "TITLE": 2467,
+      "COMPANY": 2572,
+      "DATE": 2683,
+      "DEGREE": 831,
+      "FIELD": 1236,
+      "INSTITUTION": 2322,
+      "CERT": 311,
+      "LANGUAGE": 1
+    }
+  }
+}

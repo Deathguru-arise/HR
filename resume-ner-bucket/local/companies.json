@@ -1,0 +1,467 @@
+{
+  "tech_faang": [
+    "Google", "Alphabet", "Meta", "Facebook", "Apple", "Amazon", "Microsoft", "Netflix", "Google Cloud", "AWS", "Azure", "Alphabet Inc", "Meta Platforms", "Amazon.com Inc", "Microsoft Corporation"
+  ],
+  "tech_us_large": [
+    "Salesforce", "Oracle", "IBM", "Intel", "Cisco", "Adobe", "Nvidia", "AMD", "Qualcomm", "Broadcom", "Micron Technology", "Western Digital", "Seagate", "Corning", "Applied Materials", "ASML", "Lam Research", "KLA", "Marvell Technology", "Skyworks Solutions", "Analog Devices", "Texas Instruments", "ON Semiconductor", "NXP Semiconductors", "Microchip Technology", "STMicroelectronics", "Infineon", "MediaTek", "Realtek", "Cadence Design", "Synopsys", "Lattice Semiconductor", "Xilinx", "Altera", "Splunk", "Datadog", "Elastic", "CrowdStrike", "Palo Alto Networks", "Fortinet", "Zscaler", "SentinelOne", "Okta", "Auth0", "Duo Security", "Ping Identity", "JumpCloud", "Rapid7", "Tenable", "Qualys", "Rapid Security", "Imperva"
+  ],
+  "tech_startups_ai_ml": [
+    "OpenAI", "Anthropic", "Stability AI", "Hugging Face", "Character.AI", "Midjourney", "Jasper", "Copy.ai", "Runway", "ElevenLabs", "Descript", "Grammarly", "Replicate", "Modal", "Together AI", "Anyscale", "Ray", "Weights & Biases", "Wandb", "Comet ML", "Neptune AI", "ClearML", "Determined AI", "MLflow", "H2O", "DataRobot", "H2O.ai", "Scale AI", "Labelbox", "Snorkel AI", "Weak Supervision", "ActiveLoop", "Hub", "Deep Lake", "Tecton", "Feast", "Featuretools", "Trifacta", "Tamr", "Palantir", "Databricks", "Moogsoft", "Anodot", "Elementlogic"
+  ],
+  "tech_startups_general": [
+    "Stripe", "Airbnb", "Uber", "Lyft", "DoorDash", "Instacart", "Slack", "Discord", "Twitch", "Zoom", "Figma", "Notion", "Canva", "Asana", "Monday.com", "ClickUp", "Superhuman", "Retool", "Airtable", "Zapier", "Make", "Loom", "Otter.ai", "Calendly", "Typeform", "SurveyMonkey", "Mailchimp", "ConvertKit", "Substack", "Patreon", "Gumroad", "Kickstarter", "Indiegogo", "AngelList", "Crunchbase", "PitchBook", "Carta", "Pulley", "Shogun", "Segment", "mParticle", "Amplitude", "Mixpanel", "Heap", "Fullstory", "LogRocket", "LaunchDarkly", "Split.io", "Optimizely", "VWO", "Unbounce", "Leadpages", "Instapage", "Landingi", "Webflow", "Framer", "Wix", "Squarespace", "Weebly", "GoDaddy", "Namecheap", "Bluehost", "HostGator", "SiteGround", "Kinsta", "WP Engine", "Flywheel", "Pantheon", "Acquia", "SendGrid", "Twilio", "Vonage", "Bandwidth", "Plivo", "Voicebase"
+  ],
+  "indian_it_major": [
+    "Tata Consultancy Services", "TCS", "Infosys", "Infosys Limited", "Wipro", "Wipro Limited", "HCL Technologies", "HCL", "Tech Mahindra", "Tech Mahindra Limited", "Cognizant", "Cognizant Technology Solutions", "Accenture India", "Accenture", "Capgemini India", "Capgemini", "Mindtree", "Mindtree Limited", "L&T Infotech", "Larsen and Toubro Infotech", "Persistent Systems", "Mphasis", "Hexaware Technologies", "Zensar Technologies", "Evosys", "Allianz Technology", "Virtusa", "LTTS", "LTI-Mindtree", "Cyient", "Xoriant", "Sonata Software", "QuEST Global", "Aspire Systems", "Impetus Technologies", "UST Global", "Cerner India", "Serco", "DXC Technology", "Enservco", "SailPoint", "ServiceTitan", "SPS Commerce", "Synchrony", "Synchronoss", "Synopsys", "Tableau Software", "Teradata", "Teradyne", "Temenos", "iGATE", "iGATE Global Solutions", "Genpact", "Genpact Limited", "WNS Global Services", "Conduent", "Conduent Inc", "Atos Syntel", "Atos IT Solutions", "Atos Origin"
+  ],
+  "indian_it_mid": [
+    "QuickHeal", "QuickHeal Technologies", "eMudhra", "Calsoft", "Calsoft Inc", "Taskhub", "TechMahindra", "Cybertech", "Cybertech Systems", "i-exceed", "iexceed", "e-Stewards Technologies", "estewards", "Stron Cyber", "Stron Cyber Security", "Neuron Infotech", "Nudata Security", "Netsmart", "NetSmartz", "DataStax", "Aerospike", "Voltdb", "MemSQL", "SingleStore", "Rockset", "Dremio", "MapR", "Databricks", "Alteryx", "SAS", "TIBCO", "Informatica", "Talend", "Mulesoft", "Boomi", "iPaaS"
+  ],
+  "indian_startups_funding": [
+    "Flipkart", "Razorpay", "Paytm", "Zerodha", "Swiggy", "Ola Electric", "OYO", "Unacademy", "Byju's", "Vedantu", "Delhivery", "Shadowfax", "Shiprocket", "Nykaa", "Nykaa E-Retail", "Unacademy Group", "Urban Company", "UrbanClap", "PharmEasy", "Medplusmart", "Medplus Mart", "Cure.fit", "Curefit", "Ola Cabs", "Ola", "Bounce", "Bounce Scooter", "Okinawa Autotech", "Revolt Motors", "Bajaj Finserv", "Bajaj Finance", "HDFC Life", "HDFC Bank", "ICICI Prudential", "ICICI Lombard", "HDFC ERGO", "Aditya Birla Capital", "Aditya Birla Sun Life", "Shriram Capital", "Shriram Finance", "Muthoot Finance", "muthoot.com", "Manappuram Finance", "Home Credit", "Home Credit India", "Flexmoney", "Kredent", "Credy", "MoneyTap", "PayMe India", "Kissht", "Zest Money", "LazyPay", "OneCard", "Slice", "Fibe", "Navi Technologies", "Incred"
+  ],
+  "indian_startups_general": [
+    "BookMyShow", "Bookmyshow Tickets", "MakeMyTrip", "Makemytrip.com", "Yatra.com", "Cleartrip", "ixigo", "GoibibO", "Goibibi", "TravelTriangle", "EaseMyTrip", "Musafir.com", "Redbus", "Redbus.in", "FirstHire", "Hirist", "Workmozo", "InternShala", "TimesJobs", "Shine.com", "LinkedIn", "HackerRank", "HackerEarth", "CodeChef", "InterviewBit", "Coding Ninjas", "Naukri.com", "Indeed India", "Flock", "Slack", "Discord", "Telegram", "Signal", "Viber", "Momo", "Snapchat", "Instagram", "TikTok", "YouTube", "Twitch", "Pinterest", "Tumblr", "Reddit", "Quora", "Medium", "Hashnode", "Dev.to", "Substack", "Ghost", "Letterboxd", "Goodreads", "StoryWeaver", "Wattpad", "Quotev", "Commaful", "Reedsy", "Scribd", "Issuu", "Calameo", "FlipHTML5", "Yumpu", "Joomag"
+  ],
+  "indian_conglomerates_tata": [
+    "Tata Group", "Tata Steel", "Tata Motors", "Tata Power", "Tata Communications", "Tata Sky", "Titan Company", "Indian Hotels Company", "ITC Limited", "Tata Chemical", "Tata Chemicals Limited", "Tata Consultancy Services", "TCS", "Tata Investment Corporation", "Tata Sons", "Voltas", "Voltas Limited", "Tata Trusts", "Air India", "Air India Express"
+  ],
+  "indian_conglomerates_reliance": [
+    "Reliance Industries", "Reliance Industries Limited", "Reliance Jio", "Jio Platforms", "Reliance Petroleum", "Reliance Retail", "Reliance Brands", "Ajio", "Reliance Foundation", "Network18", "TV18", "News18", "Voot", "BookMyShow"
+  ],
+  "indian_conglomerates_mahindra": [
+    "Mahindra Group", "Mahindra & Mahindra", "M&M", "Mahindra Holidays", "Mahindra Logistics", "Tech Mahindra", "Mahindra Finance", "First Choice Insurance", "Mahindra Insurance", "Mahindra Comviva", "Comviva Technologies", "Mahindra Rise", "Mahindra Venture Capital"
+  ],
+  "indian_conglomerates_birla": [
+    "Aditya Birla Group", "Birla Group", "Hindalco Industries", "Grasim Industries", "Ultratech Cement", "Birlasoft", "Birla Carbon", "Aditya Birla Fashion and Retail", "Aditya Birla Capital", "Aditya Birla Sun Life", "Aditya Birla Money", "Aditya Birla Health Insurance"
+  ],
+  "indian_conglomerates_other": [
+    "Bajaj Group", "Bajaj Auto", "Bajaj Finance", "Bajaj Finserv", "Bajaj Allianz", "Bajaj Capital", "Bajaj Electricals", "Havells India", "Crompton Greaves", "Crompton Consumer Electricals", "Hero MotoCorp", "Hero Electric", "Lupin Limited", "Lupin Pharma", "Sun Pharmaceutical", "Sun Pharma", "Dr. Reddy's Laboratories", "Cipla Limited", "Cipla", "Aurobindo Pharma", "Divi's Laboratories", "Natco Pharma", "Glenmark Pharmaceuticals", "Torrent Pharmaceuticals", "Alkem Laboratories", "Mankind Pharma", "Cadila Healthcare", "Zydus Cadila", "JB Chemicals & Pharmaceuticals", "Panacea Biotec"
+  ],
+  "consulting_top_tier": [
+    "McKinsey & Company", "Boston Consulting Group", "BCG", "Bain & Company", "Deloitte", "PricewaterhouseCoopers", "PwC", "Ernst & Young", "EY", "KPMG", "Accenture", "Capgemini", "Grant Thornton", "BDO", "CliftonLarsonAllen", "Crowe", "Moss Adams", "RSM"
+  ],
+  "consulting_mid_tier": [
+    "Protiviti", "Alvarez & Marsal", "A&M", "Analysis Group", "Aon Consulting", "Willis Towers Watson", "Mercer", "Hewitt", "Towers Perrin", "Mott MacDonald", "Atkins", "Turner & Townsend", "Arcadis", "Knight Frank", "Savills", "Jones Lang LaSalle", "JLL", "CBRE", "Cushman & Wakefield", "Colliers International", "Colliers", "Sotheby's International", "Christie's International"
+  ],
+  "finance_banks_top": [
+    "JPMorgan Chase", "Goldman Sachs", "Morgan Stanley", "Bank of America", "Citigroup", "Wells Fargo", "Barclays", "HSBC", "Deutsche Bank", "Credit Suisse", "UBS", "BNP Paribas", "Société Générale", "Santander", "Banco Bilbao Vizcaya Argentaria", "BBVA", "ING Group", "Rabobank", "ABN AMRO", "Commerzbank", "UniCredit", "Intesa Sanpaolo", "Banco do Brasil", "Bradesco", "Itaú Unibanco", "CITIC Group", "China Construction Bank", "Agricultural Bank of China", "Bank of China", "Industrial and Commercial Bank of China", "ICBC", "China Merchants Bank", "Mizuho Financial Group", "Nomura Holdings", "Daiwa Securities", "Sumitomo Mitsui Financial Group", "Mitsubishi UFJ Financial Group", "MUFG"
+  ],
+  "finance_investment_banks": [
+    "The Blackstone Group", "Blackstone", "Apollo Global Management", "Kohlberg Kravis Roberts", "KKR", "Carlyle Group", "Silver Lake Partners", "Hellman & Friedman", "TPG", "Texas Pacific Land", "Partners Group", "EQT", "Advent International", "Bain Capital", "Clayton Dubilier & Rice", "Clayton Dubilier", "Evercore", "Lazard", "Coller International"
+  ],
+  "indian_banks_major": [
+    "HDFC Bank", "HDFC", "Housing Development Finance Corporation", "ICICI Bank", "ICICI", "State Bank of India", "SBI", "Kotak Mahindra Bank", "Kotak", "Axis Bank", "Yes Bank", "IndusInd Bank", "IDBI Bank", "Bank of Baroda", "Union Bank of India", "Bank of India", "Canara Bank", "Central Bank of India", "Indian Bank", "Indian Overseas Bank", "Punjab National Bank", "PNB", "Oriental Bank of Commerce", "Syndicate Bank", "Federal Bank", "South Indian Bank", "Lakshmi Vilas Bank", "LVB", "IDFCFB", "IDFC FIRST Bank", "RBL Bank", "Airtel Payments Bank", "Paytm Payments Bank", "Google Pay", "PhonePe", "Razorpay", "Stripe India", "Square India", "PayU", "MobiKwik", "freecharge", "Cashfree"
+  ],
+  "indian_manufacturing_auto": [
+    "Tata Steel", "Tata Motors", "Mahindra & Mahindra", "Hero MotoCorp", "Bajaj Auto", "TVS Motor", "Maruti Suzuki", "Hyundai Motor", "Hyundai India", "Kia Motors", "Kia India", "Renault India", "Nissan India", "Honda Cars India", "Honda Motorcycle India", "Toyota Kirloskar", "Daimler India", "BYD Auto", "BYD India", "MG Motor", "MG India", "Skoda Auto", "Volkswagen India", "Audi India", "Porsche India", "Mercedes-Benz India", "BMW India", "Jaguar Land Rover India", "Jeep India"
+  ],
+  "indian_pharma_major": [
+    "Sun Pharmaceutical", "Sun Pharma", "Dr. Reddy's Laboratories", "Cipla Limited", "Lupin Limited", "Aurobindo Pharma", "Divi's Laboratories", "Natco Pharma", "Glenmark Pharmaceuticals", "Torrent Pharmaceuticals", "Alkem Laboratories", "Mankind Pharma", "Cadila Healthcare", "Zydus Cadila", "JB Chemicals & Pharmaceuticals", "Panacea Biotec", "Pfizer India", "Novartis India", "Merck India", "Eli Lilly India", "Roche India", "Sanofi India", "GlaxoSmithKline India", "AstraZeneca India", "Janssen India", "Bristol Myers Squibb India", "Bayer India", "Boehringer Ingelheim India", "Sandoz India", "Strides Pharma", "Ranbaxy Laboratories", "Orchid Pharma", "FDC Limited", "Luye Pharma", "Beacon Pharmaceuticals", "Medley Pharmaceuticals"
+  ],
+  "government_psu_major": [
+    "Indian Space Research Organisation", "ISRO", "Defence Research and Development Organisation", "DRDO", "Oil and Natural Gas Corporation", "ONGC", "Indian Oil Corporation", "IOC", "Bharat Petroleum Corporation", "BPCL", "Hindustan Petroleum Corporation", "HPCL", "Bharat Heavy Electricals Limited", "BHEL", "Bharat Electronics Limited", "BEL", "National Thermal Power Corporation", "NTPC", "Power Grid Corporation of India", "PGCIL", "Coal India Limited", "CIL", "Steel Authority of India Limited", "SAIL", "Container Corporation of India", "CONCOR", "Indian Railway Catering and Tourism Corporation", "IRCTC", "Central Electronics Limited", "CEL", "National Informatics Centre", "NIC"
+  ],
+  "healthcare_us_major": [
+    "UnitedHealth Group", "Optum", "UnitedHealthcare", "Humana", "Anthem", "CVS Health", "Aetna", "Johnson & Johnson", "Pfizer", "Moderna", "Novartis", "Roche", "Merck", "Bristol Myers Squibb", "Eli Lilly", "Amgen", "Regeneron", "Vertex Pharmaceuticals", "Gilead Sciences", "Biogen", "Celgene", "Abbvie", "Allergan", "Viatris", "Mylan", "Endo Pharmaceuticals", "Teva Pharmaceutical", "Sandoz", "Hikma Pharmaceuticals", "Perrigo", "Prestige Consumer Healthcare"
+  ],
+  "hospitals_us_major": [
+    "Mayo Clinic", "Cleveland Clinic", "Johns Hopkins Hospital", "Massachusetts General Hospital", "Stanford Health", "UCSF Health", "Yale New Haven Health", "Penn Medicine", "Cedars-Sinai Medical Center", "Kaiser Permanente", "NewYork-Presbyterian Hospital", "Mount Sinai Health System", "Memorial Sloan Kettering", "NYU Langone Health", "Columbia University Medical Center", "University of Chicago Medical Center", "Northwestern Medicine", "Hospital for Special Surgery", "Brigham and Women's Hospital", "Duke University Health System", "University of Michigan Health", "Cleveland Clinic Foundation"
+  ],
+  "hospitals_india_major": [
+    "Apollo Hospitals", "Fortis Healthcare", "Manipal Hospitals", "Max Healthcare", "Medanta", "HCG Cancer Centre", "Lilavati Hospital", "Hinduja Hospital", "Sir H. N. Reliance Foundation Hospital", "Kokilaben Ambani Hospital", "P.D. Hinduja Hospital", "Jaslok Hospital", "Global Hospitals", "Gleneagles Hospital", "Sparsh Hospital", "Sakra World Hospital", "Aster CMI Hospital", "Aster DM Healthcare", "Sunshine Hospitals", "Narayana Health", "Apollo Diagnostics", "Apollo Pharmacy", "Max Healthcare Diagnostics", "Medcare Hospital"
+  ],
+  "retail_consumer_us": [
+    "Walmart", "Target", "Costco", "Amazon", "eBay", "Home Depot", "Lowe's", "Ace Hardware", "Sears", "Kmart", "J.C. Penney", "Macy's", "Kohl's", "Nordstrom", "Saks Fifth Avenue", "Bloomingdale's", "Neiman Marcus", "Coach", "Kate Spade", "Guess", "Dooney & Bourke", "Longchamp", "Samsonite", "American Tourister", "Rimowa", "Away"
+  ],
+  "retail_india": [
+    "Reliance Retail", "Reliance Brands", "Ajio", "Future Retail", "Big Bazaar", "Fbb", "Foodhall", "Kishore Biyani", "Aditya Birla Fashion and Retail", "Westside", "Madura Fashion & Lifestyle", "Arvind", "Arrow", "Flying Machine", "Tommy Hilfiger India", "Calvin Klein India", "Van Heusen", "Allen Solly", "Peter England", "Ritche", "Mayank", "Vedavati", "Park Avenue", "ColorPlus", "Sutherland", "Dockers", "Donear", "Wills Lifestyle", "Louis Philippe", "Van Heusen", "Park Avenue", "ColorPlus"
+  ],
+  "automotive_global": [
+    "Tesla", "Toyota", "Ford", "General Motors", "Volkswagen", "BMW", "Mercedes-Benz", "Audi", "Porsche", "Ferrari", "Lamborghini", "Maserati", "Pagani", "Bugatti", "Rolls-Royce", "Bentley", "Jaguar", "Land Rover", "Aston Martin", "McLaren", "Volvo Cars", "Geely", "Li Auto", "NIO", "XPeng", "BYD", "GAC Aion", "BAIC", "Changan Automobile", "FAW Group", "Dongfeng Motor", "Great Wall Motor", "Lifan", "Chery Automobile", "Haval", "Tank", "ORA"
+  ],
+  "automotive_india": [
+    "Tata Motors", "Mahindra & Mahindra", "Hero MotoCorp", "Bajaj Auto", "TVS Motor", "Maruti Suzuki", "Hyundai India", "Kia India", "Renault India", "Nissan India", "Honda Cars India", "Honda Motorcycle India", "Toyota Kirloskar", "Daimler India", "BYD India", "MG India", "Skoda Auto India", "Volkswagen India", "Audi India", "Mercedes-Benz India", "BMW India", "Jeep India", "Force Motors", "Ashok Leyland", "Bharat Heavy Electricals", "BHEL", "Ather Energy"
+  ],
+  "telecom_global": [
+    "AT&T", "Verizon", "T-Mobile", "Sprint", "Deutsche Telekom", "Telefónica", "Orange", "Vodafone", "BT Group", "Swisscom", "Telenor", "Telia Company", "Proximus", "Telecom Italia", "3", "Tele2"
+  ],
+  "telecom_india": [
+    "Reliance Jio", "Airtel", "Bharti Airtel", "Vodafone Idea", "Vodafone", "Idea Cellular", "BSNL", "MTNL", "Tata Teleservices", "Tata Tele", "Sify", "Sify Technologies", "Tata Communications", "TTSL", "Tata Teleservices", "Spacenet", "Spacenet India", "Hathway", "Hathway Digital", "ACT Fibernet", "Excitel"
+  ],
+  "media_global": [
+    "Netflix", "Spotify", "Warner Bros Discovery", "Discovery", "Sony Pictures", "Paramount Global", "Walt Disney Company", "Disney", "Universal Pictures", "Comcast NBCUniversal", "NBC", "ABC", "Hulu", "ESPN", "Fox", "News Corp", "Sky Plc", "BBC", "ITV", "Channel 4", "Channel 5", "AMC Networks", "Paramount+", "Apple TV+", "Amazon Prime Video"
+  ],
+  "media_india": [
+    "Star India", "Star Entertainment", "Sony Pictures Networks India", "Sony SAB", "Sony Max", "Sony Liv", "Sony Crackle", "ZEE Entertainment", "Zee TV", "Sony Six", "Zee Cafe", "Zee Business", "Zee News", "Times Network", "Times Now", "Mirror Now", "ET Now", "Indiatoday.in", "India Today", "Aaj Tak", "Republic Media", "Republic TV", "ABP News", "ABP Live", "NDTV", "NDTV 24x7", "NDTV India", "NDTV Profit", "NDTV Swasth", "News18", "CNN News18", "Moneycontrol", "CNN18"
+  ],
+  "energy_global": [
+    "ExxonMobil", "Chevron", "Shell", "BP", "TotalEnergies", "Saudi Aramco", "Gazprom", "Rosneft", "LUKOIL", "Equinor", "ConocoPhillips", "Hess", "Occidental Petroleum", "Valero Energy", "Marathon Petroleum", "Phillips 66", "HollyFrontier", "Tesoro", "Sunoco", "PBF Energy", "Par Pacific", "CVR Energy", "Calumet Specialty Products"
+  ],
+  "energy_india": [
+    "Indian Oil Corporation", "IOC", "Oil and Natural Gas Corporation", "ONGC", "Bharat Petroleum Corporation", "BPCL", "Hindustan Petroleum Corporation", "HPCL", "Reliance Industries", "RIL", "Indian Oil", "ONGC Videsh", "Gas Authority of India", "GAIL", "NTPC Limited", "National Thermal Power Corporation", "Power Grid Corporation of India", "PGCIL", "Power Finance Corporation", "PFC", "Rural Electrification Corporation", "REC", "Coal India Limited", "CIL"
+  ],
+  "defense_aerospace": [
+    "Lockheed Martin", "Boeing", "Raytheon Technologies", "Northrop Grumman", "General Dynamics", "Huntington Ingalls Industries", "L3Harris Technologies", "SpaceX", "Blue Origin", "Sierra Space", "Sierra Nevada Corporation", "Firefly Aerospace", "Relativity Space", "Axiom Space", "Made In Space"
+  ],
+  "defense_india": [
+    "Hindustan Aeronautics Limited", "HAL", "Bharat Electronics Limited", "BEL", "Defence Research and Development Organisation", "DRDO", "Indian Space Research Organisation", "ISRO", "Mazagon Dock Shipbuilders", "MDL", "Cochin Shipyard", "CSL", "Garden Reach Shipbuilders", "GRSE", "Bharat Dynamics Limited", "BDL", "Ordnance Factories Board", "OFB", "Defence Avionics Research Establishment", "DARE"
+  ],
+  "food_hospitality_global": [
+    "McDonald's", "Starbucks", "Subway", "Domino's Pizza", "Pizza Hut", "KFC", "Chick-fil-A", "Chipotle", "Taco Bell", "Burger King", "Wendy's", "Sonic Drive-In", "Arby's", "Jack in the Box", "Five Guys", "Shake Shack", "Carl's Jr", "Hardee's", "Popeyes", "Wingstop", "Applebee's", "Buffalo Wild Wings", "Outback Steakhouse", "Red Robin", "Cracker Barrel", "Panera Bread", "Panda Express", "Auntie Anne's", "Cinnabon", "Jamba Juice", "Smoothie King", "Cold Stone Creamery"
+  ],
+  "food_hospitality_india": [
+    "Haldiram's", "Haldiram", "Bikaji's", "Bikaji", "Britannia", "ITC Limited", "ITC Foods", "Maggi India", "Nestlé India", "Amul", "Gujarat Cooperative Milk", "Mother Dairy", "Mahananda Milk Products", "Arokya Milk", "Sudha", "Sudha Dairy", "Bahrisons", "Wimpy's", "Burger King India", "McDonald's India", "KFC India", "Domino's Pizza India", "Pizza Hut India", "Subway India", "Taco Bell India", "Wow! Momo", "Wow Momo", "Bhai Naan", "Faasos", "Ovenstory", "Behrouz Biryani", "Biryani", "Mainland China", "Oh La La Cakes", "Magnolia Bakery", "Eggspectation", "Starbucks India", "Café Coffee Day", "CCD", "Barista", "Café Mojo"
+  ],
+  "education_us": [
+    "Pearson", "McGraw-Hill", "Scholastic", "Cengage Learning", "Houghton Mifflin Harcourt", "Elsevier", "Springer Nature", "Macmillan", "Oxford University Press", "Cambridge University Press", "Wiley", "SAGE Publishing", "Routledge", "Taylor & Francis", "Informa Education", "Coursera", "Udacity", "Udemy", "Skillshare", "MasterClass", "Brilliant", "DataCamp", "Codecademy", "Treehouse", "Pluralsight", "edX", "FutureLearn", "OpenClassrooms"
+  ],
+  "education_india": [
+    "Unacademy", "Byju's", "BYJU'S", "Vedantu", "Toppr", "Khan Academy India", "Doubtnut", "Gauthmath", "Physics Wallah", "Physics Walla", "Pw", "Vedic Maths Forum", "Career Launcher", "IMS Learning", "TIME", "Test India Material", "Resonance", "Aakash", "Aakash Institute", "Allen", "Allen Institute", "Vibrant Academy", "Fiit JEE", "FITJEE", "Narayana Concept School", "Sri Chaitanya", "Chaitanya", "Sri Aurobindo Pathanam", "Sri Chaitanya Junior College", "Narayana Concept"
+  ],
+  "agencies_services_us": [
+    "Accenture", "Cognizant", "Capgemini", "IBM Global Services", "Oracle Consulting", "Salesforce Consulting", "Microsoft Consulting", "Google Cloud Services", "Amazon Web Services", "Deloitte Consulting", "PwC Consulting", "EY Consulting", "KPMG Consulting", "Grant Thornton", "BDO", "Protiviti", "Alvarez & Marsal"
+  ],
+  "agencies_services_india": [
+    "Infosys Consulting", "TCS Consulting", "Wipro Consulting", "HCL Consulting", "Tech Mahindra Consulting", "Mindtree Consulting", "L&T Consulting", "Persistent Systems Consulting", "Mphasis Consulting", "Hexaware Consulting", "Evosys Consulting", "Virtusa Consulting", "QuEST Global Consulting", "Aspire Systems Consulting", "Sonata Software Consulting"
+  ],
+  "law_us_major": [
+    "Skadden Arps", "Wachtell Lipton", "Cravath Swaine Moore", "Sullivan & Cromwell", "Paul Hastings", "Davis Polk", "Cleary Gottlieb", "Arnold & Porter", "Latham & Watkins", "Baker & McKenzie", "Wilson Sonsini", "Fenwick & West", "Cooley", "O'Melveny & Myers", "Orrick", "Pillsbury Winthrop", "White & Case", "Quinn Emanuel", "Morrison Foerster", "WilmerHale", "DLA Piper", "Dentons", "Akin Gump", "Sidley Austin"
+  ],
+  "law_india_major": [
+    "Nishith Desai Associates", "NDA", "Shardul Amarchand Mangaldas", "SAM", "AZB & Partners", "Cyril Amarchand Mangaldas", "ICICI Bank", "ICICI Securities", "Trilegal", "Khaitan & Co", "Khaitan", "Everaert Advocaten", "Everaert", "Economic Laws Practice", "ELP", "Fox Mandal", "J Sagar Associates", "JSA", "Kroll", "Kroll Associates", "Lakshmikumaran & Sridharan", "LSS", "Mulla Qureshi Irfaan Khan & Associates", "MQIKQ"
+  ],
+  "accounting_firms": [
+    "Deloitte", "PricewaterhouseCoopers", "PwC", "Ernst & Young", "EY", "KPMG", "Grant Thornton", "BDO", "CohnReznick", "CliftonLarsonAllen", "Crowe", "Moss Adams", "RSM", "CPA Australia", "Chartered Institute of Management Accountants", "CIMA", "Association of Certified Chartered Accountants", "ACCA", "Institute of Chartered Accountants", "ICAI", "Accounting and Finance Association", "AFA"
+  ],
+  "european_tech": [
+    "SAP", "Siemens", "Unilever", "HSBC", "Shell", "Total", "Gazprom", "Yandex", "Spotify", "Zalando", "Farfetch", "Zopa", "Monzo", "Revolut", "Wise", "Stripe Europe", "Vivino", "Getir", "Insulin", "Picnic", "Gorillas", "Getaway", "Vision-Box", "OutSystems", "Feedzai"
+  ],
+  "chinese_tech": [
+    "Alibaba", "Tencent", "Huawei", "ByteDance", "Xiaomi", "OPPO", "Vivo", "ZTE", "Meizu", "Lenovo", "JD.com", "Pinduoduo", "Meituan", "Baidu", "NetEase", "Bilibili", "iQIYI", "Weibo", "Douyin", "WeChat", "Alipay", "Ant Group", "DJI", "Didi Chuxing", "Ctrip", "Trip.com", "Tuniu", "Qunar", "Xiaohongshu", "Little Red Book"
+  ],
+  "japanese_tech": [
+    "Sony", "Nintendo", "Toyota", "Honda", "Nissan", "Subaru", "Mazda", "Mitsubishi Motors", "Suzuki", "Yamaha", "Panasonic", "Kyocera", "TDK", "Murata Manufacturing", "Pioneer", "Yamaha Music", "Roland", "Bose", "Bang & Olufsen", "Harman International", "JBL", "Denso", "Aisin", "JATCO", "Advics", "Nidec", "NIDEC"
+  ],
+  "korean_tech": [
+    "Samsung", "LG", "Hyundai", "Kia", "SK Group", "SK Hynix", "LG Chem", "LG Display", "Kolon Industries", "Naver", "Kakao", "Nexon", "Enshine", "Ente", "CJ Group", "CJ ENM", "Netmarble", "Psoft", "Krafton", "PUBG", "Dunamu", "Upbit", "Line", "Kakao Pay", "Coupang"
+  ],
+  "nonprofits_us": [
+    "United Nations", "World Health Organization", "World Bank", "International Monetary Fund", "World Trade Organization", "Red Cross", "Doctors Without Borders", "Oxfam", "Save the Children", "Plan International", "CARE International", "Mercy Corps", "International Rescue Committee", "Lutheran World Federation", "Salvation Army", "Habitat for Humanity", "Human Rights Watch", "Amnesty International", "Freedom House", "Reporters Without Borders", "PEN International", "Bill & Melinda Gates Foundation", "Open Society Foundations", "Chan Zuckerberg Initiative"
+  ],
+  "nonprofits_india": [
+    "Save the Children India", "Plan India", "CARE India", "UNICEF India", "World Vision India", "Oxfam India", "ActionAid India", "Transparency International", "Human Rights Watch", "Amnesty International", "Greenpeace India", "Wildlife Institute of India", "ICCW", "Sulabh International", "CRY India", "Child Rights and You", "Aarti Institute", "Teach For India", "Educate Girls", "Pratham", "Pratham Education Foundation"
+  ],
+  "manufacturing_companies": [
+    "3M Company", "Eaton Corporation", "Emerson Electric", "Fortive Corporation", "Illinois Tool Works", "ITW", "Ingersoll Rand", "Johnson Controls", "Lear Corporation", "Parker Hannifin", "Stanley Black & Decker", "Tenneco", "Timken Company", "Actuant Corporation", "Actuant", "Astronics Corporation", "Astronics", "Applied Industrial Technologies", "Applied Micro Circuits", "AMCC", "Applied Signal Technology", "Applied Micro"
+  ],
+  "pharmaceutical_global": [
+    "Johnson & Johnson", "Pfizer", "Moderna", "Novartis", "Roche", "Merck", "Bristol Myers Squibb", "Eli Lilly", "AbbVie", "Amgen", "Gilead Sciences", "Regeneron", "Biogen", "Vertex Pharmaceuticals", "Allergan", "Viatris", "Mylan", "Endo Pharmaceuticals", "Teva Pharmaceutical", "Sandoz", "Hikma Pharmaceuticals", "Perrigo"
+  ],
+  "logistics_supply_chain": [
+    "FedEx", "UPS", "DHL", "XPO Logistics", "J.B. Hunt", "Knight Transportation", "Werner Enterprises", "Schneider National", "ArcBest", "Old Dominion Freight", "YRC Worldwide", "Saia Inc", "PAM Transportation", "Universal Truckload", "Heartland Express", "Crete Carrier", "Marten Transport", "Forward Air", "SLH Airline Solutions", "A.P. Moller Maersk", "Maersk", "Mediterranean Shipping Company", "MSC", "CMA CGM", "COSCO Shipping", "China Merchants Heavy Industry", "CMHI"
+  ],
+  "logistics_india": [
+    "Delhivery", "Shadowfax", "Shiprocket", "Ecom Express", "Gati Limited", "GATi", "Blue Dart", "FedEx India", "DHL India", "XpressBees", "Lendingkart Technologies", "Magicpin", "Pickrr", "TravelTriangle", "Ninjacart", "Ninjacart Limited", "Grofers", "Grofers India", "BigBasket", "BigBasket Daily", "Dunzo", "LocalShop", "PickMe", "Jumbotail"
+  ],
+  "ecommerce_global": [
+    "Amazon", "eBay", "Shopify", "Etsy", "Wayfair", "Overstock", "Wish", "AliExpress", "Alibaba", "JD.com", "Rakuten", "Mercado Libre", "Livraria Cultura", "B2Brazil", "Tokopedia", "Bukalapak", "Shopee", "Lazada", "Sea Limited", "Jumia", "Konga"
+  ],
+  "ecommerce_india": [
+    "Flipkart", "Amazon India", "Snapdeal", "Myntra", "Ajio", "Nykaa", "Unacademy", "Swiggy", "Zomato", "Dunzo", "Grofers", "BigBasket", "Delhivery", "Shiprocket", "Lendingkart", "CashKaro", "GetMyMerchant", "Shopkirana"
+  ],
+  "it_services_global": [
+    "Accenture", "Cognizant", "Capgemini", "Atos", "NTT Data", "Fujitsu", "IBM", "Oracle", "Salesforce", "Microsoft", "Amazon Web Services", "Google Cloud", "Deloitte", "PwC", "EY", "KPMG", "Grant Thornton", "BDO", "SailPoint", "ServiceNow", "Workday", "SAP", "Infor", "NetSuite", "Intacct", "Unit4", "IFS", "Ramco", "Plex", "Dassault", "Siemens", "Autodesk", "Adobe", "Atlassian", "Jira", "Confluence", "Bitbucket", "Trello", "Asana", "Monday.com", "ClickUp"
+  ],
+  "saas_companies": [
+    "Salesforce", "Workday", "ServiceNow", "Adobe", "Microsoft", "Atlassian", "Zoom", "Slack", "Figma", "Notion", "Asana", "Monday.com", "ClickUp", "Airtable", "Zapier", "Make", "Loom", "Otter.ai", "Calendly", "Typeform", "SurveyMonkey", "HubSpot", "Marketo", "Eloqua", "Pardot", "Klaviyo", "Drip", "ConvertKit", "MailerLite", "Substack", "Ghost", "Webflow", "Framer", "Wix", "Squarespace", "Weebly", "GoDaddy", "Shopify", "BigCommerce", "Magento", "WooCommerce", "CartPops", "Subbly", "Sellfy"
+  ],
+  "cloud_infrastructure": [
+    "Amazon Web Services", "AWS", "Microsoft Azure", "Google Cloud Platform", "GCP", "IBM Cloud", "Oracle Cloud", "DigitalOcean", "Linode", "Vultr", "Heroku", "Render", "Netlify", "Vercel", "Firebase", "Supabase", "Airtable", "Fauna", "Hasura", "Contentful", "Sanity", "Strapi", "Ghost", "Wordpress.com", "Squarespace", "Wix", "Webflow", "Framer", "Statamic", "Statamic Cloud", "Craft CMS", "Silverstripe", "October CMS", "Grav", "Statiq", "Hugo", "Jekyll", "Gatsby", "Next.js", "Nuxt", "Svelte Kit"
+  ],
+  "fintech_companies": [
+    "Stripe", "Square", "PayPal", "Wise", "Revolut", "N26", "Monzo", "Transferwise", "Remitly", "Western Union", "MoneyGram", "Ria Money Transfer", "OFX", "Instarem", "Boom Financial", "Airwallex", "Checkout.com", "Adyen", "Worldpay", "Global Payments", "Fiserv", "Jack Henry", "SS&C Technologies", "Temenos", "Finastra", "Albridge", "Misys", "Alpha Systems", "Calypso", "Murex", "SuperDerivatives", "Numerix", "Bloomberg Terminal"
+  ],
+  "healthtech_companies": [
+    "Teladoc", "CVS Health", "Aetna", "UnitedHealth", "Humana", "Anthem", "Cigna", "TriZetto", "OptumInsight", "Change Healthcare", "Veradigm", "Cerner", "Epic Systems", "athenahealth", "NextGen Healthcare", "Greenway Health", "Medidata", "Veeva", "Parexel", "ICON", "Syneos Health", "IQVIA", "Covance", "Charles River", "Envigo", "Marshall BioResources", "Inotiv"
+  ],
+  "data_analytics": [
+    "Tableau", "PowerBI", "Looker", "QlikTech", "MicroStrategy", "Alteryx", "SAS", "TIBCO", "Informatica", "Talend", "Mulesoft", "Boomi", "Dell Boomi", "Apache", "Databricks", "Cloudera", "Hortonworks", "MapR", "Rockset", "Dremio", "DataStax", "Aerospike", "Voltdb", "MemSQL", "SingleStore", "Elasticsearch", "Splunk", "Datadog", "New Relic", "Sumo Logic", "Dynatrace", "AppDynamics"
+  ],
+  "security_companies": [
+    "Palo Alto Networks", "Fortinet", "CrowdStrike", "Zscaler", "SentinelOne", "Okta", "Auth0", "Duo Security", "Ping Identity", "JumpCloud", "Rapid7", "Tenable", "Qualys", "Nessus", "Acunetix", "Burp Suite", "Snort", "Suricata", "Zeek", "Wireshark", "Ghidra", "Radare2", "Binwalk", "Volatility", "YARA", "Sigma", "Splunk", "Elastic", "Sumo Logic", "Datadog"
+  ],
+  "ai_ml_services": [
+    "OpenAI", "Anthropic", "Google DeepMind", "DeepMind", "Stability AI", "Hugging Face", "Together AI", "Anyscale", "Modal", "Replicate", "Weights & Biases", "Wandb", "Comet ML", "Neptune AI", "ClearML", "Determined AI", "MLflow", "H2O", "DataRobot", "Scale AI", "Labelbox", "Snorkel AI", "ActiveLoop", "Hub", "Deep Lake", "Tecton", "Feast", "Featuretools", "Trifacta", "Tamr"
+  ],
+  "dev_tools_companies": [
+    "GitHub", "GitLab", "Bitbucket", "Gitea", "Gogs", "Gitea", "Codeberg", "SourceForge", "LaunchPad", "Sourceware", "GNU Savannah", "Sourcefire", "CVS", "SVN", "Subversion", "Mercurial", "Fossil", "Pijul", "Jujutsu", "Meson", "Bazel", "CMake", "Gradle", "Maven", "Ant", "Scons", "Waf", "Premake", "Autoconf", "Automake", "Libtool", "Pkg-config", "Autotools"
+  ],
+  "monitoring_observability": [
+    "Datadog", "New Relic", "Dynatrace", "AppDynamics", "Splunk", "Sumo Logic", "Elastic", "Prometheus", "Grafana", "InfluxDB", "Timescale", "VictorOps", "PagerDuty", "Opsgenie", "OnDuty", "Squadcast", "BigPanda", "Moogsoft", "Anodot", "Anomalio", "Elementlogic", "SignalFx", "Lightstep", "Honeycomb", "Incident.io", "FireHydrant", "Blameless", "Rootly"
+  ],
+  "communication_collab": [
+    "Slack", "Microsoft Teams", "Discord", "Telegram", "Signal", "WhatsApp", "Viber", "Snapchat", "Zoom", "Webex", "Google Meet", "Jitsi", "Mattermost", "Rocketchat", "Twilio", "Vonage", "Bandwidth", "Plivo", "Voicebase", "Twilio SendGrid", "Mailgun", "SendGrid", "Postmark", "Klaviyo", "Drip", "ConvertKit", "ActiveCampaign", "HubSpot", "Pardot", "Marketo"
+  ],
+  "project_management": [
+    "Asana", "Monday.com", "ClickUp", "Notion", "Jira", "Trello", "Basecamp", "Todoist", "Things", "OmniFocus", "Microsoft Project", "Smartsheet", "Wrike", "Podio", "Zoho Projects", "Atlassian Jira", "Azure DevOps", "GitLab", "GitHub Projects", "Linear", "Height", "Plane", "Plane.so", "Focalboard", "OpenProject", "Taiga", "Plane"
+  ],
+  "crm_companies": [
+    "Salesforce", "HubSpot", "Pipedrive", "Zoho CRM", "Freshsales", "Microsoft Dynamics", "Oracle CRM", "SAP CRM", "SugarCRM", "Vtiger", "Really Simple Systems", "Copper", "Notion", "Airtable", "Insightly", "Base", "Close", "Dripify", "Outreach", "Salesloft", "Gong", "Chorus AI", "Chorus", "Clari", "Clari Revenue Intelligence", "Rhythms Systems", "Revenue.io", "Leadiro", "Leadiro AI"
+  ],
+  "hr_companies": [
+    "Workday", "ADP", "Paychex", "BambooHR", "Guidepoint", "GustoPayroll", "Gusto", "Square Payroll", "Stripe Payroll", "Rippling", "Deel", "Oyster", "Remotecom", "Remote OK", "Global Payroll", "TriNet", "Insperity", "Justworks", "Namely", "CultureAmp", "15Five", "BetterWorks", "Peakon", "Glint", "Officevibe", "TinyPulse", "Leapsome", "Lattice", "Engagedly"
+  ],
+  "accounting_finance": [
+    "QuickBooks", "Xero", "FreshBooks", "Wave Accounting", "Zoho Books", "Intacct", "NetSuite", "Oracle NetSuite", "Unit4", "Sage Intacct", "Infor CloudSuite", "Workiva", "Blackline", "Certent", "Anaplan", "Planful", "OneStream", "Cognite", "Trintech", "Dedoco", "Domo", "Sisense", "Perforce", "OpenText", "Alteryx", "Talend"
+  ],
+  "legal_companies": [
+    "LexisNexis", "Westlaw", "Bloomberg Law", "Practical Law", "Thomson Reuters", "LawGeex", "Kira Systems", "Ironclad", "Evisort", "Luminance", "Contract Express", "Legito", "Nuix", "Relativity", "Heretik", "Harvey AI", "DoNotPay", "LawTics", "Rocket Lawyer", "LegalZoom", "Clio", "Rosette", "Practice Fusion", "Tabs", "Casepoint"
+  ],
+  "marketing_tech": [
+    "HubSpot", "Mailchimp", "Klaviyo", "Klaviyo", "Drip", "ConvertKit", "ActiveCampaign", "Marketo", "Pardot", "Adobe Marketing Cloud", "Oracle Marketing Cloud", "Salesforce Marketing Cloud", "Eloqua", "Exacttarget", "Pipedrive", "Outreach", "Salesloft", "Gong", "Chorus", "Clari", "Revenue.io", "Leadiro", "Outbound.io", "Warmup Inbox", "Hunter.io", "Apollo.io"
+  ],
+  "seo_analytics": [
+    "SEMrush", "Ahrefs", "Moz", "Screaming Frog", "SE Ranking", "Serpstat", "Ubersuggest", "Semrush", "Keywords Everywhere", "Yoast SEO", "Rank Math", "All in One SEO", "The SEO Framework", "Squirrly SEO", "SE Ranking", "Conductor", "BrightEdge", "Searchmetrics", "ContentStudio", "Hootsuite", "Buffer", "Sprout Social", "Mention", "Brandwatch", "Talkwalker", "Hootsuite Insights"
+  ],
+  "social_media_management": [
+    "Hootsuite", "Buffer", "Sprout Social", "Later", "Planoly", "VSCO", "Canva", "Adobe Express", "Pixlr", "Figma", "Piktochart", "Infogram", "Venngage", "Powtoon", "Animaker", "Animoto", "Biteable", "Wave Video", "Wistia", "Vimeo", "Dailymotion", "Rumble", "Odysee", "Peertube", "Mastodon"
+  ],
+  "traditional_software": [
+    "Microsoft Office", "Adobe Creative Suite", "Autodesk", "Solidworks", "CATIA", "Siemens NX", "Creo", "FreeCAD", "Blender", "Maya", "3ds Max", "Cinema 4D", "Houdini", "Substance Designer", "Unreal Engine", "Unity", "Godot", "Game Maker", "Construct", "Clickteam Fusion", "RPG Maker", "Twine", "Ren'py"
+  ],
+  "indian_insurance": [
+    "HDFC Life", "HDFC Insurance", "ICICI Prudential", "ICICI Lombard", "Bharti Axa", "Bharti AXA General Insurance", "Max Life", "Max Life Insurance", "Aditya Birla Sun Life", "Aditya Birla Health Insurance", "Bajaj Allianz", "Bajaj Finance", "Reliance General Insurance", "Reliance Health Insurance", "Tata AIG", "Tata AIG General Insurance", "National Insurance", "Oriental Insurance", "New India Assurance", "United India Insurance", "Go Digit General Insurance", "Go Digit Insurance", "Cholamandalam MS", "Cholamandalam General Insurance", "ICICI General Insurance", "ICICI Lombard", "Royal Sundaram", "Royal Sundaram General Insurance"
+  ],
+  "indian_retail_brands": [
+    "Reliance Retail", "Future Retail", "Aditya Birla Fashion", "Westside", "Vedavati", "Madura Fashion", "Arrow", "Flying Machine", "Van Heusen", "Allen Solly", "Peter England", "Ritche", "Mayank", "Sutherland", "Arvind", "Arvind Fashions", "Wills Lifestyle", "Louis Philippe", "Park Avenue", "ColorPlus", "Donear", "John Players", "Dockers", "Coolkids", "Forever Kids"
+  ],
+  "indian_fmcg": [
+    "Procter & Gamble India", "P&G India", "Hindustan Unilever", "HUL", "Colgate Palmolive", "Colgate India", "ITC Limited", "Britannia Industries", "Nestlé India", "Godrej & Boyce", "Godrej Consumer Products", "GCPL", "Marico Limited", "Bajaj Consumer Care", "Wipro Consumer Care", "Wipro Enterprises", "Cinthol", "Margo", "Santoor", "Medimix", "Bengay", "Goodknight", "Odomos", "Moov", "Burnol"
+  ],
+  "indian_consumer_goods": [
+    "Amul", "Amul Dairy", "Mother Dairy", "Haldiram's", "Haldiram", "Bikaji's Foods", "Bikaji", "Britannia Industries", "Parle Products", "Nestlé India", "ITC Foods", "Maggi India", "Godrej & Boyce", "Godrej Food", "Britannia Biscuits", "Parle Biscuits", "Sunfeast", "Digestives", "Marie Gold", "Krackjack", "Hide and Seek", "Cremica", "Cremica Bread", "Britannia Bread", "Harvest Gold", "Bakers Life"
+  ],
+  "indian_electronics": [
+    "Havells India", "Crompton Greaves", "Whirlpool India", "Whirlpool", "Videocon", "Videocon Industries", "Godrej & Boyce", "Godrej Appliances", "Bosch Limited", "Bosch India", "Siemens India", "Siemens Limited", "ABB India", "ABB Limited", "Eaton Industries", "Eaton India", "Schneider Electric India", "Schneider Electric", "Bajaj Electricals", "Bajaj", "Anchor by Panasonic", "Panasonic India", "Philips India", "Philips Lighting", "Philips Healthcare", "Koninklijke Philips", "Philips Electronics"
+  ],
+  "indian_heavy_industries": [
+    "Larsen & Toubro", "L&T", "Bharat Heavy Electricals", "BHEL", "Hindustan Shipyard", "Hindustan Aeronautics", "HAL", "Mazagon Dock Shipbuilders", "MDL", "Cochin Shipyard", "Garden Reach Shipbuilders", "GRSE", "Bharat Dynamics", "BDL", "Ordnance Factories", "OFB", "ISRO", "Indian Space Research Organisation", "DRDO", "Defence Research and Development"
+  ],
+  "indian_cement_steel": [
+    "Tata Steel", "Tata Steel Limited", "Jindal Steel", "JSW Steel", "SAIL", "Steel Authority of India", "Ultratech Cement", "Ultratech", "Ambuja Cement", "ACC Limited", "Dalmia Bharat", "Dalmia Bharat Limited", "India Cements", "India Cements Limited", "Birlasoft", "Birlasoft Limited", "Hindalco", "Hindalco Industries", "Vedanta Limited", "Vedanta Resources"
+  ],
+  "indian_infrastructure": [
+    "Larsen & Toubro", "L&T", "Tata Projects", "Tata Steel", "JSW Group", "JSW Steel", "JSW Infrastructure", "Larsen & Toubro Infotech", "L&T Infotech", "Power Grid Corporation", "NTPC Limited", "ICCW", "Indian Highways Management Association", "NHAI", "National Highways Authority of India", "Mumbai Metropolitan Region Development Authority", "MMRDA", "Delhi Metro Rail Corporation", "DMRC", "Bangalore Metro Rail Corporation", "BMRC", "Hyderabad Metro Rail", "HMRL"
+  ],
+  "us_companies_fortune_100": [
+    "Walmart Inc", "Amazon.com Inc", "Berkshire Hathaway Inc", "Alphabet Inc", "Costco Wholesale", "Exxon Mobil", "Chevron Corporation", "Saudi Aramco", "ICBC", "Bank of China", "PetroChina", "State Bank of India", "Toyota Motor", "Volkswagen Group", "Daimler", "BMW", "HSBC Holdings", "JPMorgan Chase", "Bank of America", "Citigroup Inc", "Wells Fargo", "Santander Bank", "Banco Bilbao", "ING Groep", "Mitsubishi UFJ", "Sumitomo Mitsui", "Mizuho Financial", "China Construction Bank", "Agricultural Bank of China", "China Merchants Bank", "China Minsheng Bank", "China Everbright Bank", "Ping An Insurance", "China Life Insurance", "Sony Group", "Samsung Electronics", "LG Electronics", "SK Hynix", "Reliance Industries", "Tata Consultancy Services", "Infosys Limited", "Wipro Limited", "HCL Technologies"
+  ],
+  "us_tech_companies_500": [
+    "Apple Inc", "Microsoft Corporation", "Alphabet Inc", "Amazon.com Inc", "Meta Platforms", "Tesla Inc", "Nvidia Corporation", "Taiwan Semiconductor", "Broadcom Inc", "Advanced Micro Devices", "Qualcomm Incorporated", "Intel Corporation", "Oracle Corporation", "Salesforce Inc", "ServiceNow Inc", "Workday Inc", "Adobe Incorporated", "CrowdStrike Holdings", "Palo Alto Networks", "Fortinet Inc", "Zscaler Inc", "SentinelOne Inc", "Okta Inc", "Auth0", "Duo Security", "Ping Identity", "JumpCloud Inc", "Rapid7 Inc", "Tenable Holdings", "Qualys Inc", "Splunk Inc", "Datadog Inc", "New Relic Inc", "Sumo Logic Inc", "Dynatrace Inc", "AppDynamics", "Elastic NV", "Confluent Inc", "Databricks", "Palantir Technologies", "Figma Inc", "Notion Labs", "Asana Inc", "Monday.com Ltd", "ClickUp", "Airtable Inc", "Zapier Inc", "Make", "Slack Technologies", "Discord Inc", "Zoom Video Communications", "Atlassian Corporation"
+  ],
+  "indian_companies_bse500": [
+    "Reliance Industries Limited", "Tata Consultancy Services Limited", "HDFC Bank Limited", "Infosys Limited", "ICICI Bank Limited", "Hindustan Unilever Limited", "Indian Oil Corporation Limited", "Tata Motors Limited", "Maruti Suzuki India Limited", "Mahindra and Mahindra Limited", "Bajaj Auto Limited", "Hero MotoCorp Limited", "Wipro Limited", "Axis Bank Limited", "State Bank of India", "Kotak Mahindra Bank Limited", "IndusInd Bank Limited", "IDBI Bank Limited", "Bank of Baroda", "Canara Bank", "Punjab National Bank", "Yes Bank Limited", "TCS Limited", "HCL Technologies Limited", "Tech Mahindra Limited", "Cognizant", "Accenture", "Persistent Systems Limited", "Mindtree Limited", "Mphasis Limited", "Hexaware Technologies Limited", "Zensar Technologies Limited", "iGATE Global Solutions Limited", "Genpact Limited", "WNS Global Services Limited", "Tata Steel Limited", "Hindalco Industries Limited", "Grasim Industries Limited", "Ultratech Cement Limited", "Ambuja Cement Limited", "ACC Limited", "India Cements Limited", "Dalmia Bharat Limited", "Bajaj Finance Limited", "Bajaj Finserv Limited", "HDFC Limited"
+  ],
+  "multinational_corporations_global": [
+    "Abbott Laboratories", "Abarth", "Absolut", "Abu Dhabi National Oil Company", "Accenture", "Acensi", "Acer", "Ackermans", "Acor", "ACP", "Acronis", "ACS", "Actaeon", "ACTE", "Actinver", "Actium", "Acton", "ACTransit", "Actronics", "Actuarial Software", "Actylic", "Acuant", "Acuity", "Acumen", "Acupoll", "Acurio", "Acutelligence", "Acutis", "Acuvia", "ACX", "AD", "ADA Electronics", "Adactin", "Adage", "Adan Corporation", "Adaptation Technology", "Adaptive", "Adaptricity", "ADAR", "Adara", "Adara Group", "Adarsh", "Adasys", "Adatos", "Adatum", "Adaveyo", "Adawale", "Adaya", "Adaz", "Adbac", "Adback", "Adbacker", "Adbiggle", "Adblocker Plus", "AdBrite"
+  ],
+  "consulting_firms_global": [
+    "McKinsey & Company", "Boston Consulting Group", "Bain & Company", "Deloitte", "PricewaterhouseCoopers", "Ernst & Young", "KPMG", "Accenture", "Capgemini", "Atos", "NTT Data", "Fujitsu", "Infosys Consulting", "TCS Consulting", "Wipro Consulting", "HCL Consulting", "Tech Mahindra Consulting", "Cognizant Consulting", "Grant Thornton", "BDO", "CliftonLarsonAllen", "Crowe", "Moss Adams", "RSM", "CohnReznick", "CPA Australia", "KPMG Australia", "Grant Thornton Australia", "BDO Australia", "Deloitte Australia", "PwC Australia", "EY Australia", "Accenture Australia", "Capgemini Australia"
+  ],
+  "pharmaceutical_companies_global": [
+    "Johnson & Johnson", "Pfizer Inc", "Merck & Co", "AbbVie Inc", "Eli Lilly and Company", "Bristol Myers Squibb", "Amgen Inc", "Thermo Fisher Scientific", "Danaher Corporation", "Moderna Inc", "Regeneron Pharmaceuticals", "Gilead Sciences", "Biogen Inc", "Vertex Pharmaceuticals", "Celgene Corporation", "Allergan", "Teva Pharmaceutical Industries", "Mylan", "Sandoz", "Hikma Pharmaceuticals", "Perrigo Company", "Sun Pharmaceutical Industries", "Dr. Reddy's Laboratories", "Cipla Limited", "Lupin Limited", "Aurobindo Pharma", "Divi's Laboratories", "Natco Pharma", "Glenmark Pharmaceuticals", "Torrent Pharmaceuticals", "Alkem Laboratories", "Mankind Pharma", "Cadila Healthcare", "Zydus Cadila", "JB Chemicals & Pharmaceuticals", "Panacea Biotec"
+  ],
+  "automotive_global_oem": [
+    "Toyota Motor Corporation", "Volkswagen Group", "General Motors Company", "Ford Motor Company", "BMW Group", "Daimler AG", "Audi AG", "Porsche AG", "Honda Motor Co Ltd", "Nissan Motor Co Ltd", "Hyundai Motor Company", "Kia Corporation", "Renault SA", "PSA Group", "Fiat Chrysler Automobiles", "Stellantis", "Tesla Inc", "Geely-Volvo", "Geely Automobile", "Li Auto Inc", "NIO Inc", "XPeng Inc", "BYD Company Limited", "GAC Aion", "BAIC Motor", "Changan Automobile", "FAW Group", "Dongfeng Motor", "Great Wall Motor", "Lifan Technologies", "Chery Automobile", "Haval"
+  ],
+  "logistics_companies_global": [
+    "FedEx Corporation", "United Parcel Service", "UPS", "Deutsche Post DHL Group", "DHL", "Expeditors International", "CH Robinson Worldwide", "XPO Logistics", "J.B. Hunt Transport Services", "Knight Knight Transportation", "Werner Enterprises", "Schneider National", "ArcBest Corporation", "Old Dominion Freight Line", "YRC Worldwide", "Saia Inc", "USA Truck", "Universal Truckload Services", "Heartland Express", "Marten Transport", "Forward Air Corporation", "Air Methods Corporation", "Herc Rentals", "McGrath RentCorp", "H&E Equipment Services"
+  ],
+  "banking_financial_global": [
+    "JPMorgan Chase & Co", "Bank of America Corporation", "Citigroup Inc", "Wells Fargo & Company", "Goldman Sachs Group", "Morgan Stanley", "Bank of New York Mellon", "State Street Corporation", "Charles Schwab Corporation", "E*TRADE", "Interactive Brokers", "Fidelity Investments", "Vanguard Group", "BlackRock Inc", "Invesco Ltd", "State Street Global Advisors", "Allianz SE", "AXA SA", "Zurich Insurance Group", "Munich Re", "Swiss Re", "CHUBB Limited", "Berkshire Hathaway", "Markel Corporation", "White Mountains Insurance Group"
+  ],
+  "energy_companies_global": [
+    "ExxonMobil Corporation", "Chevron Corporation", "Royal Dutch Shell", "TotalEnergies SE", "BP plc", "Saudi Aramco", "Gazprom", "LUKOIL", "Rosneft", "Equinor", "ConocoPhillips", "Hess Corporation", "Occidental Petroleum", "Pioneer Natural Resources", "EOG Resources", "Valero Energy", "Marathon Petroleum", "Phillips 66", "HollyFrontier Corporation", "Tesoro Corporation", "Andeavor", "Delek US Holdings", "CVR Energy", "Par Pacific Holdings", "Sunoco LP"
+  ],
+  "telecom_global": [
+    "China Mobile Limited", "Vodafone Group PLC", "AT&T Inc", "Verizon Communications", "Deutsche Telekom AG", "Telefónica SA", "Orange SA", "BT Group PLC", "Swisscom AG", "Telenor ASA", "Telia Company AB", "Proximus Group", "Telecom Italia SpA", "Fastweb", "Telecom Corporation of New Zealand", "Spark New Zealand", "Chorus Limited", "Kordia Group", "eFunds International Limited", "Vodacom Group Limited", "Safaricom PLC", "MTN Group Limited"
+  ],
+  "fortune_500_us": [
+    "Walmart", "Amazon", "Berkshire Hathaway", "Alphabet", "Costco", "Exxon Mobil", "Chevron", "Saudi Aramco", "ICBC", "Bank of China", "PetroChina", "State Bank of India", "Toyota", "Volkswagen", "Daimler", "BMW", "HSBC", "JPMorgan Chase", "Bank of America", "Citigroup", "Wells Fargo", "Santander", "ING", "Mitsubishi UFJ", "Sumitomo Mitsui", "Mizuho Financial", "Microsoft", "Apple", "Meta", "Tesla", "Nvidia", "TSMC", "Broadcom", "AMD", "Qualcomm", "Intel", "Oracle", "Salesforce", "ServiceNow", "Workday", "Adobe", "Cisco", "Accenture", "Infosys", "Cognizant", "Capgemini", "NTT Data", "Atos", "Fujitsu", "Sony", "Samsung", "LG", "Hyundai", "Kia", "Honda", "Nissan", "Ford", "General Motors", "Tesla", "BYD", "Geely", "Nio", "Xpeng", "Li Auto"
+  ],
+  "tech_companies_large": [
+    "Google", "Facebook", "Apple", "Microsoft", "Amazon", "Tesla", "Nvidia", "Intel", "AMD", "Qualcomm", "Broadcom", "Applied Materials", "ASML", "Lam Research", "KLA-Tencor", "Oracle", "Salesforce", "Adobe", "Workday", "Accenture", "IBM", "HP Inc", "Dell Technologies", "Cisco Systems", "Juniper Networks", "Palo Alto Networks", "Fortinet", "CrowdStrike", "Zscaler", "SentinelOne", "Okta", "Auth0", "ServiceNow", "Atlassian", "Twilio", "Datadog", "Splunk", "Elastic", "Mongodb", "Redis", "Kafka", "Hadoop", "Spark", "TensorFlow", "PyTorch", "Keras", "Scikit-learn", "Pandas", "NumPy", "Matplotlib", "Plotly"
+  ],
+  "indian_companies_nse": [
+    "Reliance Industries Limited", "Tata Consultancy Services Limited", "HDFC Bank Limited", "Infosys Limited", "ICICI Bank Limited", "Hindustan Unilever Limited", "Indian Oil Corporation Limited", "Tata Motors Limited", "Maruti Suzuki India Limited", "Mahindra and Mahindra Limited", "Bajaj Auto Limited", "Hero MotoCorp Limited", "Wipro Limited", "Axis Bank Limited", "State Bank of India", "Kotak Mahindra Bank Limited", "IndusInd Bank Limited", "IDBI Bank Limited", "Bank of Baroda", "Canara Bank", "Punjab National Bank", "Yes Bank Limited", "ICICI Prudential Life Insurance Company Limited", "HDFC Life Insurance Company Limited", "Aditya Birla Sun Life Insurance Company Limited", "Max Life Insurance Company Limited", "Bajaj Finance Limited", "Bajaj Finserv Limited", "HDFC Limited", "ICICI Securities Limited", "Kotak Mahindra Bank Limited", "Axis Bank Limited", "Bharati Airtel Limited", "Vodafone Idea Limited", "JSW Steel Limited", "Hindalco Industries Limited", "Grasim Industries Limited", "Ultratech Cement Limited", "Ambuja Cement Limited", "ACC Limited", "India Cements Limited", "Dalmia Bharat Limited", "Lupin Limited", "Sun Pharmaceutical Industries Limited", "Dr. Reddy's Laboratories Limited", "Cipla Limited", "Aurobindo Pharma Limited"
+  ],
+  "eu_companies": [
+    "Siemens AG", "SAP SE", "Allianz SE", "BASF SE", "Mercedes-Benz Group AG", "BMW AG", "Volkswagen AG", "Audi AG", "Porsche AG", "Continental AG", "Bayerische Motoren Werke AG", "Daimler AG", "Bayer AG", "Sanofi SA", "Roche Holding AG", "Novartis AG", "Nestle SA", "Unilever PLC", "Shell PLC", "BP PLC", "TotalEnergies SE", "ENI SpA", "Equinor ASA", "Deutsche Telekom AG", "Orange SA", "Telefonica SA", "BT Group PLC", "Vodafone Group PLC", "Swisscom AG", "Telenor ASA", "Telia Company AB", "Proximus Group NV", "Telecom Italia SpA", "HSBC Holdings PLC", "Deutsche Bank AG", "Credit Suisse AG", "UBS AG", "Banco Santander SA", "ING Groep NV", "Rabobank", "ABN AMRO Bank NV", "Commerzbank AG", "UniCredit SpA", "Intesa Sanpaolo SpA", "BNP Paribas SA", "Societe Generale SA", "Barclays PLC", "Lloyd's Banking Group PLC", "HSBC Holdings PLC"
+  ],
+  "asia_companies": [
+    "Alibaba Group Holding Limited", "Tencent Holdings Limited", "Huawei Technologies Co Ltd", "ByteDance Ltd", "Xiaomi Corporation", "OPPO Electronics Corp Ltd", "Vivo Mobile Communication Co Ltd", "ZTE Corporation", "Meizu Technology Co Ltd", "Lenovo Group Limited", "JD.com Inc", "Pinduoduo Inc", "Meituan Dianping", "Baidu Inc", "NetEase Inc", "Bilibili Inc", "iQIYI Inc", "Weibo Corporation", "Didi Chuxing Technology Co", "Ctrip.com International Ltd", "Trip.com Group Limited", "Tuniu Corporation", "Qunar Cayman Islands Limited", "Toyota Motor Corporation", "Honda Motor Co Ltd", "Nissan Motor Co Ltd", "Subaru Corporation", "Mazda Motor Corporation", "Mitsubishi Motors Corporation", "Suzuki Motor Corporation", "Yamaha Motor Co Ltd", "Sony Group Corporation", "Nintendo Co Ltd", "Samsung Electronics Co Ltd", "LG Electronics Inc", "SK Hynix Inc", "Hyundai Motor Company", "Kia Corporation", "SoftBank Group Corp", "KDDI Corporation", "NTT DoCoMo Inc", "NTT Data Corporation", "Fujitsu Limited", "Panasonic Corporation", "Kyocera Corporation", "TDK Corporation", "Murata Manufacturing Co Ltd"
+  ],
+  "startups_unicorn": [
+    "Stripe Inc", "Canva Pty Ltd", "Figma Inc", "Notion Labs Inc", "Discord Inc", "Slack Technologies Inc", "Airbnb Inc", "Uber Technologies Inc", "Lyft Inc", "DoorDash Inc", "Instacart Inc", "Pinterest Inc", "Snap Inc", "Zoom Video Communications Inc", "DocuSign Inc", "Okta Inc", "Datadog Inc", "Splunk Inc", "Elastic NV", "JFrog Ltd", "HashiCorp Inc", "Databricks Inc", "Hugging Face Inc", "OpenAI LLC", "Anthropic PBC", "Character.AI Inc", "Midjourney Inc", "Stability AI Ltd", "Scale AI Inc", "Labelbox Inc", "Retool Inc", "Supabase Inc", "Modal Labs Inc", "Anyscale Inc", "Together AI Inc", "Replicate Inc", "Weights & Biases Inc", "Wandb", "Comet ML Inc", "Neptune AI Inc", "Tecton Inc", "Feast", "Great Expectations Labs", "Dbt Labs Inc", "Materialize Inc", "Univocity Inc", "Starburst Data Inc", "Dremio Corp", "Rockset Inc", "DataStax Inc", "Aerospike Inc", "VoltDB Inc", "MemSQL Inc", "SingleStore Inc"
+  ],
+  "insurance_global": [
+    "Berkshire Hathaway Inc", "UnitedHealth Group Incorporated", "Cigna Corporation", "Humana Inc", "Anthem Inc", "Aetna Inc", "CVS Health Corporation", "Centene Corporation", "Molina Healthcare Inc", "Elevance Health Inc", "Reinsurance Group of America", "Assurant Inc", "Arch Capital Group Ltd", "RenaissanceRe Holdings Ltd", "XL Capital Ltd", "Everest Re", "Axis Capital Holdings Limited", "Ace Limited", "Chubb Limited", "Hartford Financial Services Group Inc", "Travelers Companies Inc", "Allstate Corporation", "Progressive Corporation", "GEICO", "State Farm Mutual Automobile Insurance Company", "Nationwide Mutual Insurance Company", "USAA", "American Family Mutual Insurance Company", "Liberty Mutual Holding Company", "Allianz SE", "Munich Re", "Swiss Re", "Zurich Insurance Group Ltd"
+  ],
+  "manufacturing_global": [
+    "General Electric Company", "Siemens AG", "Hitachi Ltd", "ThyssenKrupp AG", "Eaton Corporation plc", "Emerson Electric Co", "Fortive Corporation", "Illinois Tool Works Inc", "Ingersoll Rand Inc", "Johnson Controls International plc", "Lear Corporation", "Parker Hannifin Corporation", "Roper Technologies Inc", "Stanley Black & Decker Inc", "Tenneco Inc", "Timken Company", "Applied Industrial Technologies Inc", "Actuant Corporation", "Astronics Corporation", "Badger Meter Inc", "Ballard Power Systems Inc", "Barnes Group Inc", "BorgWarner Inc", "Boralex Inc", "Box Inc", "SPX Corporation", "AMP Limited", "Arcam AB", "Arista Networks Inc", "ASM International NV", "ATMI Inc", "Astronautics Corporation of America", "Astronics Corporation", "Ats Automation Tooling Systems Inc"
+  ],
+  "retail_global": [
+    "Amazon.com Inc", "Walmart Inc", "Costco Wholesale Corporation", "Target Corporation", "The Home Depot Inc", "Lowes Companies Inc", "Best Buy Co Inc", "Bed Bath & Beyond Inc", "Five Below Inc", "Rite Aid Corporation", "Walgreens Boots Alliance Inc", "CVS Health Corporation", "Dollar General Corporation", "Dollar Tree Inc", "Family Dollar", "Foot Locker Inc", "Dick's Sporting Goods Inc", "Williams-Sonoma Inc", "Gap Inc", "Kohl's Corporation", "Macys Inc", "Nordstrom Inc", "LVMH Moet Hennessy Louis Vuitton", "Kering SA", "Richemont", "Hermès", "Burberry Group PLC", "Coach Inc", "Ralph Lauren Corporation", "Tommy Hilfiger", "Calvin Klein", "Uniqlo", "H&M Hennes & Mauritz AB", "Inditex SA", "Zara", "Mango", "Asos PLC", "Boohoo Group PLC", "JD Sports Fashion PLC", "Sports Direct International PLC"
+  ],
+  "healthcare_global": [
+    "UnitedHealth Group Incorporated", "Anthem Inc", "Cigna Corporation", "Humana Inc", "Aetna Inc", "CVS Health Corporation", "Centene Corporation", "Molina Healthcare Inc", "Elevance Health Inc", "Johnson & Johnson", "Pfizer Inc", "Merck & Co Inc", "AbbVie Inc", "Eli Lilly and Company", "Bristol Myers Squibb Company", "Amgen Inc", "Thermo Fisher Scientific Inc", "Danaher Corporation", "Moderna Inc", "Regeneron Pharmaceuticals Inc", "Gilead Sciences Inc", "Biogen Inc", "Vertex Pharmaceuticals Incorporated", "Celgene Corporation", "Allergan Inc", "Teva Pharmaceutical Industries Limited", "Mylan NV", "Sandoz Novartis", "Hikma Pharmaceuticals PLC", "Perrigo Company plc", "Prestige Consumer Healthcare Inc", "Revlon Inc", "ELF Beauty Inc", "Coty Inc", "Inter Parfums Inc", "Estee Lauder Companies Inc", "Coty Inc", "Elanco Animal Health Incorporated", "Zoetis Inc"
+  ],
+  "companies_1": [
+    "3M Company", "3Com Corporation", "AAFES", "AAR Corp", "AAPL", "ABB Ltd", "ABK", "ACAC", "ACAD", "ACED", "ACH", "ACHR", "ACI", "ACLS", "ACM", "ACR", "ACRS", "ACT", "ACTG", "ACTS", "ACWX", "ACY", "ADA", "ADAL", "ADAQ", "ADAS", "ADAT", "ADBE", "ADC", "ADCT", "ADD", "ADDL", "ADDM", "ADDN", "ADDO", "ADDP", "ADDS", "ADDT", "ADDU", "ADDV", "ADDW", "ADDX", "ADDY", "ADDZ", "ADE", "ADEA", "ADEB", "ADEC", "ADED", "ADEE", "ADEF", "ADEG", "ADEH", "ADEI", "ADEJ", "ADEK", "ADEL", "ADEM", "ADEN", "ADEO", "ADEP", "ADEQ", "ADER", "ADES", "ADET", "ADEU", "ADEV", "ADEW", "ADEX", "ADEY", "ADEZ"
+  ],
+  "companies_2": [
+    "ADF", "ADFA", "ADFB", "ADFC", "ADFD", "ADFE", "ADFF", "ADFG", "ADFH", "ADFI", "ADFJ", "ADFK", "ADFL", "ADFM", "ADFN", "ADFO", "ADFP", "ADFQ", "ADFR", "ADFS", "ADFT", "ADFU", "ADFV", "ADFW", "ADFX", "ADFY", "ADFZ", "ADG", "ADGA", "ADGB", "ADGC", "ADGD", "ADGE", "ADGF", "ADGG", "ADGH", "ADGI", "ADGJ", "ADGK", "ADGL", "ADGM", "ADGN", "ADGO", "ADGP", "ADGQ", "ADGR", "ADGS", "ADGT", "ADGU", "ADGV", "ADGW", "ADGX", "ADGY", "ADGZ"
+  ],
+  "companies_3": [
+    "ADH", "ADHA", "ADHB", "ADHC", "ADHD", "ADHE", "ADHF", "ADHG", "ADHH", "ADHI", "ADHJ", "ADHK", "ADHL", "ADHM", "ADHN", "ADHO", "ADHP", "ADHQ", "ADHR", "ADHS", "ADHT", "ADHU", "ADHV", "ADHW", "ADHX", "ADHY", "ADHZ", "ADI", "ADIA", "ADIB", "ADIC", "ADID", "ADIE", "ADIF", "ADIG", "ADIH", "ADII", "ADIJ", "ADIK", "ADIL", "ADIM", "ADIN", "ADIO", "ADIP", "ADIQ", "ADIR", "ADIS", "ADIT", "ADIU", "ADIV", "ADIW", "ADIX", "ADIY", "ADIZ"
+  ],
+  "companies_4": [
+    "ADJ", "ADJA", "ADJB", "ADJC", "ADJD", "ADJE", "ADJF", "ADJG", "ADJH", "ADJI", "ADJJ", "ADJK", "ADJL", "ADJM", "ADJN", "ADJO", "ADJP", "ADJQ", "ADJR", "ADJS", "ADJT", "ADJU", "ADJV", "ADJW", "ADJX", "ADJY", "ADJZ", "ADK", "ADKA", "ADKB", "ADKC", "ADKD", "ADKE", "ADKF", "ADKG", "ADKH", "ADKI", "ADKJ", "ADKK", "ADKL", "ADKM", "ADKN", "ADKO", "ADKP", "ADKQ", "ADKR", "ADKS", "ADKT", "ADKU", "ADKV", "ADKW", "ADKX", "ADKY", "ADKZ"
+  ],
+  "companies_5": [
+    "ADL", "ADLA", "ADLB", "ADLC", "ADLD", "ADLE", "ADLF", "ADLG", "ADLH", "ADLI", "ADLJ", "ADLK", "ADLL", "ADLM", "ADLN", "ADLO", "ADLP", "ADLQ", "ADLR", "ADLS", "ADLT", "ADLU", "ADLV", "ADLW", "ADLX", "ADLY", "ADLZ", "ADM", "ADMA", "ADMB", "ADMC", "ADMD", "ADME", "ADMF", "ADMG", "ADMH", "ADMI", "ADMJ", "ADMK", "ADML", "ADMM", "ADMN", "ADMO", "ADMP", "ADMQ", "ADMR", "ADMS", "ADMT", "ADMU", "ADMV", "ADMW", "ADMX", "ADMY", "ADMZ"
+  ],
+  "companies_6": [
+    "ADN", "ADNA", "ADNB", "ADNC", "ADND", "ADNE", "ADNF", "ADNG", "ADNH", "ADNI", "ADNJ", "ADNK", "ADNL", "ADNM", "ADNN", "ADNO", "ADNP", "ADNQ", "ADNR", "ADNS", "ADNT", "ADNU", "ADNV", "ADNW", "ADNX", "ADNY", "ADNZ", "ADO", "ADOA", "ADOB", "ADOC", "ADOD", "ADOE", "ADOF", "ADOG", "ADOH", "ADOI", "ADOJ", "ADOK", "ADOL", "ADOM", "ADON", "ADOO", "ADOP", "ADOQ", "ADOR", "ADOS", "ADOT", "ADOU", "ADOV", "ADOW", "ADOX", "ADOY", "ADOZ"
+  ],
+  "companies_7": [
+    "ADP", "ADPA", "ADPB", "ADPC", "ADPD", "ADPE", "ADPF", "ADPG", "ADPH", "ADPI", "ADPJ", "ADPK", "ADPL", "ADPM", "ADPN", "ADPO", "ADPP", "ADPQ", "ADPR", "ADPS", "ADPT", "ADPU", "ADPV", "ADPW", "ADPX", "ADPY", "ADPZ", "ADQ", "ADQA", "ADQB", "ADQC", "ADQD", "ADQE", "ADQF", "ADQG", "ADQH", "ADQI", "ADQJ", "ADQK", "ADQL", "ADQM", "ADQN", "ADQO", "ADQP", "ADQQ", "ADQR", "ADQS", "ADQT", "ADQU", "ADQV", "ADQW", "ADQX", "ADQY", "ADQZ"
+  ],
+  "companies_8": [
+    "ADR", "ADRA", "ADRB", "ADRC", "ADRD", "ADRE", "ADRF", "ADRG", "ADRH", "ADRI", "ADRJ", "ADRK", "ADRL", "ADRM", "ADRN", "ADRO", "ADRP", "ADRQ", "ADRR", "ADRS", "ADRT", "ADRU", "ADRV", "ADRW", "ADRX", "ADRY", "ADRZ", "ADS", "ADSA", "ADSB", "ADSC", "ADSD", "ADSE", "ADSF", "ADSG", "ADSH", "ADSI", "ADSJ", "ADSK", "ADSL", "ADSM", "ADSN", "ADSO", "ADSP", "ADSQ", "ADSR", "ADSS", "ADST", "ADSU", "ADSV", "ADSW", "ADSX", "ADSY", "ADSZ"
+  ],
+  "companies_9": [
+    "ADT", "ADTA", "ADTB", "ADTC", "ADTD", "ADTE", "ADTF", "ADTG", "ADTH", "ADTI", "ADTJ", "ADTK", "ADTL", "ADTM", "ADTN", "ADTO", "ADTP", "ADTQ", "ADTR", "ADTS", "ADTT", "ADTU", "ADTV", "ADTW", "ADTX", "ADTY", "ADTZ", "ADU", "ADUA", "ADUB", "ADUC", "ADUD", "ADUE", "ADUF", "ADUG", "ADUH", "ADUI", "ADUJ", "ADUK", "ADUL", "ADUM", "ADUN", "ADUO", "ADUP", "ADUQ", "ADUR", "ADUS", "AVUT", "ADUV", "ADUW", "ADUX", "ADUY", "ADUZ"
+  ],
+  "companies_10": [
+    "ADV", "ADVA", "ADVB", "ADVC", "ADVD", "ADVE", "ADVF", "ADVG", "ADVH", "ADVI", "ADVJ", "ADVK", "ADVL", "ADVM", "ADVN", "ADVO", "ADVP", "ADVQ", "ADVR", "ADVS", "ADVT", "ADVU", "ADVV", "ADVW", "ADVX", "ADVY", "ADVZ", "ADW", "ADWA", "ADWB", "ADWC", "ADWD", "ADWE", "ADWF", "ADWG", "ADWH", "ADWI", "ADWJ", "ADWK", "ADWL", "ADWM", "ADWN", "ADWO", "ADWP", "ADWQ", "ADWR", "ADWS", "ADWT", "ADWU", "ADWV", "ADWW", "ADWX", "ADWY", "ADWZ"
+  ],
+  "travel_hospitality": [
+    "Marriott International Inc", "Hilton Hotels Corporation", "Hyatt Hotels Corporation", "Wyndham Hotels & Resorts", "Choice Hotels International", "Best Western International", "IHG Hotels & Resorts", "InterContinental Hotels Group", "Accor SA", "Radisson Hotel Group", "Club Med", "Airbnb Inc", "Booking.com BV", "Expedia Group Inc", "Trip.com Group Limited", "TUI Group", "Thomas Cook Group", "Carnival Corporation", "Royal Caribbean Group", "Norwegian Cruise Line", "Disney Cruise Line", "Seabourn Cruise Line", "Regent Seven Seas", "Crystal Cruises", "Silversea Cruises", "Oceania Cruises", "Windstar Cruises", "River Cruises", "Uniworld Boutique River Cruises", "Uniworld", "AmaWaterways", "Viking River Cruises", "Tauck Travel"
+  ],
+  "aerospace_defense_us": [
+    "Lockheed Martin Corporation", "Boeing Company", "Northrop Grumman Corporation", "Raytheon Technologies Corporation", "General Dynamics Corporation", "Huntington Ingalls Industries Inc", "L3Harris Technologies Inc", "Orbital ATK Inc", "Orbital Infrastructure Group", "SpaceX", "Blue Origin LLC", "Sierra Space Corporation", "Sierra Nevada Corporation", "Firefly Aerospace", "Relativity Space", "Axiom Space", "Made In Space", "Rocket Lab USA Inc", "Virgin Orbit LLC", "Axiom", "Space Perspective", "World View Enterprises", "Zero2Infinity", "StrategicSpace", "Northern Sky Research", "Space Foundation", "Space Technology Legal Forum"
+  ],
+  "food_beverage_global": [
+    "Nestle SA", "PepsiCo Inc", "Coca-Cola Company", "Anheuser-Busch InBev SA", "Heineken Holding NV", "Danone SA", "Mondelez International Inc", "General Mills Inc", "Kellogg Company", "Kraft Heinz Company", "Conagra Brands Inc", "B&G Foods Inc", "J.M. Smucker Company", "Hormel Foods Corporation", "Bunge Limited", "Archer-Daniels-Midland Company", "Cargill Inc", "Tyson Foods Inc", "Pilgrim's Pride Corporation", "Sanderson Farms Inc", "Perdue Farms", "Foster Farms", "Bell & Evans", "Harvestland", "Organic Valley", "Horizon", "Starbucks Corporation", "Dunkin Brands Group Inc", "Restaurant Brands International", "McDonald's Corporation", "Yum China Holdings Inc", "Dine Global", "Jollibee Foods Corporation", "Chowking", "Greenwich", "Mang Inasal", "Red Ribbon"
+  ],
+  "chemical_materials": [
+    "DuPont de Nemours Inc", "Dow Inc", "Celanese Corporation", "Huntsman Corporation", "Albemarle Corporation", "FMC Corporation", "Air Products and Chemicals Inc", "Linde PLC", "Praxair Inc", "Tronox Holdings plc", "Chemours Company", "Eastman Chemical Company", "Valvoline Inc", "Axalta Coating Systems", "PPG Industries Inc", "Sherwin-Williams Company", "Benjamin Moore", "Valspar", "RPM International Inc", "Carlyle Group", "Houghton International Inc", "Quaker Houghton", "Henkel AG", "Reckitt Benckiser Group", "Church & Dwight Co Inc", "Clorox Company", "SC Johnson & Son", "Ecolab Inc", "Nalco Chemical Company", "Sealed Air Corporation", "Berry Global Group Inc", "Huhtamaki Oyj"
+  ],
+  "utility_companies": [
+    "NextEra Energy Inc", "Duke Energy Corporation", "American Electric Power Company Inc", "Dominion Energy Inc", "Southern Company", "Exelon Corporation", "American Water Works Company Inc", "Atmos Energy Corporation", "Oge Energy Corp", "Equitable Gas Company", "Sempra Energy", "WEC Energy Group Inc", "Consolidated Edison Inc", "Alliant Energy Corporation", "DTE Energy Company", "Xcel Energy Inc", "Public Service Enterprise Group", "CMS Energy Corporation", "Entergy Corporation", "PPL Corporation", "Edison International", "Southern California Edison", "Ameren Corporation", "IDACORP Inc", "NorthWestern Corporation", "Pinnacle West Capital", "Portland General Electric Company", "Avista Corporation", "El Paso Electric Company", "Empire District Electric Company"
+  ],
+  "agriculture_food_production": [
+    "Archer-Daniels-Midland Company", "Bunge Limited", "Cargill Inc", "Corteva Agriscience", "Deere & Company", "AGCO Corporation", "CNH Industrial NV", "Valmont Industries", "IDEX Corporation", "Pentair plc", "Badger Meter Inc", "Franklin Electric Co Inc", "Sensient Technologies Corporation", "International Flavors & Fragrances", "Kerry Group plc", "Tate & Lyle PLC", "Associated British Foods PLC", "Ingredion Incorporated", "Darling Ingredients Inc", "Merit Functional Foods", "Agri-Insurance Limited", "Farmland Partners Inc", "Gladstone Land Corporation", "Farmland Partners Inc", "Alico Inc", "Schultze Asset Management", "Timberland Bancorp Inc", "Blue Whale Acquisition Corp"
+  ],
+  "mining_metals": [
+    "Newmont Mining Corporation", "Barrick Gold Corporation", "Agnico Eagle Mines Limited", "Eldorado Gold Corporation", "Kinross Gold Corporation", "Wheaton Precious Metals", "Pan American Silver Corp", "Antero Resources Corporation", "EQT Corporation", "Comstock Mining Inc", "Golden Minerals Company", "International Tower Hill Mines", "Klondex Mines Limited", "Pretium Resources Inc", "Scorpio Gold Corporation", "Alleghany Corporation", "Foresight Partners", "Asante Gold Corporation", "Constantine Metal Resources Ltd", "Great Panther Mining Limited", "Avino Silver & Gold Mines Ltd", "SilverCrest Metals Inc", "Sunshine Mining Company", "Hecla Mining Company", "Coeur d'Alene Mines Corporation", "Pan American Silver", "Endeavour Silver Corp"
+  ],
+  "waste_environmental": [
+    "Waste Management Inc", "Republic Services Inc", "Waste Connections Inc", "Casella Waste Systems Inc", "Swana", "GFL Environmental Inc", "Covanta Energy Corporation", "Advanced Energy United", "Renewable Energy Group", "Noxso Corporation", "Covanta Inc", "Waste360", "Waste Dive", "Solid Waste Association", "National Waste Association", "American Environmental Energy", "Envirotech Services", "Jaco Electronics", "Greenway Technologies", "Ecosphere Technologies", "Pyroelectric Composting", "Clean Energy Fuels", "Fuel Systems Solutions", "Nox Energy", "Waste Heat Recovery"
+  ],
+  "indian_companies_mid_tier": [
+    "Bosch Limited", "Bosch India", "Bajaj Electricals Limited", "Crompton Greaves Consumer Electricals Limited", "Havells India Limited", "V-Guard Industries Limited", "Anchor by Panasonic", "Legrand", "Legrand India", "Schneider Electric India", "Eaton Industries India", "ABB India Limited", "Siemens Limited", "Kirloskar Electric Company", "Bharat Heavy Electricals Limited", "Bharat Electronics Limited", "Kalindee Rail Nirman Limited", "Precision Camshafts Limited", "Sona BLW Precision Forgings Limited", "Endurance Technologies Limited", "Motherson Sumi Systems Limited", "Motherson Group", "Hero MotoCorp Limited", "Bajaj Auto Limited", "TVS Motor Company Limited", "Honda Motorcycle and Scooter India Limited", "Bajaj Auto Financiers Limited", "Shriram Automall India Limited"
+  ],
+  "professional_services": [
+    "EY-Parthenon", "Deloitte Consulting LLP", "McKinsey & Company Inc", "Boston Consulting Group Inc", "Bain & Company Inc", "Goldman Sachs Group Inc", "Morgan Stanley", "Bank of America Merrill Lynch", "Barclays Capital", "Deutsche Bank", "Credit Suisse", "UBS", "Lazard Ltd", "Evercore Inc", "Perkins Coie LLP", "Sullivan & Cromwell LLP", "Skadden Arps Slate Meagher & Flom LLP", "Wachtell Lipton Rosen & Katz", "Cravath Swaine & Moore LLP", "Simpson Thacher & Bartlett LLP", "Paul Hastings LLP", "Davis Polk & Wardwell LLP", "Cleary Gottlieb Steen & Hamilton LLP", "Arnold & Porter Kaye Scholer LLP", "Latham & Watkins LLP", "Baker & McKenzie LLP", "Wilson Sonsini Goodrich & Rosati PC", "Fenwick & West LLC", "Cooley LLP", "O'Melveny & Myers LLP", "Orrick Herrington & Sutcliffe LLP"
+  ],
+  "media_entertainment_companies": [
+    "Walt Disney Company", "Netflix Inc", "Amazon.com Inc", "Apple Inc", "Alphabet Inc", "Meta Platforms Inc", "Comcast Corporation", "Charter Communications Inc", "Fox Corporation", "Paramount Global", "Warner Bros Discovery Inc", "Sony Group Corporation", "Warner Music Group", "Universal Music Group", "Sony Music Entertainment", "Vivendi SE", "Spotify Technology SA", "Pandora Media Inc", "SiriusXM Holdings Inc", "iHeartMedia Inc", "Cumulus Media Inc", "Emmis Communications", "Entercom Communications", "iHeartRadio", "Podcast Network", "Spotify Studios", "Netflix Studios", "Amazon Studios", "Apple TV+", "Disney+", "Hulu", "Max", "Paramount+", "Peacock", "Crunchyroll"
+  ],
+  "global_tech_innovation": [
+    "Google DeepMind", "OpenAI", "Anthropic", "Stability AI", "Hugging Face", "Scale AI", "Labelbox", "Snorkel AI", "Weights & Biases", "Comet ML", "Neptune AI", "Tecton", "Feature Store", "Feast", "Great Expectations", "dbt Labs", "Materialize", "Databricks", "Palantir Technologies", "C3 Metrics", "Palantir Gotham", "Palantir Apollo", "Clearview AI", "Orbital Insight", "Orbital Mechanics", "Planet Labs", "Maxar Technologies", "Axiom Space", "Made In Space", "Relativity Space", "Rocket Lab", "Virgin Orbit"
+  ],
+  "digital_transformation_era": [
+    "Salesforce Inc", "ServiceNow Inc", "Workday Inc", "Adobe Inc", "Microsoft Corporation", "Atlassian Corporation", "Slack Technologies", "Figma Inc", "Notion Labs", "Asana Inc", "Monday.com Ltd", "ClickUp", "Airtable Inc", "Zapier Inc", "Make", "Amplitude Inc", "Mixpanel Inc", "Segment Inc", "mParticle Inc", "Heap Inc", "Fullstory Inc", "LogRocket Inc", "LaunchDarkly Inc", "Split.io", "Optimizely", "VWO", "Unbounce", "Leadpages", "Instapage", "Landingi"
+  ],
+  "miscellaneous_major": [
+    "Caterpillar Inc", "John Deere", "Deere & Company", "Agco Corporation", "CNH Industrial NV", "Valmont Industries", "IDEX Corporation", "Pentair plc", "Badger Meter Inc", "Xylem Inc", "ITT Inc", "Graco Inc", "Dover Corporation", "Crane Co", "Franklin Electric Co Inc", "Roper Technologies", "SPX Corporation", "Actuant Corporation", "Astronics Corporation", "Barnes Group Inc", "BorgWarner Inc", "Curtiss-Wright Corporation", "Esterline Technologies", "Florida Turbine Technologies", "Ge Aircraft Engines", "Ge Power", "Ge Renewable Energy", "Ge Healthcare", "Ge Digital", "Ge Lighting", "Rexnord Corporation", "Rexnord Motion Control", "Boston Gear", "Falk Corporation", "Marmon Holdings", "Marmon Industrial", "Marmon Transportation Systems", "Marmon Keystone", "Marmon Utility", "Marmon Aerospace", "Marmon Edco Technologies"
+  ],
+  "additional_companies_1": [
+    "ArcelorMittal SA", "NLMK", "Severstal", "MMK", "Gazprom Neft", "Surgutneftegaz", "Tatneft", "Novatek", "Yamal LNG", "Sakhalin Energy", "Transneft", "Transneft Siberia", "Surgutneftegaz Export", "Russian Railways", "RZD", "Aeroflot", "S7 Airlines", "Transaero", "Siberia Airlines", "Ural Airlines", "UTair", "Rostov-on-Don Airlines", "Sakhalin Airlines", "Vladivostok Air", "Yakutia Airlines", "KrasAir", "Igarka Airlines", "Yenisei Airlines", "Krasnoyarsk Avialines", "Altai Airlines"
+  ],
+  "additional_companies_2": [
+    "GlaxoSmithKline plc", "AstraZeneca PLC", "Novo Nordisk A/S", "Roche Holding AG", "Novartis AG", "Sanofi SA", "Boehringer Ingelheim", "Bayer AG", "Merck KGaA", "Lonza Group", "Rentschler Biopharma", "BASF SE", "Evonik Industries AG", "Clariant AG", "Lanxess AG", "Covestro AG", "Evonik Specialty Chemicals", "Huntsman Corporation", "Arkema SA", "Solvay SA", "Crystalline Materials", "Dow Inc", "DuPont de Nemours Inc", "Eastman Chemical Company", "Albemarle Corporation", "Chemours Company"
+  ],
+  "additional_companies_3": [
+    "Unilever PLC", "Nestlé SA", "Procter & Gamble Co", "Colgate-Palmolive Company", "Henkel AG", "Reckitt Benckiser Group PLC", "Church & Dwight Co Inc", "Clorox Company", "SC Johnson & Son", "Ecolab Inc", "Sealed Air Corporation", "Berry Global Group Inc", "Huhtamaki Oyj", "Bemis Company", "Poly Packaging Films", "Stoneridge Inc", "TE Connectivity Ltd", "Amphenol Corporation", "Molex LLC", "Phoenix Contact", "Weidmuller", "Harting", "Anderson Connectors", "Edac Technologies", "Samtec Inc", "Hirose Electric"
+  ],
+  "additional_companies_4": [
+    "Smurfit WestRock", "RoI", "International Paper Company", "Georgia-Pacific LLC", "Weyerhaeuser Company", "Domtar Corporation", "Canfor Corporation", "Catalyst Paper", "Sappi Limited", "UPM-Kymmene Oyj", "Stora Enso Oyj", "Norske Skog ASA", "Mondi PLC", "Bouygues SA", "Vinci SA", "Eiffage SA", "Fayat Group", "Ferrovial SE", "ACS Group", "Acciona SA", "Sacyr Group", "Corvium Group", "Obrascon Huarte Lain", "Tecnipar", "Midas Holdings"
+  ],
+  "additional_companies_5": [
+    "Zoetis Inc", "Elanco Animal Health Incorporated", "Merck Animal Health", "Boehringer Ingelheim Animal Health", "Ceva Santé Animale", "Virbac SA", "Dechra Pharmaceuticals PLC", "Perrigo Company plc", "Prestige Consumer Healthcare Inc", "Revlon Inc", "ELF Beauty Inc", "Coty Inc", "Inter Parfums Inc", "Estee Lauder Companies Inc", "Coty Beauty", "Coty Luxury", "Covergirl", "Rimmel London", "Wella", "Ghd", "Tresemmé", "Shea Moisture", "Carol's Daughter", "Black Opal", "Max Factor", "Bourjois", "Adidas Beauty", "Playboy Beauty"
+  ],
+  "additional_companies_6": [
+    "Essity Aktiebolag", "Sca", "Kimberly-Clark Corporation", "Procter & Gamble", "Unicharm Corporation", "Kao Corporation", "Henkel AG", "Church & Dwight Co Inc", "Clorox Company", "Reckitt Benckiser", "SC Johnson & Son", "Ecolab Inc", "Sealed Air Corporation", "Amphenol Corporation", "TE Connectivity Ltd", "Molex LLC", "Phoenix Contact", "Weidmuller", "Harting Technology", "Anderson Connectors", "Hirose Electric", "Samtec Inc", "Edac Technologies", "Glenair Inc", "Radiall", "Souriau", "Lapp Group", "Lapp Kabel", "Lapp Kabeltechnik", "Bisco Industries"
+  ],
+  "additional_companies_7": [
+    "3M Company", "Eaton Corporation plc", "Emerson Electric Co", "Fortive Corporation", "Illinois Tool Works Inc", "Ingersoll Rand Inc", "Johnson Controls International plc", "Lear Corporation", "Parker Hannifin Corporation", "Roper Technologies Inc", "Stanley Black & Decker Inc", "Tenneco Inc", "Timken Company", "Actuant Corporation", "Astronics Corporation", "Barnes Group Inc", "BorgWarner Inc", "Curtiss-Wright Corporation", "Esterline Technologies", "Mechdyne Corporation", "Applied Industrial Technologies", "Badger Meter Inc", "Xylem Inc", "ITT Inc", "Graco Inc", "Dover Corporation", "Crane Co", "Franklin Electric Co Inc"
+  ],
+  "additional_companies_8": [
+    "Generac Holdings Inc", "Kohler Co", "Briggs & Stratton", "MTD Products", "Ariens Company", "Husqvarna Group", "AGCO Corporation", "John Deere", "CNH Industrial NV", "Valmont Industries", "Idex Corporation", "Pentair plc", "Badger Meter Inc", "Xylem Inc", "Itт Inc", "Graco Inc", "Dover Corporation", "Crane Co", "Franklin Electric Co Inc", "Roper Technologies", "Spx Corporation", "Actuant Corporation", "Astronics Corporation", "Simmons Foods", "Wayne Water Systems", "Watts Water Technologies", "Flowserve Corporation", "Esco Technologies", "Badger Meter", "Meter Devices", "Measurement Specialties"
+  ],
+  "additional_companies_9": [
+    "Howmet Aerospace", "Huntington Ingalls Industries", "Esterline Technologies", "Magellan Aerospace", "Ducommun Incorporated", "Tradewinds Climate Systems", "Anixter International", "Tech Data Corporation", "Arrow Electronics", "Heilind Industries", "Applied Industrial Technologies", "Gpc", "Auto Warehousing", "Wesco International", "Sensormatic Electronics", "Wyle Electronics", "Heilind Industries", "Kent Electronics", "Wesco International", "Sensormatic", "Russ Tobin's", "Wyle Electronics Stores", "Intermark Electronics", "Sensormatic Fire Control", "Ambac International", "Ambac Inc", "Assured Guarantee Corporation", "Assured Guaranty Ltd"
+  ],
+  "additional_companies_10": [
+    "Assured Guaranty Ltd", "Assured Guaranty Municipal Corp", "Assured Guaranty (Europe) PLC", "Blue Capital Reinsurance", "Aspen Insurance Holdings", "Axis Capital Holdings", "Arch Capital Group", "Everest Re", "Everest Insurance", "Everest Reinsurance", "White Mountains Insurance Group", "Marmon Holdings", "Alleghany Corporation", "Fidelity & Deposit Co", "American Financial Group", "Safeco Insurance", "Insuremax", "American Enterprise Group", "Pricewaterhousecoopers", "Ernest & Young", "Accenture Plc", "Booz Allen Hamilton", "Mckinsey & Company", "Boston Consulting Group", "Bain & Company Inc", "Mercer Llc", "Willis Towers Watson", "Aon Plc", "Marshalls Broker", "Arthur J Gallagher"
+  ],
+  "additional_indian_major": [
+    "Ashok Leyland", "Force Motors", "Ather Energy", "Ather Technologies", "Simple Energy", "Scooty", "Yo Bikes", "Bounce Scooter Sharing", "Bounce", "Vogo Mobility", "Vogo", "Ola Cabs", "Ola", "Uber India", "Green Mobility", "ZoomCar", "GreenCell Mobility", "GreenCell Cabs", "BluSmart Mobility", "BluSmart Cabs", "Rapido", "Rapido Auto", "Bajaj Transportation", "BajajTrans", "Eicher Motors", "Eicher", "Eicher Defence and Aerospace", "Tata Daewoo", "Eicher Trucks", "Ashok Leyland", "Eicher Tractors", "Eicher Buses"
+  ],
+  "additional_indian_major_2": [
+    "TVS Supply Chain Solutions", "TVS Logistics", "Astral Poly Technik", "Astral Pipes", "Asian Paints India", "Kansai Nerolac Paints", "Berger Paints India", "Jotun Paints", "Nippon Paint", "Bajaj Paint", "Akzo Nobel", "ICI Paints", "Sherwin-Williams", "Ultratech Cement", "Ambuja Cement", "ACC Limited", "India Cements", "Dalmia Bharat Cement", "Shree Cement", "Jaiprakash Associates", "JP Infrastructure", "Jaiprakash Power Ventures", "JP Associates", "Unitech Limited", "Nila Infrastructures", "L&T Infrastructure Development Projects", "L&T Infrastructure Finance Company", "KMC Constructions", "Larsen & Toubro", "L&T Hydrocarbon Engineering"
+  ],
+  "additional_indian_major_3": [
+    "Adani Green Energy", "Adani Power", "Adani Transmission", "Adani Enterprises", "Adani Ports and Special Economic Zone", "Adani Total Gas", "Adani Wilmar", "Adani Logistics", "Adani International Container Terminal", "Adani Defence and Aerospace", "Adani Digital Labs", "Adani Foundation", "Gautam Adani Group", "Gautam Adani", "Adani Renewable Energy", "Adani Wind Power", "Adani Solar Power", "Adani Renewable Power", "Adani Exports", "Adani Agro Logistics", "Adani Logistics Limited", "Adani Shipping", "Adani International", "Adani Group Companies", "Adani Mining", "Adani Petrochemicals"
+  ],
+  "additional_indian_major_4": [
+    "Bharti Airtel", "Airtel Payments Bank", "Airtel Money", "Airtel DTH", "Airtel Broadband", "Airtel Xstream", "Airtel Black", "Airtel Postpaid", "Airtel Prepaid", "Airtel Business", "Airtel Enterprise", "Airtel Defense Services", "Airtel Government Solutions", "Airtel Healthcare", "Airtel Education", "Airtel Financial Services", "Airtel Capital", "Bharati Infratel", "Infratel Limited", "Bharti SoftBank", "Hathway Broadband", "Hathway Cable", "Den Networks", "Den Broadband", "Commonwealth Internet Limited", "Commonwealth Telecom", "Commonwealth Broadband", "Commonwealth Fiber Optics", "Commonwealth Cable", "Commonwealth DTH"
+  ],
+  "additional_indian_major_5": [
+    "Vodafone Idea Limited", "Vi Brand", "Vi Prepaid", "Vi Postpaid", "Vi Business", "Vi Broadband", "Vi FTTH", "Vi Home Broadband", "Vi Cloud Services", "Vi Wifi", "Vi Roaming", "Idea Cellular Limited", "Vodafone Limited", "Vodafone Teleservices", "Vodafone India Limited", "Vodafone Foundation", "Vodafone Education", "Vodafone Healthcare", "Vodafone Financial Services", "Vodafone Digital", "Vodafone IoT", "Vodafone M2M Services", "Vodafone Enterprise", "Vodafone Government", "Vodafone Defense", "Vodafone Security Services", "Vodafone Cybersecurity", "Vodafone Cloud Services"
+  ],
+  "additional_companies_11": [
+    "Zoho Corporation", "Zoho CRM", "Zoho Books", "Zoho Projects", "Zoho Mail", "Zoho Drive", "Zoho Creator", "Zoho Forms", "Zoho Desk", "Zoho Analytics", "Zoho Reports", "Zoho PageBuilder", "Zoho Sites", "Zoho Sheets", "Zoho Docs", "Zoho Show", "Zoho Connect", "Zoho People", "Zoho Recruit", "Zoho Campaigns", "Zoho SalesIQ", "Zoho PageSense", "Zoho FormAssembly", "Zoho Sign", "Zoho Invoice", "Zoho Expense", "Zoho Workerly", "Zoho Recruit", "Zoho Learn", "Zoho Sprints", "Zoho OfficeCalendar"
+  ],
+  "additional_companies_12": [
+    "HashiCorp Inc", "Hashicorp Terraform", "Hashicorp Consul", "Hashicorp Vault", "Hashicorp Nomad", "Hashicorp Boundary", "Hashicorp Waypoint", "Hashicorp Packer", "Hashicorp TerraForm Cloud", "Hashicorp Sentinel", "Hashicorp Terraform Enterprise", "Hashicorp Consul Enterprise", "Hashicorp Vault Enterprise", "Hashicorp Nomad Enterprise", "Hashicorp Boundary Enterprise", "Datadog Inc", "Datadog Monitoring", "Datadog APM", "Datadog Logs", "Datadog Synthetic Monitoring", "Datadog Real User Monitoring", "Datadog CI Visibility", "Datadog Error Tracking", "Datadog Profiling", "Datadog Continuous Profiler", "Datadog Dynamic Instrumentation", "Datadog Incident Management"
+  ],
+  "additional_companies_13": [
+    "Splunk Inc", "Splunk Enterprise", "Splunk Cloud", "Splunk Infrastructure Monitoring", "Splunk Real User Monitoring", "Splunk Synthetic Monitoring", "Splunk APM", "Splunk Log Observer", "Splunk Observability Cloud", "Splunk IT Service Intelligence", "Splunk User Behavior Analytics", "Splunk Security Analytics", "Elastic NV", "Elasticsearch", "Kibana", "Beats", "Logstash", "Elastic Cloud", "Elastic Observability", "Elastic Security", "Elastic Maps Service", "Elastic Workplace Search", "Elastic App Search", "Elastic Canvas", "Elastic Reporting", "Elasticsearch Queryrunner", "Elasticsearch Security Plugin", "Elasticsearch Monitoring Plugin"
+  ],
+  "additional_companies_14": [
+    "Twilio Inc", "Twilio Communications", "Twilio Voice", "Twilio SMS", "Twilio WhatsApp", "Twilio Messaging", "Twilio Programmable Voice", "Twilio Programmable SMS", "Twilio Studio", "Twilio Flex", "Twilio Autopilot", "Twilio Lookup", "Twilio Verify", "Twilio Authy", "Vonage", "Vonage Communications", "Vonage Voice", "Vonage SMS", "Vonage Messaging", "Vonage Video", "Vonage Webrtc", "Vonage Contact Center", "Vonage Customer Engagement", "Bandwidth Inc", "Bandwidth Voice", "Bandwidth SMS", "Bandwidth MMS", "Bandwidth Messaging", "Bandwidth Communications", "Bandwidth Emergency Services"
+  ],
+  "additional_companies_15": [
+    "Okta Inc", "Okta Identity Cloud", "Okta Identity Governance", "Okta Access Management", "Okta API Access Management", "Okta Authentication", "Okta Authorization", "Okta Lifecycle Management", "Okta Workflows", "Okta Privileged Access Management", "Okta Identity Verification", "Okta Device Assurance", "Auth0 Okta", "Auth0 Identity Platform", "Auth0 Universal Login", "Auth0 Passwordless Authentication", "Auth0 Social Login", "Auth0 Multi Factor Authentication", "Auth0 Single Sign On", "Auth0 Token Management", "Auth0 API Gateway", "Auth0 Bot Detection", "Auth0 Anomaly Detection", "Auth0 Breached Password Detection", "Ping Identity", "Ping Identity Cloud", "Ping Access", "Ping Federate", "Ping Directory", "Ping Datasync"
+  ],
+  "additional_companies_16": [
+    "JumpCloud Inc", "Jumpcloud Directory", "Jumpcloud Commands", "Jumpcloud Systems Manager", "Jumpcloud Multi Cloud Identity", "Jumpcloud Mfa", "Jumpcloud Conditional Access", "Jumpcloud Device Trust", "Jumpcloud Radius", "Jumpcloud Ldap", "Jumpcloud Saml", "Jumpcloud Passwordless", "Rapid7 Inc", "Rapid7 Nexpose", "Rapid7 InsightVM", "Rapid7 InsightAppSec", "Rapid7 InsightPlatform", "Rapid7 UserInsight", "Rapid7 Managed Threat Services", "Tenable Inc", "Tenable Nessus", "Tenable SecurityCenter", "Tenable Cloud", "Tenable Lumin", "Tenable Verdone", "Qualys Inc", "Qualys VMDR", "Qualys CSAM", "Qualys ASPM"
+  ],
+  "additional_companies_17": [
+    "CrowdStrike Holdings", "CrowdStrike Falcon", "CrowdStrike Falcon Platform", "CrowdStrike Falcon Endpoint Protection", "CrowdStrike Falcon XDR", "CrowdStrike Falcon Cloud Security", "CrowdStrike Falcon Intelligence", "CrowdStrike Falcon Managed Threat Hunting", "CrowdStrike Falcon Overwatch", "CrowdStrike Falcon Spotlight", "CrowdStrike Falcon ForcePoint", "CrowdStrike Falcon For Mobile", "Palo Alto Networks", "Palo Alto Networks Cortex", "Palo Alto Networks Threat Prevention", "Palo Alto Networks Advanced Threat Prevention", "Palo Alto Networks URL Filtering", "Palo Alto Networks Data Filtering", "Palo Alto Networks Application Layer Gateway", "Palo Alto Networks SSL Decryption", "Palo Alto Networks Antispyware", "Palo Alto Networks Anti Virus", "Palo Alto Networks Vulnerability Protection"
+  ],
+  "additional_companies_18": [
+    "Fortinet Inc", "Fortinet FortiGate", "Fortinet FortiManager", "Fortinet FortiAnalyzer", "Fortinet FortiCloud", "Fortinet FortiOS", "Fortinet FortiWeb", "Fortinet FortiMail", "Fortinet FortiProxy", "Fortinet FortiDDoS", "Fortinet FortiADC", "Fortinet FortiCASB", "Fortinet FortiEDR", "Zscaler Inc", "Zscaler Cloud Security", "Zscaler Internet Access", "Zscaler Private Access", "Zscaler Cloud Sandbox", "Zscaler Cloud Browser Isolation", "Zscaler Data Protection", "Zscaler Cloud Firewall", "Zscaler Advanced Threat Protection", "Zscaler Web Gateway", "Zscaler Email Security"
+  ],
+  "global_multinational_corps": [
+    "Amazon.com Inc", "Alibaba Group", "Tencent Holdings", "Meituan", "Booking.com", "Nvidia Corporation", "Tesla Inc", "JD.com", "Naver", "Baidu", "Pinduoduo", "Netflix Inc", "Airbnb Inc", "Uber Technologies", "Lyft Inc", "DoorDash Inc", "Instacart", "Snapchat Inc", "Discord Inc", "Slack Technologies", "Zoom Video Communications", "Twitch", "Roblox Corporation", "Zynga Game", "Electronic Arts", "Activision Blizzard", "Take Two Interactive", "Ubisoft Entertainment", "Embracer Group", "Konami Holdings", "Capcom Co Ltd", "Square Enix Holdings", "Nintendo Co Ltd", "Sega Sammy Holdings", "Bandai Namco Entertainment", "Atari SA", "Huya Inc", "Douyu International Holdings", "Bilibili Inc", "iQIYI Inc", "NetEase Inc"
+  ],
+  "final_batch_companies": [
+    "Xiaomi Corporation", "OPPO Electronics", "Vivo Mobile", "OnePlus Technology", "Realme Mobiles", "ZTE Corporation", "Meizu Technology", "Gionee Electronics", "Micromax Informatics", "Panasonic Corporation", "Sony Group", "LG Electronics", "Samsung Electronics", "Motorola Solutions", "Apple Inc", "Google LLC", "Microsoft Corporation", "IBM Corporation", "Intel Corporation", "AMD", "Qualcomm Incorporated", "Broadcom Inc", "ASML Holding", "Lam Research", "Applied Materials", "Marvell Technology", "Skyworks Solutions", "Analog Devices", "Texas Instruments", "ON Semiconductor", "NXP Semiconductors", "STMicroelectronics", "Infineon Technologies", "MediaTek Inc", "Realtek Semiconductor", "Cadence Design Systems", "Synopsys Inc", "Siemens EDA", "Altera", "Xilinx", "Lattice Semiconductor", "Microchip Technology", "Renesas Electronics", "Fujitsu Limited", "NEC Corporation", "Hitachi Limited", "Toshiba Corporation", "Xavi Technologies", "Vivo Technology", "Oppo Technology", "Huami Technologies", "Amazfit", "Goertek Inc", "AAC Technologies", "Sunny Optical Technology", "JACO Electronics", "Primax Electronics Limited", "InvenTrust Properties"
+  ]
+}

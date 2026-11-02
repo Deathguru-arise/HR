@@ -24,20 +24,30 @@
 
 <!-- Eligibility gate -->
 {% if app.eligibility %}
-<div class="notice {% if app.eligibility.passed %}notice-pass{% else %}notice-fail{% endif %}">
-  <span class="notice-icon">{% if app.eligibility.passed %}✓{% else %}✗{% endif %}</span>
+<div class="notice {% if app.eligibility.passed %}notice-pass{% elif eligibility_needs_review %}warning{% else %}notice-fail{% endif %}">
+  <span class="notice-icon">{% if app.eligibility.passed %}✓{% else %}!{% endif %}</span>
   <div>
-    <b>Eligibility: {% if app.eligibility.passed %}PASSED{% else %}FAILED{% endif %}</b>
+    <b>Eligibility: {% if app.eligibility.passed %}PASSED{% elif eligibility_needs_review %}NEEDS REVIEW{% else %}REVIEW REQUIRED{% endif %}</b>
     <div class="criteria-grid">
       {% for c in app.eligibility.criteria %}
       <div class="criterion-row">
-        <span class="crit-icon {% if c.passed %}good{% else %}bad{% endif %}">{% if c.passed %}✓{% else %}✗{% endif %}</span>
+        <span class="crit-icon {% if c.passed %}good{% elif c.needs_review %}pending{% else %}bad{% endif %}">{% if c.passed %}✓{% elif c.needs_review %}?{% else %}✗{% endif %}</span>
         <span><b>{{ c.criterion }}</b> — required {{ c.required }}, found {{ c.actual }}{% if not c.passed %} · {{ c.reason }}{% endif %}</span>
       </div>
       {% endfor %}
     </div>
   </div>
 </div>
+{% endif %}
+
+{% if is_hr and app.analysis and app.drive.graduation_year %}
+<form class="form-card" method="post" action="{% url 'correct_resume_field' app.id %}">
+  {% csrf_token %}<h2>Review graduation year</h2>
+  <p class="muted">Extracted value: {{ app.analysis.graduation_year_extracted|default:"Not found" }}. Correct this value or record that the resume does not state it. This is saved as an HR correction and does not train the model automatically.</p>
+  <label>Verified year<input type="number" name="graduation_year" min="1950" max="2100" value="{{ app.analysis.graduation_year_extracted|default:'' }}"></label>
+  <label><input type="checkbox" name="not_present" value="1"> Graduation year is not present in the resume</label>
+  <button class="button primary">Save review and recalculate eligibility</button>
+</form>
 {% endif %}
 
 {% if app.analysis %}
@@ -107,9 +117,15 @@
     <h3>Education · Experience</h3>
     <p class="meta-row">
       🎓 {{ app.analysis.education_level|default:"Not detected" }} &nbsp;·&nbsp;
+      🎓 Graduation year {{ app.analysis.graduation_year_extracted|default:"Needs review" }} &nbsp;·&nbsp;
       ⏱ {{ app.analysis.experience_years|default:"0" }} yr(s) experience &nbsp;·&nbsp;
       {% if app.analysis.cgpa_extracted %}📊 CGPA {{ app.analysis.cgpa_extracted }}{% endif %}
     </p>
+    {% if app.analysis.facts.resume_entities %}
+    <h3>Model extracted fields to verify</h3>
+    <p class="muted">Local model output · review against the source resume. It does not change the role-fit score.</p>
+    <div class="chips">{% for entity in app.analysis.facts.resume_entities %}<span>{{ entity.label|title }}: {{ entity.text }} · {{ entity.confidence|floatformat:2 }}</span>{% endfor %}</div>
+    {% endif %}
 
     {% if app.analysis.projects %}
     <h3>Projects ({{ app.analysis.projects|length }})</h3>

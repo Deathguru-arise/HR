@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+.venv-onnx-export/
+venv/
+.env
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.mypy_cache/
+.DS_Store
+training/output/
+training/data/resume_resource/
+*.egg-info/

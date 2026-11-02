@@ -121,3 +121,4 @@ class Command(BaseCommand):
 
         self.stdout.write("=" * 65)
         self.stdout.write("Report completed successfully.\n")
+

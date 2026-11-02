@@ -33,6 +33,25 @@ def _require_hr(user):
         raise PermissionDenied
 
 
+RESUME_FORMAT_GUIDES = {
+    "standard": {
+        "label": "Standard single-column",
+        "image": "/static/resume_formats/standard.svg",
+        "description": "Recommended for most roles. Use a single column with clear section headings and contact, education, skills, and experience details.",
+    },
+    "fresher": {
+        "label": "Projects and skills first",
+        "image": "/static/resume_formats/fresher.svg",
+        "description": "Best for students and early-career candidates. Put education, projects, and relevant skills before work experience.",
+    },
+    "experienced": {
+        "label": "Experience first",
+        "image": "/static/resume_formats/experienced.svg",
+        "description": "Best for experienced applicants. Put recent work experience and achievements before education and skills.",
+    },
+}
+
+
 # ---------------------------------------------------------------------------
 # Public views
 # ---------------------------------------------------------------------------
@@ -59,14 +78,24 @@ def register(request):
     return render(request, "register.html")
 
 
-def login_view(request):
+def login_view(request, portal=""):
+    portal = request.POST.get("portal", portal) if request.method == "POST" else request.GET.get("portal", portal)
+    if portal not in ("candidate", "hr"):
+        portal = ""
     if request.method == "POST":
         user = authenticate(request, username=request.POST.get("username"), password=request.POST.get("password"))
         if user:
+            user_role = role(user)
+            if portal == "candidate" and user_role != "candidate":
+                messages.error(request, "This account is for HR. Choose the HR portal to sign in.")
+                return render(request, "login.html", {"portal": portal})
+            if portal == "hr" and user_role not in ("hr", "admin"):
+                messages.error(request, "This account is for candidates. Choose the candidate portal to sign in.")
+                return render(request, "login.html", {"portal": portal})
             login(request, user)
             return redirect("dashboard")
         messages.error(request, "The username or password was not recognized.")
-    return render(request, "login.html")
+    return render(request, "login.html", {"portal": portal})
 
 
 @login_required
@@ -159,6 +188,7 @@ def drive_detail(request, drive_id):
         "drive": drive,
         "can_apply": bool(profile_obj and profile_obj.role == "candidate"),
         "already_applied": already_applied,
+        "resume_format": RESUME_FORMAT_GUIDES.get(drive.resume_format, RESUME_FORMAT_GUIDES["standard"]),
     })
 
 
@@ -174,6 +204,9 @@ def create_drive(request):
                 closing = timezone.make_aware(closing)
             if not company_name or not title or closing <= timezone.now():
                 raise ValueError("Enter a company, role, and future closing time.")
+            resume_format = request.POST.get("resume_format", "standard")
+            if resume_format not in RESUME_FORMAT_GUIDES:
+                raise ValueError("Choose one of the resume layout previews.")
             with transaction.atomic():
                 company, _ = Company.objects.get_or_create(
                     name=company_name, defaults={"created_by": request.user}
@@ -193,6 +226,7 @@ def create_drive(request):
                     description=request.POST.get("description", ""),
                     required_skills=request.POST.get("required_skills", ""),
                     preferred_skills=request.POST.get("preferred_skills", ""),
+                    resume_format=resume_format,
                     closes_at=closing,
                     applicant_limit=int(request.POST.get("applicant_limit") or 0) or None,
                     minimum_cgpa=request.POST.get("minimum_cgpa") or None,
@@ -212,7 +246,11 @@ def create_drive(request):
             return redirect("dashboard")
         except (ValueError, KeyError) as exc:
             messages.error(request, str(exc) or "Check the required fields, future deadline, and weights.")
-    return render(request, "create_drive.html")
+    return render(request, "create_drive.html", {
+        "resume_format_options": [
+            {"key": key, **guide} for key, guide in RESUME_FORMAT_GUIDES.items()
+        ],
+    })
 
 
 # ---------------------------------------------------------------------------
@@ -323,6 +361,10 @@ def application_detail(request, application_id):
 
     # Stage scores for HR
     stage_scores = list(app.stage_scores.all()) if is_hr else []
+    eligibility_needs_review = bool(
+        getattr(getattr(app, "eligibility", None), "criteria", [])
+        and any(item.get("needs_review") for item in app.eligibility.criteria)
+    )
 
     return render(request, "application_detail.html", {
         "app": app,
@@ -330,7 +372,59 @@ def application_detail(request, application_id):
         "blind": blind,
         "stage_scores": stage_scores,
         "stage_choices": StageScore.STAGE_CHOICES,
+        "eligibility_needs_review": eligibility_needs_review,
     })
+
+
+@login_required
+def correct_resume_field(request, application_id):
+    """Let HR correct a parsed field while retaining an audit trail."""
+    if request.method != "POST":
+        raise Http404
+    app = get_object_or_404(Application.objects.select_related("drive", "candidate"), pk=application_id)
+    _require_hr(request.user)
+    if role(request.user) == "hr" and app.drive.created_by_id != request.user.id:
+        raise PermissionDenied
+    if "graduation_year" not in request.POST:
+        raise Http404
+    raw_year = request.POST.get("graduation_year", "").strip()
+    not_present = request.POST.get("not_present") == "1"
+    if not_present:
+        corrected_year = None
+        correction = {"status": "not_present", "by": request.user.username}
+    else:
+        try:
+            corrected_year = int(raw_year)
+            if not 1950 <= corrected_year <= 2100:
+                raise ValueError
+        except ValueError:
+            messages.error(request, "Enter a valid graduation year or select ‘not present in resume’.")
+            return redirect("application_detail", application_id=app.pk)
+        correction = {"status": "corrected", "value": corrected_year, "by": request.user.username}
+
+    analysis = app.analysis
+    facts = analysis.facts or {}
+    corrections = facts.setdefault("review_corrections", {})
+    corrections["graduation_year"] = correction
+    analysis.facts = facts
+    analysis.graduation_year_extracted = corrected_year
+    analysis.save(update_fields=["facts", "graduation_year_extracted", "processed_at"])
+
+    passed, criteria = run_eligibility_gate(app, app.drive)
+    EligibilityCheck.objects.update_or_create(
+        application=app, defaults={"passed": passed, "criteria": criteria}
+    )
+    if passed:
+        app.status = "eligible"
+    elif app.status == "eligible":
+        app.status = "submitted"
+    app.save(update_fields=["status", "updated_at"])
+    AuditEvent.objects.create(
+        actor=request.user, action="resume_field_corrected", object_type="Application",
+        object_id=str(app.pk), details={"field": "graduation_year", "correction": correction},
+    )
+    messages.success(request, "Graduation-year review saved. Eligibility was recalculated.")
+    return redirect("application_detail", application_id=app.pk)
 
 
 @login_required

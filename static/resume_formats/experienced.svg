@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 220" role="img" aria-labelledby="title desc">
+  <title id="title">Experience first resume preview</title><desc id="desc">A one-column page that places work history before education and skills.</desc>
+  <rect width="360" height="220" rx="18" fill="#edf5ef"/><rect x="114" y="14" width="132" height="192" rx="7" fill="#fff" stroke="#d6e5da"/>
+  <rect x="143" y="28" width="74" height="7" rx="3.5" fill="#267353"/><rect x="130" y="41" width="100" height="3" rx="1.5" fill="#bac9bf"/>
+  <rect x="128" y="56" width="52" height="5" rx="2" fill="#267353"/><rect x="128" y="65" width="100" height="3" rx="1.5" fill="#c9d4cc"/><rect x="128" y="72" width="89" height="3" rx="1.5" fill="#d7dfd9"/><rect x="128" y="79" width="96" height="3" rx="1.5" fill="#d7dfd9"/>
+  <rect x="128" y="93" width="45" height="5" rx="2" fill="#41564a"/><rect x="128" y="102" width="98" height="3" rx="1.5" fill="#c9d4cc"/><rect x="128" y="109" width="87" height="3" rx="1.5" fill="#d7dfd9"/>
+  <rect x="128" y="123" width="42" height="5" rx="2" fill="#41564a"/><rect x="128" y="132" width="102" height="3" rx="1.5" fill="#c9d4cc"/>
+  <rect x="128" y="146" width="46" height="5" rx="2" fill="#41564a"/><rect x="128" y="155" width="94" height="3" rx="1.5" fill="#c9d4cc"/><rect x="128" y="162" width="82" height="3" rx="1.5" fill="#d7dfd9"/>
+  <circle cx="66" cy="72" r="22" fill="#d9eadf"/><path d="M57 78V66h17v12M54 78h23M61 66v-5h9v5" fill="none" stroke="#267353" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M66 108v30M80 123h25" stroke="#83ac91" stroke-width="2" stroke-linecap="round"/>
+  <rect x="262" y="78" width="58" height="8" rx="4" fill="#d9eadf"/><rect x="262" y="94" width="42" height="5" rx="2.5" fill="#b5cbbb"/><rect x="262" y="105" width="50" height="5" rx="2.5" fill="#b5cbbb"/>
+</svg>

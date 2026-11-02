@@ -38,6 +38,14 @@
       </div>
     </div>
 
+    <div class="detail-section resume-format-guide">
+      <h2>Resume layout guide</h2>
+      <p>{{ resume_format.label }}{% if drive.resume_format == "standard" %} · Recommended{% endif %}</p>
+      <img src="{{ resume_format.image }}" alt="Visual example of the {{ resume_format.label }} resume layout" loading="lazy">
+      <p>{{ resume_format.description }}</p>
+      <p class="muted">Use readable text, standard headings, and a single-column page. Avoid scanned pages, decorative text, and information placed only in headers, footers, or images. This is a guide; upload your resume as PDF or DOCX.</p>
+    </div>
+
     <div class="notice">
       <span class="notice-icon">i</span>
       <div>

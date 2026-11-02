@@ -58,4 +58,16 @@ python manage.py evaluate_agreement --labels hr_labeling_template.csv
 
 Resume files are served through an authenticated view with per-application role checks. The application records key workflow events. Candidates cannot see other candidates' files, scores, or private notes. HR users see only applications for drives they created; placement admins can review all records. Final application status is a human decision.
 
+## Local resume extraction model
+
+The project uses the downloaded `resume-ner-bucket/local` DistilBERT model through its quantized ONNX artifact at `resume-ner-bucket/local/onnx/model_quantized.onnx`. The model and tokenizer run locally. The HR review page shows selected extracted education, date, skill, institution, and certification spans with confidence values; these are review aids and do not alter the role-fit score. Graduation year is still checked using the existing rules and must be verified when missing or uncertain.
+
+The bucket also includes the training/validation data and training scripts. Its existing model is already fine-tuned for resume entity extraction; use `python -m training.train_ner` from `resume-ner-bucket/local` to fine-tune from the included dataset. That command writes a separate checkpoint under `training/output/resume-ner/distilbert/best`. To point the portal at a different exported model folder, set `RESUME_NER_MODEL_DIR` to that folder; it must include tokenizer/config files and an `onnx/model_quantized.onnx` file. The checked-in model label set has a general `DATE` entity, not a dedicated graduation-year label, so validate extraction on representative local resumes before relying on it. Model and source dataset licensing should be reviewed for the intended use.
+
+HR corrections to graduation-year extraction are saved with an audit event and used to recalculate that application’s eligibility. They are not automatically fed back into training; add verified, consented corrections to a reviewed training set before retraining.
+
+## Resume layout guidance per drive
+
+HR selects one of three illustrated resume layouts when creating a drive: a standard single-column layout, a projects-and-skills-first layout for early-career applicants, or an experience-first layout. The chosen preview and guidance appear on the candidate's drive page before applying. All three examples use a single-column page and clear headings to reduce layout-related extraction noise; candidates still submit a PDF or DOCX resume, and the guide does not guarantee perfect parsing.
+
 The project database currently contains no labeled application outcomes, so a hiring predictor cannot be responsibly trained from it. To (re)build the local taxonomy index, run `py manage.py train_skill_model`; the generated artifact is saved in `recruitment/data/skill_model.json`. Benchmarking, OCR, representative labeled data, and governance review remain necessary before deployment; this prototype does not claim hiring accuracy.

@@ -149,3 +149,4 @@ def generate_hr_labeling_csv_template() -> str:
         "None", "Strong GitHub project evidence"
     ])
     return output.getvalue()
+

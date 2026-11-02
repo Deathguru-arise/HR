@@ -6,9 +6,9 @@
   <div class="health-row"><span>Resume AI cloud fallback</span><b class="good">Disabled</b></div>
   <div class="health-row"><span>Resume file storage</span><b>Local server storage</b></div>
   <div class="health-row"><span>Scoring method</span><b>Evidence-checked local rubric</b></div>
-  <div class="health-row"><span>Skill suggestion model</span><b>{% if status.enabled %}Trained · {{ status.model }}{% else %}Not trained{% endif %}</b></div>
-  {% if status.enabled %}<div class="health-row"><span>Training profiles</span><b>{{ status.training_documents }}</b></div><div class="health-row"><span>Trained at</span><b>{{ status.trained_at }}</b></div>{% endif %}
+  <div class="health-row"><span>Resume extraction model</span><b>{% if status.enabled %}Ready · {{ status.model }}{% else %}Unavailable{% endif %}</b></div>
+  <div class="health-row"><span>Skill suggestion index</span><b>{% if status.skill_suggestions_enabled %}Ready{% else %}Unavailable{% endif %}</b></div>
   <p class="muted">{{ status.message }}</p>
-  <div class="notice"><span class="notice-icon">i</span><div><b>How model suggestions work</b><p>The offline TF-IDF model finds related terms from the built-in skill taxonomy. Suggestions are unverified, do not affect rubric scores, and never make hiring decisions. Resume text is not sent to hosted AI services.</p></div></div>
+  <div class="notice"><span class="notice-icon">i</span><div><b>How local extraction works</b><p>The downloaded DistilBERT ONNX model extracts resume entities locally. Its dates and education fields assist review; missing or uncertain values require human verification. Extracted fields do not change rubric scores or make hiring decisions.</p></div></div>
 </div>
 {% endblock %}

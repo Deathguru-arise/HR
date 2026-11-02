@@ -35,6 +35,21 @@
       <label>Allowed branches <small>Comma-separated, blank = all</small><input name="allowed_branches" placeholder="CSE, ECE, IT"></label>
     </div>
 
+    <h2>Preferred resume layout</h2>
+    <p class="muted">Choose a visual layout guide for applicants. All options use a single-column structure to help reduce parsing noise; candidates can still upload their own PDF or DOCX resume.</p>
+    <div class="resume-format-grid" role="radiogroup" aria-label="Preferred resume layout">
+      {% for option in resume_format_options %}
+      <label class="resume-format-option">
+        <input type="radio" name="resume_format" value="{{ option.key }}" {% if option.key == 'standard' %}checked{% endif %} required>
+        <span class="resume-format-card">
+          <img src="{{ option.image }}" alt="Preview: {{ option.label }} resume layout" loading="lazy">
+          <b>{{ option.label }}{% if option.key == 'standard' %} · Recommended{% endif %}</b>
+          <small>{{ option.description }}</small>
+        </span>
+      </label>
+      {% endfor %}
+    </div>
+
     <h2>Drive settings</h2>
     <div class="form-grid">
       <label>Application deadline<input name="closes_at" type="datetime-local" required></label>

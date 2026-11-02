@@ -1,0 +1,6 @@
+accelerate>=1.13,<2
+datasets>=4.8.5,<5
+numpy>=2.4,<3
+seqeval>=1.2.2,<2
+torch>=2.11,<3
+transformers>=5.7,<6

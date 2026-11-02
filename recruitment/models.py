@@ -26,11 +26,17 @@ class Company(models.Model):
 
 class Drive(models.Model):
     STATUS = [("draft", "Draft"), ("open", "Open"), ("closed", "Closed")]
+    RESUME_FORMATS = [
+        ("standard", "Standard single-column"),
+        ("fresher", "Projects and skills first"),
+        ("experienced", "Experience first"),
+    ]
     company = models.ForeignKey(Company, on_delete=models.PROTECT, related_name="drives")
     title = models.CharField(max_length=160)
     description = models.TextField()
     required_skills = models.TextField(help_text="Comma-separated mandatory skills")
     preferred_skills = models.TextField(blank=True, help_text="Comma-separated preferred skills")
+    resume_format = models.CharField(max_length=20, choices=RESUME_FORMATS, default="standard")
     minimum_cgpa = models.DecimalField(max_digits=4, decimal_places=2, null=True, blank=True)
     max_arrears = models.PositiveSmallIntegerField(null=True, blank=True, help_text="Maximum allowed active arrears (0 = none allowed)")
     allowed_branches = models.TextField(blank=True, help_text="Comma-separated allowed departments/branches (blank = all)")

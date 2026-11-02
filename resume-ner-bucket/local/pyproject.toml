@@ -1,0 +1,17 @@
+[project]
+name = "resume-ner-training"
+version = "0.1.0"
+description = "Training and data pipeline for resume NER"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "accelerate>=1.13,<2",
+  "datasets>=4.8.5,<5",
+  "numpy>=2.4,<3",
+  "seqeval>=1.2.2,<2",
+  "torch>=2.11,<3",
+  "transformers>=5.7,<6",
+]
+
+[tool.uv]
+package = false

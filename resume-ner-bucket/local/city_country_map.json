@@ -1,0 +1,133 @@
+{
+  "india": {
+    "bangalore": "India", "bengaluru": "India", "mumbai": "India", "delhi": "India",
+    "new delhi": "India", "hyderabad": "India", "chennai": "India", "pune": "India",
+    "kolkata": "India", "ahmedabad": "India", "noida": "India", "gurgaon": "India",
+    "gurugram": "India", "jaipur": "India", "kochi": "India", "indore": "India",
+    "chandigarh": "India", "lucknow": "India", "nagpur": "India", "bhopal": "India",
+    "visakhapatnam": "India", "coimbatore": "India", "thiruvananthapuram": "India",
+    "mysore": "India", "mysuru": "India", "mangalore": "India", "mangaluru": "India",
+    "surat": "India", "vadodara": "India", "rajkot": "India", "nashik": "India",
+    "patna": "India", "ranchi": "India", "bhubaneswar": "India", "guwahati": "India",
+    "dehradun": "India", "madurai": "India", "tiruchirappalli": "India",
+    "trichy": "India", "warangal": "India", "surathkal": "India",
+    "vellore": "India", "manipal": "India", "pilani": "India",
+    "kharagpur": "India", "kanpur": "India", "roorkee": "India"
+  },
+  "united_states": {
+    "new york": "United States", "los angeles": "United States", "chicago": "United States",
+    "houston": "United States", "phoenix": "United States", "philadelphia": "United States",
+    "san antonio": "United States", "san diego": "United States", "dallas": "United States",
+    "san jose": "United States", "austin": "United States", "jacksonville": "United States",
+    "san francisco": "United States", "columbus": "United States", "indianapolis": "United States",
+    "fort worth": "United States", "charlotte": "United States", "seattle": "United States",
+    "denver": "United States", "nashville": "United States", "oklahoma city": "United States",
+    "washington": "United States", "el paso": "United States", "boston": "United States",
+    "portland": "United States", "las vegas": "United States", "memphis": "United States",
+    "louisville": "United States", "baltimore": "United States", "milwaukee": "United States",
+    "albuquerque": "United States", "tucson": "United States", "fresno": "United States",
+    "sacramento": "United States", "mesa": "United States", "atlanta": "United States",
+    "kansas city": "United States", "colorado springs": "United States",
+    "omaha": "United States", "raleigh": "United States", "miami": "United States",
+    "minneapolis": "United States", "tampa": "United States", "new orleans": "United States",
+    "cleveland": "United States", "pittsburgh": "United States", "cincinnati": "United States",
+    "st. louis": "United States", "saint louis": "United States", "detroit": "United States",
+    "salt lake city": "United States", "honolulu": "United States",
+    "mountain view": "United States", "palo alto": "United States", "menlo park": "United States",
+    "cupertino": "United States", "redmond": "United States", "boulder": "United States",
+    "cambridge": "United States", "santa monica": "United States", "irvine": "United States",
+    "sunnyvale": "United States", "santa clara": "United States", "berkeley": "United States",
+    "ann arbor": "United States", "madison": "United States", "durham": "United States",
+    "chapel hill": "United States", "provo": "United States", "pasadena": "United States",
+    "scottsdale": "United States", "bellevue": "United States", "kirkland": "United States",
+    "plano": "United States", "arlington": "United States", "lexington": "United States",
+    "waltham": "United States", "el segundo": "United States", "hawthorne": "United States",
+    "redondo beach": "United States", "fort collins": "United States",
+    "san mateo": "United States", "los gatos": "United States",
+    "college station": "United States", "west lafayette": "United States",
+    "university park": "United States", "ithaca": "United States",
+    "marysville": "United States", "dublin": "United States"
+  },
+  "united_kingdom": {
+    "london": "United Kingdom", "manchester": "United Kingdom", "birmingham": "United Kingdom",
+    "glasgow": "United Kingdom", "liverpool": "United Kingdom", "edinburgh": "United Kingdom",
+    "leeds": "United Kingdom", "bristol": "United Kingdom", "sheffield": "United Kingdom",
+    "newcastle": "United Kingdom", "nottingham": "United Kingdom", "cardiff": "United Kingdom",
+    "belfast": "United Kingdom", "leicester": "United Kingdom", "coventry": "United Kingdom",
+    "oxford": "United Kingdom", "cambridge": "United Kingdom", "reading": "United Kingdom",
+    "southampton": "United Kingdom", "brighton": "United Kingdom", "bath": "United Kingdom",
+    "york": "United Kingdom", "exeter": "United Kingdom", "dundee": "United Kingdom",
+    "aberdeen": "United Kingdom", "malmo": "United Kingdom"
+  },
+  "canada": {
+    "toronto": "Canada", "vancouver": "Canada", "montreal": "Canada", "calgary": "Canada",
+    "edmonton": "Canada", "ottawa": "Canada", "winnipeg": "Canada", "quebec city": "Canada",
+    "hamilton": "Canada", "kitchener": "Canada", "waterloo": "Canada", "halifax": "Canada",
+    "victoria": "Canada", "london": "Canada", "saskatoon": "Canada", "regina": "Canada"
+  },
+  "germany": {
+    "berlin": "Germany", "munich": "Germany", "frankfurt": "Germany", "hamburg": "Germany",
+    "cologne": "Germany", "dusseldorf": "Germany", "stuttgart": "Germany", "dortmund": "Germany",
+    "essen": "Germany", "leipzig": "Germany", "bremen": "Germany", "dresden": "Germany",
+    "hannover": "Germany", "nuremberg": "Germany", "wroclaw": "Germany", "krakow": "Germany",
+    "heidelberg": "Germany", "karlsruhe": "Germany", "bonn": "Germany"
+  },
+  "france": {
+    "paris": "France", "marseille": "France", "lyon": "France", "toulouse": "France",
+    "nice": "France", "nantes": "France", "strasbourg": "France", "montpellier": "France",
+    "bordeaux": "France", "lille": "France", "rennes": "France", "grenoble": "France"
+  },
+  "australia": {
+    "sydney": "Australia", "melbourne": "Australia", "brisbane": "Australia",
+    "perth": "Australia", "adelaide": "Australia", "canberra": "Australia",
+    "gold coast": "Australia", "hobart": "Australia", "auckland": "New Zealand",
+    "wellington": "New Zealand", "christchurch": "New Zealand"
+  },
+  "east_asia": {
+    "tokyo": "Japan", "osaka": "Japan", "yokohama": "Japan", "kyoto": "Japan",
+    "nagoya": "Japan", "fukuoka": "Japan", "sapporo": "Japan",
+    "seoul": "South Korea", "busan": "South Korea", "incheon": "South Korea",
+    "beijing": "China", "shanghai": "China", "shenzhen": "China", "guangzhou": "China",
+    "hangzhou": "China", "chengdu": "China", "nanjing": "China", "wuhan": "China",
+    "xi'an": "China", "tianjin": "China", "suzhou": "China",
+    "taipei": "Taiwan", "hong kong": "Hong Kong"
+  },
+  "southeast_asia": {
+    "singapore": "Singapore",
+    "bangkok": "Thailand", "chiang mai": "Thailand",
+    "kuala lumpur": "Malaysia", "penang": "Malaysia", "johor bahru": "Malaysia",
+    "jakarta": "Indonesia", "bali": "Indonesia", "surabaya": "Indonesia",
+    "manila": "Philippines", "cebu": "Philippines",
+    "ho chi minh city": "Vietnam", "hanoi": "Vietnam",
+    "sao paulo": "Brazil", "rio de janeiro": "Brazil",
+    "lagos": "Nigeria", "nairobi": "Kenya", "cape town": "South Africa",
+    "johannesburg": "South Africa"
+  },
+  "middle_east": {
+    "dubai": "UAE", "abu dhabi": "UAE", "sharjah": "UAE",
+    "riyadh": "Saudi Arabia", "jeddah": "Saudi Arabia",
+    "doha": "Qatar", "muscat": "Oman", "manama": "Bahrain",
+    "tel aviv": "Israel", "haifa": "Israel", "jerusalem": "Israel"
+  },
+  "europe_other": {
+    "amsterdam": "Netherlands", "rotterdam": "Netherlands", "the hague": "Netherlands",
+    "eindhoven": "Netherlands", "utrecht": "Netherlands",
+    "stockholm": "Sweden", "gothenburg": "Sweden", "malmo": "Sweden",
+    "dublin": "Ireland", "cork": "Ireland", "galway": "Ireland",
+    "zurich": "Switzerland", "geneva": "Switzerland", "bern": "Switzerland", "basel": "Switzerland",
+    "barcelona": "Spain", "madrid": "Spain", "valencia": "Spain", "seville": "Spain",
+    "lisbon": "Portugal", "porto": "Portugal",
+    "rome": "Italy", "milan": "Italy", "turin": "Italy", "florence": "Italy",
+    "vienna": "Austria", "graz": "Austria",
+    "brussels": "Belgium", "antwerp": "Belgium",
+    "copenhagen": "Denmark", "aarhus": "Denmark",
+    "oslo": "Norway", "bergen": "Norway",
+    "helsinki": "Finland", "espoo": "Finland",
+    "warsaw": "Poland", "krakow": "Poland", "wroclaw": "Poland", "gdansk": "Poland",
+    "prague": "Czech Republic", "brno": "Czech Republic",
+    "budapest": "Hungary", "bucharest": "Romania",
+    "tallinn": "Estonia", "riga": "Latvia", "vilnius": "Lithuania",
+    "athens": "Greece", "thessaloniki": "Greece",
+    "istanbul": "Turkey", "ankara": "Turkey"
+  }
+}

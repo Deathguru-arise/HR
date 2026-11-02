@@ -1,0 +1,155 @@
+{
+  "model_type": "resume-ner",
+  "base_model": "distilbert-base-cased",
+  "task": "token-classification",
+  "labels": [
+    "O", "B-NAME", "I-NAME", "B-EMAIL", "I-EMAIL", "B-PHONE", "I-PHONE",
+    "B-LOCATION", "I-LOCATION", "B-COMPANY", "I-COMPANY", "B-TITLE", "I-TITLE",
+    "B-DATE", "I-DATE", "B-DEGREE", "I-DEGREE", "B-INSTITUTION", "I-INSTITUTION",
+    "B-FIELD", "I-FIELD", "B-SKILL", "I-SKILL", "B-CERT", "I-CERT",
+    "B-LANGUAGE", "I-LANGUAGE"
+  ],
+  "seniority_keywords": {
+    "Executive": ["cto", "ceo", "coo", "cfo", "cmo", "chief", "president", "founder", "co-founder", "managing director"],
+    "Principal": ["principal", "distinguished", "fellow"],
+    "Staff": ["staff", "architect"],
+    "Senior": ["senior", "sr.", "sr ", "lead", "head", "director", "vp", "vice president", "manager"],
+    "Mid": ["mid", "ii", "iii"],
+    "Junior": ["junior", "jr.", "jr ", "associate", "entry", "intern", "trainee", "fresher", "graduate"]
+  },
+  "seniority_by_years": {
+    "Staff": 15,
+    "Senior": 8,
+    "Mid": 3,
+    "Junior": 0
+  },
+  "seniority_by_experience_count": {
+    "Senior": 4,
+    "Mid": 2,
+    "Junior": 0
+  },
+  "phone_country_prefixes": {
+    "+91": "India", "+1": "United States", "+44": "United Kingdom",
+    "+49": "Germany", "+61": "Australia", "+81": "Japan",
+    "+82": "South Korea", "+46": "Sweden", "+33": "France",
+    "+86": "China", "+65": "Singapore", "+971": "UAE"
+  },
+  "us_states": ["AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA","KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ","NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT","VA","WA","WV","WI","WY","DC"],
+  "country_name_aliases": {
+    "india": "India",
+    "united states": "United States",
+    "usa": "United States",
+    "united kingdom": "United Kingdom",
+    "uk": "United Kingdom"
+  },
+  "pre_processing": {
+    "normalize_dashes": true,
+    "normalize_bullets": true,
+    "collapse_multi_spaces": true,
+    "strip_labels": ["Phone:", "Email:"],
+    "bullet_chars": ["●", "•", "▪", "■", "▸", "►", "‣", "⁃"],
+    "bullet_replacement": "- ",
+    "dash_replacements": {"–": "-", "—": "-"},
+    "expand_skill_tables": true,
+    "skill_table_categories": [
+      "Cloud Technologies", "Build Tools", "Container Technologies",
+      "Scripting", "Version Control System", "Version Control",
+      "Configuration Management", "Infrastructure as Code",
+      "CI/CD", "Observability & Monitoring", "Observability",
+      "DevSecOps Tools", "DevSecOps", "Programming Languages",
+      "Programming", "Frameworks & Libraries", "Frameworks",
+      "Libraries", "Databases", "Database", "Operating Systems",
+      "Networking", "Testing", "Testing Tools", "Test Frameworks",
+      "Tools & Technologies", "Tools", "Technologies",
+      "Cloud Platforms", "Cloud", "Platforms",
+      "Languages", "Frontend", "Backend", "DevOps",
+      "Monitoring", "Security", "Security Tools",
+      "Web Technologies", "Mobile", "Data Tools",
+      "Project Management Tools", "Methodologies",
+      "Automation", "Automation Tools", "Source Control",
+      "Bug Tracking", "IDE", "Other",
+      "Technical Skills", "Core Competencies",
+      "Areas of Expertise", "Proficiencies"
+    ],
+    "table_prose_max_words": 15,
+    "table_continuation_max_chars": 60
+  },
+  "post_processing": {
+    "span_merge_max_gap": 3,
+    "span_merge_labels": ["TITLE", "COMPANY"],
+    "company_gazetteer_match_max_words": 3,
+    "title_company_separators": [" at "],
+    "max_experience_months": 600,
+    "present_words": ["present", "current"],
+    "date_words": [
+      "jan", "january", "feb", "february", "mar", "march",
+      "apr", "april", "may", "jun", "june", "jul", "july",
+      "aug", "august", "sep", "september", "oct", "october",
+      "nov", "november", "dec", "december", "present", "current"
+    ],
+    "email_strip_prefixes": ["Esq.", "Dr.", "PhD", "MD", "PE"],
+    "space_collapse_pairs": [
+      [" . ", "."],
+      [" + + ", "++"],
+      [" + +", "++"],
+      [" & ", "&"],
+      [" / ", "/"],
+      [" # ", "#"],
+      [" ,", ","]
+    ],
+    "entity_rules": {
+      "COMPANY": {
+        "min_length": 4,
+        "exceptions": [],
+        "gazetteer_bypass": true,
+        "strip_trailing_state_code": true
+      },
+      "TITLE": {
+        "min_length": 2,
+        "exceptions": ["VP", "PA", "RN", "MD", "DO", "QA"]
+      },
+      "SKILL": {
+        "min_length": 4,
+        "uppercase_bypass": true,
+        "exceptions": ["Go", "R", "C", "C#", "F#", "D"],
+        "blocked_words": [
+          "native", "fluent", "bilingual", "bilingual proficiency",
+          "conversational", "intermediate", "basic", "proficiency",
+          "proficient", "elementary"
+        ],
+        "aliases": {
+          "node js": "node.js",
+          "nodejs": "node.js",
+          "react js": "react",
+          "dot net": ".net",
+          "asp net": "asp.net",
+          "c sharp": "c#",
+          "cplusplus": "c++",
+          "cpp": "c++",
+          "scikit learn": "scikit-learn",
+          "machine": "machine learning"
+        }
+      },
+      "CERT": {
+        "min_length": 2,
+        "exceptions": [],
+        "aliases": {
+          "servsafe manager": "servsafe manager certification",
+          "the comptia security+": "comptia security+"
+        }
+      },
+      "DATE": {
+        "min_length": 3,
+        "exceptions": []
+      },
+      "EMAIL": {
+        "min_length": 5,
+        "exceptions": [],
+        "require": "@",
+        "reject_patterns": ["//", "www."],
+        "strip_prefixes": ["Esq.", "Dr.", "PhD", "MD", "PE"]
+      }
+    }
+  },
+  "city_country_map_file": "city_country_map.json"
+}

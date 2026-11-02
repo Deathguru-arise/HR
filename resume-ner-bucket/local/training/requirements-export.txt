@@ -1,0 +1,6 @@
+# Separate ONNX export environment.
+# Kept separate because current Optimum ONNX stack requires transformers <4.58.
+accelerate>=1,<2
+onnxruntime>=1.21,<2
+optimum-onnx[onnxruntime]>=0.1,<1
+transformers>=4.57,<4.58

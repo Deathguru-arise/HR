@@ -331,6 +331,16 @@ def process_resume(text, pages, drive):
     # ---- Step 9: Structured extraction ---------------------------------
     cgpa_val = extract_cgpa(text)
     grad_year = extract_graduation_year(text)
+    grad_year_source = "rule" if grad_year else "not_found"
+    try:
+        from .resume_ner import extract_entities, graduation_year_from_entities
+        ner_entities = extract_entities(text)
+        model_grad_year = graduation_year_from_entities(text, ner_entities)
+        if model_grad_year:
+            grad_year = model_grad_year
+            grad_year_source = "local_ner"
+    except Exception:
+        ner_entities = []
     has_arrears_val = detect_arrears(text)
     projects = extract_projects(text, sections)
     certifications = extract_certifications(text, sections)
@@ -438,6 +448,10 @@ def process_resume(text, pages, drive):
             "education_score":  round(edu_score_pct * 100),
             "section_confidence": section_confidence,
             "model_skill_suggestions": model_suggestions,
+            "resume_entities": [entity for entity in ner_entities if entity["label"] in {
+                "DATE", "DEGREE", "FIELD", "INSTITUTION", "SKILL", "CERT"
+            }],
+            "graduation_year_source": grad_year_source,
         },
         "summary": summary,
         "flags":   flags,
@@ -519,13 +533,20 @@ def run_eligibility_gate(application, drive):
         grad_year = None
         if profile and profile.graduation_year:
             grad_year = profile.graduation_year
-        ok = grad_year is not None and grad_year == drive.graduation_year
+        if grad_year is None:
+            try:
+                grad_year = application.analysis.graduation_year_extracted
+            except Exception:
+                grad_year = None
+        needs_review = grad_year is None
+        ok = grad_year == drive.graduation_year
         criteria.append({
             "criterion": "Graduation year",
             "required": str(drive.graduation_year),
-            "actual": str(grad_year) if grad_year else "Not on record",
+            "actual": str(grad_year) if grad_year else "Not found — needs review",
             "passed": ok,
-            "reason": "" if ok else f"Graduation year {grad_year or 'unknown'} does not match required {drive.graduation_year}",
+            "needs_review": needs_review,
+            "reason": "" if ok else ("No graduation year was found. Ask the candidate or inspect the resume before deciding." if needs_review else f"Graduation year {grad_year} does not match required {drive.graduation_year}"),
         })
         if not ok:
             passed = False
@@ -870,16 +891,16 @@ def extract_skills_from_jd(text: str) -> dict:
 
 
 def local_model_status():
-    """Report status for the fitted local skill retriever."""
-    from .skill_model import MODEL_PATH, load_skill_model
-    model = load_skill_model()
+    """Report status for local resume extraction and skill suggestions."""
+    from .resume_ner import model_status as ner_status
+    from .skill_model import load_skill_model
+    ner = ner_status()
+    skill_model = load_skill_model()
     return {
-        "enabled": bool(model),
-        "model": model.get("model", "") if model else "",
-        "trained_at": model.get("trained_at", "") if model else "",
-        "training_documents": model.get("training_documents", 0) if model else 0,
-        "message": ("Offline TF-IDF skill suggestions are enabled. They do not affect the evidence score."
-                    if model else f"Local skill model is not trained. Run `py manage.py train_skill_model` to create {MODEL_PATH.name}."),
+        "enabled": ner["enabled"],
+        "model": ner["model"],
+        "message": ner["message"],
+        "skill_suggestions_enabled": bool(skill_model),
     }
 
 
